@@ -32,31 +32,43 @@
   <h2>Tracks</h2>
 
   <div class="track-grid">
-
-    <article class="track-card">
-      <div class="track-cover">
-        <img src="images/006-yasashii-loop.png" alt="やさしいループの中で">
-      </div>
-      <div class="track-body">
-        <h3 class="track-title">やさしいループの中で</h3>
-        <div class="track-meta">2025.11.23 release</div>
-        <p class="track-comment">
-          映画「恋はデジャ・ブ」からインスパイアされた曲です。映画はハッピーエンドなのですが、
-          せつないラブソングにしてみました。
-        </p>
-        <div class="track-links">
-          <a href="https://open.spotify.com/intl-ja/album/76CFVEeoRFZB6WhmJMp6gT" class="btn small">Spotify</a>
-          <a href="Apple MusicのURL" class="btn small">Apple Music</a>
-          <a href="Amazon MusicのURL" class="btn small">Amazon</a>
-          <a href="YouTube MusicのURL" class="btn small">YouTube Music</a>
+    {% assign sorted_tracks = site.tracks | sort: "track_no" | reverse %}
+    {% for track in sorted_tracks %}
+      <article class="track-card">
+        <div class="track-cover">
+          <img src="images/{{ track.slug }}.png" alt="{{ track.title }}">
         </div>
-      </div>
-    </article>
-
-    <!-- 以下、同じパターンで曲を追加 -->
-
+        <div class="track-body">
+          <h3 class="track-title">{{ track.title }}</h3>
+          <div class="track-meta">
+            {{ track.release_date }} release
+            {% if track.movie %}
+              / Inspired by 「{{ track.movie }}」
+            {% endif %}
+          </div>
+          <p class="track-comment">
+            {{ track.comment }}
+          </p>
+          <div class="track-links">
+            {% if track.links.spotify %}
+              <a href="{{ track.links.spotify }}" class="btn small">Spotify</a>
+            {% endif %}
+            {% if track.links.apple %}
+              <a href="{{ track.links.apple }}" class="btn small">Apple Music</a>
+            {% endif %}
+            {% if track.links.amazon %}
+              <a href="{{ track.links.amazon }}" class="btn small">Amazon</a>
+            {% endif %}
+            {% if track.links.youtube_music %}
+              <a href="{{ track.links.youtube_music }}" class="btn small">YouTube Music</a>
+            {% endif %}
+          </div>
+        </div>
+      </article>
+    {% endfor %}
   </div>
 </section>
+
 
   </main>
 
