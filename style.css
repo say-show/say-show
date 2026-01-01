@@ -72,28 +72,55 @@ h2 {
   margin-top: 40px;
 }
 
-.track {
+.track-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.track-card {
   background: var(--bg-alt);
   border-radius: 12px;
-  padding: 18px 18px 16px;
-  margin-bottom: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.track-cover img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  max-height: 220px;
+}
+
+.track-body {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.track-title {
+  font-size: 1rem;
+  margin: 0;
 }
 
 .track-meta {
   font-size: 0.8rem;
   color: var(--text-muted);
-  margin-bottom: 4px;
 }
 
-.track h3 {
-  font-size: 1.05rem;
-  margin: 0 0 6px;
-}
-
-.track p {
-  margin: 0;
+.track-comment {
   font-size: 0.9rem;
-  line-height: 1.7;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.track-links {
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 .btn {
@@ -109,6 +136,11 @@ h2 {
 .btn.primary {
   background: var(--accent);
   border-color: var(--accent);
+}
+
+.btn.small {
+  padding: 6px 10px;
+  font-size: 0.75rem;
 }
 
 .footer {
