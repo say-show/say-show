@@ -155,3 +155,14 @@ h2 {
   font-size: 0.8rem;
   color: var(--text-muted);
 }
+
+@media (max-width: 640px) {
+  .track-card {
+    flex-direction: column;
+  }
+  .track-cover {
+    max-width: 100%;
+    flex: 0 0 auto;
+  }
+}
+
