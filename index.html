@@ -39,7 +39,13 @@
     {% for track in sorted_tracks %}
       <article class="track-card">
         <div class="track-cover">
-          <img src="images/{{ track.slug }}.png" alt="{{ track.title }}">
+          {% if track.slug %}
+            <img src="images/{{ track.slug }}.png" alt="{{ track.title }}">
+          {% else %}
+            <div class="track-cover-placeholder">
+              NOW<br>PRINTING
+            </div>
+          {% endif %}
         </div>
         <div class="track-body">
           <h3 class="track-title">{{ track.title }}</h3>
