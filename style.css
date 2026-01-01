@@ -74,7 +74,7 @@ h2 {
 
 .track-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: 1fr;   /* まずは1列表示でOK（慣れたら変えてよい） */
   gap: 20px;
 }
 
@@ -83,18 +83,24 @@ h2 {
   border-radius: 12px;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;          /* ← ここを column から row に */
+  gap: 12px;
+}
+
+.track-cover {
+  flex: 0 0 140px;              /* 好きな幅に調整可 */
+  max-width: 140px;
 }
 
 .track-cover img {
   width: 100%;
+  height: 100%;
   display: block;
   object-fit: cover;
-  max-height: 220px;
 }
 
 .track-body {
-  padding: 14px 16px 16px;
+  padding: 14px 16px 16px 4px;  /* 左だけ少し詰める */
   display: flex;
   flex-direction: column;
   gap: 8px;
