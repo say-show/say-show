@@ -1,0 +1,6 @@
+title: "SAY-SHOW"
+description: "J-POPとシティポップ、インディポップをベースにした、映画インスパイア型音楽プロジェクト。"
+theme: null   # デフォルトテーマを使わない
+collections:
+  tracks:
+    output: false   # 個別ページは作らず、トップから一覧表示だけに使う
