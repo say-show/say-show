@@ -20,17 +20,17 @@ body {
 }
 
 .hero {
-  min-height: 70vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 80px 20px 60px;
-  background: radial-gradient(circle at top, #262b4f, #05060b);
+  background: radial-gradient(circle at top, #030f61, #05060b);
   text-align: center;
 }
 
 .hero-inner {
-  max-width: 720px;
+  max-width: 730px;
 }
 
 .hero h1 {
