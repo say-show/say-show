@@ -49,6 +49,7 @@ body {
   line-height: 1.8;
   margin-bottom: 2rem;
   color: var(--text-muted);
+  text-align: left;   
 }
 
 .hero-buttons .btn {
