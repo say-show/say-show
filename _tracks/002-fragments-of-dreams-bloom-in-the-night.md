@@ -1,8 +1,7 @@
 ---
 title: "夢のかけらは夜に咲く"
 track_no: 2
-slug: ""
-# fragments-of-dreams-bloom-in-the-night
+slug: "fragments-of-dreams-bloom-in-the-night"
 release_date: "2025.10.30"
 movie: "ナイトメア・ビフォア・クリスマス"
 comment: >
