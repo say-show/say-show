@@ -1,5 +1,5 @@
---- 
-title: "Mirror Talk
+---
+title: "Mirror Talk"
 track_no: 8
 slug: "mirror-talk"
 release_date: "2025.12.05"
