@@ -52,7 +52,7 @@ body {
 }
 
 .hero-buttons .btn {
-  margin: 0 0.5rem;
+  margin: 0 0.3rem 0.4rem;
 }
 
 main {
@@ -144,6 +144,7 @@ h2 {
   gap: 6px;
 }
 
+/* 共通ボタン */
 .btn {
   display: inline-block;
   padding: 10px 18px;
@@ -152,8 +153,35 @@ h2 {
   color: #fff;
   text-decoration: none;
   font-size: 0.9rem;
+  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out, opacity 0.15s;
 }
 
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  opacity: 0.95;
+}
+
+/* 各サービスのカラー */
+.btn-spotify {
+  background: #1DB954;          /* Spotify green 近似色 */  /*[web:308][web:312]*/
+  border-color: #1DB954;
+}
+
+.btn-apple {
+  background: #FF4E6B;          /* Apple Musicピンク調 */   /*[web:309][web:313]*/
+  border-color: #FF4E6B;
+}
+
+.btn-amazon {
+  background: #0077C1;          /* Amazon Musicのブルー系 */ /*[web:318][web:310]*/
+  border-color: #0077C1;
+}
+
+.btn-youtube {
+  background: #FF0000;          /* YouTube Red */           /*[web:315][web:319]*/
+  border-color: #FF0000;
+}
 .btn.primary {
   background: var(--accent);
   border-color: var(--accent);
