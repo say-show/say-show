@@ -53,6 +53,9 @@ body {
 }
 
 .hero-buttons .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   margin: 0 0.3rem 0.4rem;
 }
 
@@ -191,6 +194,47 @@ h2 {
 .btn.small {
   padding: 6px 10px;
   font-size: 0.75rem;
+}
+
+/* アイコン共通 */
+.btn-icon {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* 単色アイコンの色味（背景は既存のbtn.primaryなどを使う場合は調整） */
+.spotify-icon svg circle {
+  fill: #1DB954;     /* Spotify Green系 */           /*[web:308][web:312]*/
+}
+.spotify-icon svg path {
+  fill: #000000;
+}
+
+.apple-icon svg path {
+  fill: #FF4E6B;     /* Apple Musicピンク調 */       /*[web:309][web:313]*/
+}
+
+.amazon-icon svg path {
+  fill: #00A8E1;     /* Amazon系ブルー */            /*[web:318][web:310]*/
+}
+
+.youtube-icon svg path:first-child {
+  fill: #FF0000;     /* YouTube Red */               /*[web:315][web:319]*/
+}
+.youtube-icon svg path:last-child {
+  fill: #FFFFFF;
+}
+
+.btn-label {
+  display: inline-block;
 }
 
 .footer {
