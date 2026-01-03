@@ -5,7 +5,7 @@ slug: "the-blue-echo-resonating-on-the-asphalt"
 release_date: "2025.10.30"
 movie: "フットルース"
 comment: >
-  初めてリリースした曲。元々「フットルース」から着想を得たはずだったのですが、いろいろ試行錯誤して作ったので、映画から遠く離れてしまいました。
+  初めてリリースした曲。元々「フットルース」から着想を得たはずだったのですが、いろいろ試行錯誤して作ったので、映画から遠く離れた感じになってしまいました。曲の出だしが気に入ってます。
 links:
   spotify: "https://open.spotify.com/intl-ja/track/6Y9un1J6IzpjJegVwaaSNm"
   apple: "https://apple.co/3La7C3K"
