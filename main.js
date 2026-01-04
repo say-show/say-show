@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ボタンクリックで開く
   document.addEventListener('click', (e) => {
-    const btn = e.target.closest('.track-lyrics'');
+    const btn = e.target.closest('.track-lyrics');
     if (!btn) return;
 
     const title = btn.dataset.title || '';
