@@ -11,4 +11,8 @@ links:
   apple: ""
   amazon: ""
   youtube_music: ""
+lyrics: |
+  1行目の歌詞
+  2行目の歌詞
+  サビの歌詞
 ---
