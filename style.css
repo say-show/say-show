@@ -263,67 +263,121 @@ h2 {
   color: var(--text-muted);
 }
 
+/* === 歌詞モーダル全体 === */
 .lyrics-modal {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: radial-gradient(circle at top, rgba(3, 15, 97, 0.65), rgba(5, 6, 11, 0.95));
   display: none;
   align-items: center;
   justify-content: center;
   z-index: 40;
+  padding: 24px;
 }
 
 .lyrics-modal.is-open {
   display: flex;
 }
 
+/* === ガラスカード風コンテンツ === */
 .lyrics-modal-content {
   max-width: 640px;
-  max-height: 80vh;
-  width: 90%;
-  background: rgba(10, 16, 40, 0.98);
-  border-radius: 12px;
-  padding: 1.5rem 1.7rem;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
-  color: #fff;
+  max-height: 84vh;
+  width: min(90%, 640px);
+
+  /* ガラスカード感 */
+  background: rgba(10, 16, 40, 0.32);          /* ネイビーブルーを薄めに */
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  padding: 28px 26px 26px;                     /* 歌詞カードっぽく上下ゆったり */
+  color: #f8f6ff;
   position: relative;
-  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
+/* === 閉じるボタン === */
 .lyrics-modal-close {
   position: absolute;
-  top: 10px;
-  right: 12px;
+  top: 12px;
+  right: 14px;
   border: none;
-  background: transparent;
-  color: #aaa;
+  background: rgba(0, 0, 0, 0.22);
+  color: #fdfbff;
   font-size: 1.4rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  transition: background 0.15s ease-out, transform 0.1s ease-out;
 }
 
+.lyrics-modal-close:hover {
+  background: rgba(0, 0, 0, 0.38);
+  transform: translateY(-1px);
+}
+
+/* === タイトル（上部は詰めすぎず、でも主張しすぎない） === */
 .lyrics-modal-title {
-  margin: 0 0 0.8rem;
-  font-size: 1rem;
-  letter-spacing: 0.12em;
+  margin: 4px 36px 14px 2px; /* 右側はcloseボタンと被らないように余白 */
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
+  color: rgba(245, 245, 245, 0.9);
 }
 
+/* === 歌詞本体：歌詞カード風に上下ゆったり === */
 .lyrics-modal-body {
   margin: 0;
+  padding: 14px 2px 4px;     /* 上を少し厚めに */
   font-family: inherit;
-  font-size: 0.9rem;
-  line-height: 1.7;
+  font-size: 0.92rem;
+  line-height: 1.95;         /* 行間広めで読みやすく */
+  letter-spacing: 0.04em;
   white-space: pre-wrap;
+  text-align: center;        /* 「歌詞カード」っぽくセンター寄せ */
+  overflow-y: auto;
 }
 
+/* スクロールの見た目を少し整える（任意） */
+.lyrics-modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+.lyrics-modal-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+}
+.lyrics-modal-body::-webkit-scrollbar-track {
+  background: transparent;
+}
 
+/* === スマホ向け微調整 === */
 @media (max-width: 640px) {
-  .track-card {
-    flex-direction: column;
+  .lyrics-modal {
+    padding: 16px;
   }
-  .track-cover {
-    max-width: 100%;
-    flex: 0 0 auto;
+
+  .lyrics-modal-content {
+    padding: 24px 18px 20px;
+    border-radius: 16px;
+  }
+
+  .lyrics-modal-title {
+    margin: 2px 34px 10px 2px;
+    font-size: 0.85rem;
+  }
+
+  .lyrics-modal-body {
+    font-size: 0.88rem;
+    line-height: 1.9;
+    padding-top: 12px;
   }
 }
-
