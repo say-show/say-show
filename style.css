@@ -152,6 +152,22 @@ h2 {
   gap: 6px;
 }
 
+.track-lyrics-link {
+  margin-top: 0.4rem;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.track-lyrics-link:hover {
+  color: #ffffff;
+}
+
+
 /* 共通ボタン */
 .btn {
   display: inline-block;
