@@ -154,17 +154,25 @@ h2 {
 
 .track-lyrics {
   margin-top: 0.4rem;
-  padding: 0;
-  border: none;
-  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
   color: var(--text-muted);
   font-size: 0.8rem;
-  text-decoration: underline;
+  border-radius: 999px;
+  padding: 6px 12px;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.15s ease-out, border-color 0.15s ease-out, color 0.15s ease-out, transform 0.1s ease-out;
 }
 
+/* ホバー時は少しだけ主張させる */
 .track-lyrics:hover {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.4);
   color: #ffffff;
+  transform: translateY(-1px);
 }
 
 /* 共通ボタン */
