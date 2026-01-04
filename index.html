@@ -98,11 +98,11 @@
             {{ track.comment }}
           </p>
           <button
-            class="track-lyrics-link"
+            class="btn-lyrics"
             data-title="{{ track.title }}"
             data-lyrics="{{ track.lyrics | escape }}"
-            >
-            Lyrics
+          >
+            歌詞
           </button>
           <div class="track-links">
             {% if track.links.spotify %}
@@ -130,5 +130,13 @@
   <footer class="footer">
     <p>© SAY-SHOW</p>
   </footer>
+
+  <div id="lyrics-modal" class="lyrics-modal">
+    <div class="lyrics-modal-content">
+      <button class="lyrics-modal-close" aria-label="閉じる">×</button>
+      <h3 class="lyrics-modal-title"></h3>
+      <pre class="lyrics-modal-body"></pre>
+    </div>
+  </div>
 </body>
 </html>
