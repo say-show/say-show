@@ -97,6 +97,13 @@
           <p class="track-comment">
             {{ track.comment }}
           </p>
+          <button
+            class="track-lyrics-link"
+            data-title="{{ track.title }}"
+            data-lyrics="{{ track.lyrics | escape }}"
+            >
+            Lyrics
+          </button>
           <div class="track-links">
             {% if track.links.spotify %}
               <a href="{{ track.links.spotify }}" class="btn small">Spotify</a>
