@@ -339,6 +339,7 @@ h2 {
 
 /* === タイトル（上部は詰めすぎず、でも主張しすぎない） === */
 .lyrics-modal-title {
+  padding-bottom: 10px;
   margin: 4px 36px 14px 2px; /* 右側はcloseボタンと被らないように余白 */
   font-size: 0.9rem;
   letter-spacing: 0.18em;
