@@ -344,6 +344,7 @@ h2 {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(245, 245, 245, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25); 
 }
 
 /* === 歌詞本体：歌詞カード風に上下ゆったり === */
