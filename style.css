@@ -153,7 +153,14 @@ h2 {
 }
 
 .track-lyrics {
+  display: inline-flex; 
+  align-items: center;
+  gap: 6px;
+
   margin-top: 0.4rem;
+  width: auto;
+  max-width: max-content;
+
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: rgba(255, 255, 255, 0.04);
   color: var(--text-muted);
@@ -161,9 +168,6 @@ h2 {
   border-radius: 999px;
   padding: 6px 12px;
   cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
   transition: background 0.15s ease-out, border-color 0.15s ease-out, color 0.15s ease-out, transform 0.1s ease-out;
 }
 
