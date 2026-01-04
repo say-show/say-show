@@ -152,7 +152,7 @@ h2 {
   gap: 6px;
 }
 
-.track-lyrics-link {
+.track-lyrics {
   margin-top: 0.4rem;
   padding: 0;
   border: none;
@@ -163,10 +163,9 @@ h2 {
   cursor: pointer;
 }
 
-.track-lyrics-link:hover {
+.track-lyrics:hover {
   color: #ffffff;
 }
-
 
 /* 共通ボタン */
 .btn {
