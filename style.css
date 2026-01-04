@@ -343,20 +343,8 @@ h2 {
   line-height: 1.95;         /* 行間広めで読みやすく */
   letter-spacing: 0.04em;
   white-space: pre-wrap;
-  text-align: center;        /* 「歌詞カード」っぽくセンター寄せ */
+  text-align: left;        /* 「歌詞カード」っぽくセンター寄せ */
   overflow-y: auto;
-}
-
-/* スクロールの見た目を少し整える（任意） */
-.lyrics-modal-body::-webkit-scrollbar {
-  width: 6px;
-}
-.lyrics-modal-body::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: 999px;
-}
-.lyrics-modal-body::-webkit-scrollbar-track {
-  background: transparent;
 }
 
 /* === スマホ向け微調整 === */
