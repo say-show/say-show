@@ -363,6 +363,14 @@ h2 {
 
 /* === スマホ向け微調整 === */
 @media (max-width: 640px) {
+  .track-card {
+  flex-direction: column;
+  }
+  .track-cover {
+  max-width: 100%;
+  flex: 0 0 auto;
+  }
+
   .lyrics-modal {
     padding: 16px;
   }
