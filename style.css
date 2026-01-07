@@ -274,6 +274,10 @@ h2 {
   font-size: 0.8rem;
   color: var(--text-muted);
 }
+.footer a {
+  text-decoration: none;
+  color: var(--text-muted);
+}
 
 /* === 歌詞モーダル全体 === */
 .lyrics-modal {
