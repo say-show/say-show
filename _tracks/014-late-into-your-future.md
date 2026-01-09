@@ -1,5 +1,5 @@
 ---
-title: "君に遅刻していく （公開予定）"
+title: "君に遅刻していく"
 track_no: 14
 slug: "late-into-your-future"
 release_date: "2026.01.09"
@@ -7,9 +7,9 @@ movie: "時をかける少女"
 comment: >
   アニメ映画の「時をかける少女」からインスパイアされた曲です。タイムリープの使い方が難しかったのですが、「言えなかった好き」というコンセプトにしました。「放課後の片想い」を、時間という軸で表現してみました。
 links:
-  spotify: ""
-  apple: ""
-  amazon: ""
+  spotify: "https://open.spotify.com/album/2DRUx5qaW2IY3xvGh66Gby"
+  apple: "https://apple.co/3Nic5lp"
+  amazon: "https://music.amazon.co.uk/albums/B0GDRXYMGT"
   youtube_music: ""
 lyrics: |
   チャイムが遠くで　まだ鳴ってる気がして
