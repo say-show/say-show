@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://say-show.github.io/say-show/sitemap.xml
