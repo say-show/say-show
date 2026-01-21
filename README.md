@@ -18,10 +18,10 @@ J-POPとシティポップ、インディポップをベースにした、映画
 
 各サービスで楽曲を配信中です。お好みのプラットフォームからお聴きください。
 
-- **Spotify** - [SAY-SHOW の楽曲](https://open.spotify.com/artist/xxxxx)
-- **Apple Music** - [SAY-SHOW](https://apple.co/xxxxx)
-- **Amazon Music** - [SAY-SHOW](https://music.amazon.co.uk/xxxxx)
-- **YouTube Music** - [SAY-SHOW](https://music.youtube.com/xxxxx)
+- **Spotify** - [SAY-SHOW](https://open.spotify.com/intl-ja/artist/1QQBBrg6L673fnZZOPYtu3)
+- **Apple Music** - [SAY-SHOW](https://apple.co/4snDy58)
+- **Amazon Music** - [SAY-SHOW](https://music.amazon.co.uk/artists/B0FYK1ZQ9C/say-show)
+- **YouTube Music** - [SAY-SHOW](https://music.youtube.com/channel/UC96QUBvKpZo1sBSBNj4t31A?si=6YQM4mryzjOwUN0r)
 
 ## 📱 関連情報
 
