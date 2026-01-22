@@ -240,8 +240,8 @@ h2 {
 
 .banner-new-badge {
   position: absolute;
-  top: -8px;
-  right: -8px;
+  top: 4px;
+  right: 4px;
   background: var(--accent);
   color: var(--bg);
   padding: 2px 6px;
@@ -396,13 +396,9 @@ h2 {
     font-size: 2rem;
   }
 
-  /* モバイル版：Coming Soon バナーを表示、coming-soon 曲を非表示 */
+  /* モバイル版：Coming Soon バナーを表示 */
   .coming-soon-banner {
     display: flex;
-  }
-
-  .track-card.coming-soon {
-    display: none;
   }
 }
 /* Auto-deploy test: 2026年 1月20日 火曜日 22時22分18秒 JST */
