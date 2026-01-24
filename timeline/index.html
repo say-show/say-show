@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Timeline | SAY-SHOW</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/say-show/style.css">
+  <meta property="og:title" content="Timeline | SAY-SHOW">
+  <meta property="og:description" content="SAY-SHOWのリリース履歴を時系列で表示">
+  <meta property="og:url" content="https://say-show.github.io/say-show/timeline/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Timeline | SAY-SHOW">
+  <meta name="twitter:description" content="SAY-SHOWのリリース履歴を時系列で表示">
+  <link rel="icon" type="image/png" href="/say-show/favicon-32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/say-show/favicon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/say-show/apple-touch-icon-180.png">
+  <style>
+    /* タイムライン専用スタイル */
+    .timeline-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px 80px;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 50px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -34px;
+      top: 8px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px var(--bg), 0 0 0 6px var(--accent);
+      z-index: 1;
+    }
+
+    .timeline-cover {
+      flex-shrink: 0;
+      width: 120px;
+      height: 120px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: block;
+      text-decoration: none;
+    }
+
+    .timeline-cover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(255, 75, 139, 0.4);
+    }
+
+    .timeline-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .timeline-cover:hover img {
+      transform: scale(1.05);
+    }
+
+    .timeline-cover-placeholder {
+      width: 100%;
+      height: 100%;
+      background: var(--bg-alt);
+      border: 1px dashed rgba(255, 255, 255, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .timeline-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .timeline-date {
+      font-size: 1.5rem;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.02em;
+    }
+
+    .timeline-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0 0 0.5rem;
+      color: var(--text-main);
+    }
+
+    .timeline-movie {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .track-count {
+      text-align: left;
+      margin-bottom: 40px;
+      font-size: 1rem;
+      color: var(--text-muted);
+    }
+
+    .track-count strong {
+      color: var(--accent);
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    /* モバイル対応 */
+    @media (max-width: 768px) {
+      .timeline {
+        padding-left: 30px;
+      }
+
+      .timeline::before {
+        left: 10px;
+      }
+
+      .timeline-item::before {
+        left: -24px;
+      }
+
+      .timeline-item {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .timeline-cover {
+        width: 100%;
+        max-width: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ローディングアニメーション -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-logo-wrapper">
+      <img src="/say-show/favicon-512-transparent.png" alt="SAY-SHOW" class="loading-logo-img">
+    </div>
+  </div>
+
+  <header style="padding: 80px 20px 60px; text-align: center; background: radial-gradient(circle at top, #030f61, #05060b);">
+    <p style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-muted);">
+      <a href="/say-show/" style="color: var(--text-muted); text-decoration: none;">← Back to SAY-SHOW</a>
+    </p>
+    <h1 style="font-size: 2rem; margin: 0 0 1rem; font-weight: 700; border-bottom: 2px solid var(--accent); padding-bottom: 0.8rem; display: inline-block;">Timeline</h1>
+    <p style="font-size: 0.9rem; color: var(--text-muted); margin: 1rem 0 0;">リリースの軌跡を時系列で</p>
+  </header>
+
+  <main class="timeline-page">
+    <!-- 曲数表示 -->
+    
+    <p class="track-count">これまでに <strong>16曲</strong> をリリース</p>
+
+    <!-- タイムライン -->
+    <div class="timeline">
+      
+      
+      <article class="timeline-item">
+        <a href="/say-show/tracks/after-school-club-for-good-kids/" class="timeline-cover">
+          
+            <picture>
+              <source srcset="/say-show/images/after-school-club-for-good-kids.webp" type="image/webp">
+              <img src="/say-show/images/after-school-club-for-good-kids.png" alt="いい子やめた放課後クラブ" loading="lazy" decoding="async">
+            </picture>
+          
+        </a>
+        <div class="timeline-content">
+          <div class="timeline-date">2026.01.23</div>
+          <h3 class="timeline-title">いい子やめた放課後クラブ</h3>
+          
+            <p class="timeline-movie">Inspired by「バービー」</p>
+          
+        </div>
+      </article>
+      
+      <article class="timeline-item">
+        <a href="/say-show/tracks/light-that-melts-without-being-touched/" class="timeline-cover">
+          
+            <picture>
+              <source srcset="/say-show/images/light-that-melts-without-being-touched.webp" type="image/webp">
+              <img src="/say-show/images/light-that-melts-without-being-touched.png" alt="触れずに、溶けていく光" loading="lazy" decoding="async">
+            </picture>
+          
+        </a>
+        <div class="timeline-content">
+          <div class="timeline-date">2026.01.16</div>
+          <h3 class="timeline-title">触れずに、溶けていく光</h3>
+          
+            <p class="timeline-movie">Inspired by「シザーハンズ」</p>
+          
+        </div>
+      </article>
+      
+      <article class="timeline-item">
+        <a href="/say-show/tracks/late-into-your-future/" class="timeline-cover">
+          
+            <picture>
+              <source srcset="/say-show/images/late-into-your-future.webp" type="image/webp">
+              <img src="/say-show/images/late-into-your-future.png" alt="君に遅刻していく" loading="lazy" decoding="async">
+            </picture>
+          
+        </a>
+        <div class="timeline-content">
+          <div class="timeline-date">2026.01.09</div>
+          <h3 class="timeline-title">君に遅刻していく</h3>
+          
+            <p class="timeline-movie">Inspired by「時をかける少女」</p>
+          
+        </div>
+      </article>
+      
+      <article class="timeline-item">
+        <a href="/say-show/tracks/between-the-glare-and-me/" class="timeline-cover">
+          
+            <picture>
+              <source srcset="/say-show/images/between-the-glare-and-me.webp" type="image/webp">
+              <img src="/say-show/images/between-the-glare-and-me.png" alt="まぶしさと僕の間" loading="lazy" decoding="async">
+            </picture>
+          
+        </a>
+        <div class="timeline-content">
+          <div class="timeline-date">2026.01.02</div>
+          <h3 class="timeline-title">まぶしさと僕の間</h3>
+          
+            <p class="timeline-movie">Inspired by「ズートピア」</p>
+          
+        </div>
+      </article>
+      
+      <article class="timeline-item">
+        <a href="/say-show/tracks/the-striped-heart-is-not-broken-yet/" class="timeline-cover">
+          
+            <picture>
+              <source srcset="/say-show/images/the-striped-heart-is-not-broken-yet.webp" type="image/webp">
+              <img src="/say-show/images/the-striped-heart-is-not-broken-yet.png" alt="しま模様のハートはまだ割れてない" loading="lazy" decoding="async">
+            </picture>
+          
+        </a>
+        <div class="timeline-content">
+          <div class="timeline-date">2026.01.01</div>
+          <h3 class="timeline-title">しま模様のハートはまだ割れてない</h3>
+          
+            <p class="timeline-movie">Inspired by「ビートルジュース」</p>
+          
+        </div>
+      </article>
+      
+      <article class="timeline-item">
+        <a href="/say-show/tracks/fox-footprints-a-dawn-cafe/" class="timeline-cover">
+          
+            <picture>
+              <source srcset="/say-show/images/fox-footprints-a-dawn-cafe.webp" type="image/webp">
+              <img src="/say-show/images/fox-footprints-a-dawn-cafe.png" alt="きつねの足跡、夜明けのカフェ" loading="lazy" decoding="async">
+            </picture>
+          
+        </a>
+        <div class="timeline-content">
+          <div class="timeline-date">2025.12.26</div>
+          <h3 class="timeline-title">きつねの足跡、夜明けのカフェ</h3>
+          
+            <p class="timeline-movie">Inspired by「ファンタスティック Mr.FOX」</p>
+          
+        </div>
+      </article>
+      
+      <article class="timeline-item">
+        <a href="/say-show/tracks/between-rain-and-snow/" class="timeline-cover">
+          
+            <picture>
+              <source srcset="/say-show/images/between-rain-and-snow.webp" type="image/webp">
+              <img src="/say-show/images/between-rain-and-snow.png" alt="雨と雪のあいだで" loading="lazy" decoding="async">
+            </picture>
+          
+        </a>
+        <div class="timeline-content">
+          <div class="timeline-date">2025.12.19</div>
+          <h3 class="timeline-title">雨と雪のあいだで</h3>
+          
+            <p class="timeline-movie">Inspired by「おおかみこどもの雨と雪」</p>
+          
+        </div>
+      </article>
+      
+      <article class="timeline-item">
+        <a href="/say-show/tracks/a-single-star-and-a-speaker/" class="timeline-cover">
+          
+            <picture>
+              <source srcset="/say-show/images/a-single-star-and-a-speaker.webp" type="image/webp">
+              <img src="/say-show/images/a-single-star-and-a-speaker.png" alt="ひとりの星とスピーカー" loading="lazy" decoding="async">
+            </picture>
+          
+        </a>
+        <div class="timeline-content">
+          <div class="timeline-date">2025.12.12</div>
+          <h3 class="timeline-title">ひとりの星とスピーカー</h3>
+          
+            <p class="timeline-movie">Inspired by「アイアン・ジャイアント」</p>
+          
+        </div>
+      </article>
+      
+      <article class="timeline-item">
+        <a href="/say-show/tracks/mirror-talk/" class="timeline-cover">
+          
+            <picture>
+              <source srcset="/say-show/images/mirror-talk.webp" type="image/webp">
+              <img src="/say-show/images/mirror-talk.png" alt="Mirror Talk" loading="lazy" decoding="async">
+            </picture>
+          
+        </a>
+        <div class="timeline-content">
+          <div class="timeline-date">2025.12.05</div>
+          <h3 class="timeline-title">Mirror Talk</h3>
+          
+        </div>
+      </article>
+      
+      <article class="timeline-item">
+        <a href="/say-show/tracks/shade-line/" class="timeline-cover">
+          
+            <picture>
+              <source srcset="/say-show/images/shade-line.webp" type="image/webp">
+              <img src="/say-show/images/shade-line.png" alt="シェイドライン" loading="lazy" decoding="async">
+            </picture>
+          
+        </a>
+        <div class="timeline-content">
+          <div class="timeline-date">2025.11.28</div>
+          <h3 class="timeline-title">シェイドライン</h3>
+          
+            <p class="timeline-movie">Inspired by「レディ・プレイヤー1」</p>
+          
+        </div>
+      </article>
+      
+      <article class="timeline-item">
+        <a href="/say-show/tracks/in-a-gentle-loop/" class="timeline-cover">
+          
+            <picture>
+              <source srcset="/say-show/images/in-a-gentle-loop.webp" type="image/webp">
+              <img src="/say-show/images/in-a-gentle-loop.png" alt="やさしいループの中で" loading="lazy" decoding="async">
+            </picture>
+          
+        </a>
+        <div class="timeline-content">
+          <div class="timeline-date">2025.11.23</div>
+          <h3 class="timeline-title">やさしいループの中で</h3>
+          
+            <p class="timeline-movie">Inspired by「恋はデジャ・ブ」</p>
+          
+        </div>
+      </article>
+      
+      <article class="timeline-item">
+        <a href="/say-show/tracks/corner-pop-anthem/" class="timeline-cover">
+          
+            <picture>
+              <source srcset="/say-show/images/corner-pop-anthem.webp" type="image/webp">
+              <img src="/say-show/images/corner-pop-anthem.png" alt="片隅ポップ・アンセム" loading="lazy" decoding="async">
+            </picture>
+          
+        </a>
+        <div class="timeline-content">
+          <div class="timeline-date">2025.11.17</div>
+          <h3 class="timeline-title">片隅ポップ・アンセム</h3>
+          
+            <p class="timeline-movie">Inspired by「SING/シング」</p>
+          
+        </div>
+      </article>
+      
+      <article class="timeline-item">
+        <a href="/say-show/tracks/colors-on-an-ordinary-day/" class="timeline-cover">
+          
+            <picture>
+              <source srcset="/say-show/images/colors-on-an-ordinary-day.webp" type="image/webp">
+              <img src="/say-show/images/colors-on-an-ordinary-day.png" alt="ふつうの日に色を" loading="lazy" decoding="async">
+            </picture>
+          
+        </a>
+        <div class="timeline-content">
+          <div class="timeline-date">2025.11.13</div>
+          <h3 class="timeline-title">ふつうの日に色を</h3>
+          
+            <p class="timeline-movie">Inspired by「インサイド・ヘッド」</p>
+          
+        </div>
+      </article>
+      
+      <article class="timeline-item">
+        <a href="/say-show/tracks/tiny-rain-gentle-town/" class="timeline-cover">
+          
+            <picture>
+              <source srcset="/say-show/images/tiny-rain-gentle-town.webp" type="image/webp">
+              <img src="/say-show/images/tiny-rain-gentle-town.png" alt="Tiny Rain, Gentle Town" loading="lazy" decoding="async">
+            </picture>
+          
+        </a>
+        <div class="timeline-content">
+          <div class="timeline-date">2025.11.13</div>
+          <h3 class="timeline-title">Tiny Rain, Gentle Town</h3>
+          
+            <p class="timeline-movie">Inspired by「パティントン」</p>
+          
+        </div>
+      </article>
+      
+      <article class="timeline-item">
+        <a href="/say-show/tracks/fragments-of-dreams-bloom-in-the-night/" class="timeline-cover">
+          
+            <picture>
+              <source srcset="/say-show/images/fragments-of-dreams-bloom-in-the-night.webp" type="image/webp">
+              <img src="/say-show/images/fragments-of-dreams-bloom-in-the-night.png" alt="夢のかけらは夜に咲く" loading="lazy" decoding="async">
+            </picture>
+          
+        </a>
+        <div class="timeline-content">
+          <div class="timeline-date">2025.10.30</div>
+          <h3 class="timeline-title">夢のかけらは夜に咲く</h3>
+          
+            <p class="timeline-movie">Inspired by「ナイトメア・ビフォア・クリスマス」</p>
+          
+        </div>
+      </article>
+      
+      <article class="timeline-item">
+        <a href="/say-show/tracks/the-blue-echo-resonating-on-the-asphalt/" class="timeline-cover">
+          
+            <picture>
+              <source srcset="/say-show/images/the-blue-echo-resonating-on-the-asphalt.webp" type="image/webp">
+              <img src="/say-show/images/the-blue-echo-resonating-on-the-asphalt.png" alt="アスファルトに響く青の残響" loading="lazy" decoding="async">
+            </picture>
+          
+        </a>
+        <div class="timeline-content">
+          <div class="timeline-date">2025.10.30</div>
+          <h3 class="timeline-title">アスファルトに響く青の残響</h3>
+          
+            <p class="timeline-movie">Inspired by「フットルース」</p>
+          
+        </div>
+      </article>
+      
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© SAY-SHOW / <a href="/say-show/about/">About</a></p>
+  </footer>
+
+  <script src="/say-show/main.js"></script>
+</body>
+</html>
