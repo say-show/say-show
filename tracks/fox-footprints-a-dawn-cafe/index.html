@@ -24,6 +24,13 @@
   <link rel="apple-touch-icon" href="/say-show/apple-touch-icon-180.png">
 </head>
 <body>
+  <!-- ローディングアニメーション -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-logo-wrapper">
+      <img src="/say-show/favicon-512-transparent.png" alt="SAY-SHOW" class="loading-logo-img">
+    </div>
+  </div>
+
   <header class="hero" style="min-height: 50vh; padding: 60px 20px 40px;">
     <div class="hero-inner">
       <p style="font-size: 0.85rem; margin-bottom: 0.5rem; color: var(--text-muted);">
@@ -132,5 +139,7 @@
   <footer class="footer">
     <p>© SAY-SHOW / <a href="/say-show/images/qrcode_sayshow.png">&#x25A3;</a></p>
   </footer>
+
+  <script src="/say-show/main.js"></script>
 </body>
 </html>
