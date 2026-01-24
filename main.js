@@ -2,14 +2,14 @@
 window.addEventListener('load', () => {
   const loadingOverlay = document.getElementById('loadingOverlay');
   if (loadingOverlay) {
-    // アニメーション完了後（1.5秒）にフェードアウト開始
+    // アニメーション完了後（0.8秒）にフェードアウト開始
     setTimeout(() => {
       loadingOverlay.classList.add('hidden');
       // フェードアウト完了後にDOMから削除
       setTimeout(() => {
         loadingOverlay.remove();
-      }, 600);
-    }, 1500);
+      }, 400);
+    }, 800);
   }
 });
 
