@@ -12,15 +12,23 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="About SAY-SHOW | SAY-SHOW">
   <meta name="twitter:description" content="映画のシーンからインスパイアされた音楽プロジェクト、SAY-SHOWについて。">
+  <link rel="icon" type="image/png" href="/say-show/favicon-32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/say-show/favicon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/say-show/apple-touch-icon-180.png">
 </head>
 <body>
-  <header class="hero" style="min-height: 50vh; padding: 60px 20px 40px;">
-    <div class="hero-inner">
-      <p style="font-size: 0.85rem; margin-bottom: 0.5rem; color: var(--text-muted);">
-        <a href="/say-show/" style="color: var(--text-muted); text-decoration: none;">← Back to SAY-SHOW</a>
-      </p>
-      <h1 style="font-size: 2rem; margin-bottom: 1rem;">About SAY-SHOW</h1>
+  <!-- ローディングアニメーション -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-logo-wrapper">
+      <img src="/say-show/favicon-512-transparent.png" alt="SAY-SHOW" class="loading-logo-img">
     </div>
+  </div>
+
+  <header style="padding: 80px 20px 60px; text-align: center; background: radial-gradient(circle at top, #030f61, #05060b);">
+    <p style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-muted);">
+      <a href="/say-show/" style="color: var(--text-muted); text-decoration: none;">← Back to SAY-SHOW</a>
+    </p>
+    <h1 style="font-size: 2rem; margin: 0 0 1rem; font-weight: 700; border-bottom: 2px solid var(--accent); padding-bottom: 0.8rem; display: inline-block;">About SAY-SHOW</h1>
   </header>
 
   <main>
@@ -53,9 +61,15 @@
 
 <p>SAY-SHOWは大きな実験です。音楽は学校の授業でしかやったことがなく、知識もスキルもありません。しかし今はAIという新しい道具があり、クリエイティブなことに誰でも挑戦できる時代になりました。その中で最も大事にしているのは、「面白いからやる」という姿勢です。固定観念に縛られず、新しい道具を使ってできることを試していく——それがSAY-SHOWの本質です。</p>
 
-<h2 id="今後について">今後について</h2>
+<h2 id="ロゴについて">ロゴについて</h2>
 
-<p>具体的な目標は決めていませんが、いつかは動画制作にも挑戦してみたいと思っています。</p>
+<div style="text-align: center; margin: 2rem 0 2.5rem;">
+  <img src="/say-show/favicon-512-transparent.png" alt="SAY-SHOW Logo" style="width: 150px; height: 150px; filter: drop-shadow(0 8px 24px rgba(255, 75, 139, 0.4));" />
+</div>
+
+<p>SAY-SHOWのロゴは、このプロジェクトの本質——「映画から音楽へ」という変換プロセスを視覚的に表現しています。</p>
+
+<p>中央の縦に連なる波形は、フィルムのコマと音楽の波形を重ね合わせたデザインです。映画のシーンという視覚的な体験が、音楽という聴覚的な表現へと姿を変える、その瞬間を象徴しています。</p>
 
 
       <!-- 戻るリンク -->
@@ -68,5 +82,7 @@
   <footer class="footer">
     <p>© SAY-SHOW / <a href="/say-show/images/qrcode_sayshow.png">&#x25A3;</a></p>
   </footer>
+
+  <script src="/say-show/main.js"></script>
 </body>
 </html>
