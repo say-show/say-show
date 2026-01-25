@@ -23,21 +23,30 @@ J-POPとシティポップ、インディポップをベースにした、映画
 - **Amazon Music** - [SAY-SHOW](https://music.amazon.co.uk/artists/B0FYK1ZQ9C/say-show)
 - **YouTube Music** - [SAY-SHOW](https://music.youtube.com/channel/UC96QUBvKpZo1sBSBNj4t31A?si=6YQM4mryzjOwUN0r)
 
-## 📱 関連情報
+## 📱 サイト機能
 
-プロジェクトの最新情報は、公式 LP で更新されています。
+### トップページ
+すべての楽曲を最新順で一覧表示。各曲のカバーアート、リリース日、インスパイア元の映画情報を確認できます。
 
-- **公式 LP**: https://say-show.github.io/say-show/
-- 楽曲の詳細情報、歌詞、背景ストーリーなど
+### Timeline
+年ごとにリリース履歴を時系列で振り返ることができるページ。プロジェクトの成長の軌跡をご覧いただけます。
 
-## 🎨 プロジェクト詳細
+➜ [Timeline](https://say-show.github.io/say-show/timeline/)
 
-各楽曲について以下の情報を掲載しています：
+### About
+プロジェクトのコンセプトとロゴの意味について紹介しています。
+
+➜ [About](https://say-show.github.io/say-show/about/)
+
+### 各曲の詳細ページ
+トラックごとに以下の情報を掲載しています：
 
 - 🎬 インスパイアされた映画
 - 📝 曲の背景とストーリー
 - 🎤 歌詞
 - 🎵 配信リンク（Spotify、Apple Music など）
+- 🖼️ カバーアート
+- 🎧 試聴プレイヤー（公開後）
 
 ---
 
