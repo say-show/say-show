@@ -520,27 +520,67 @@ h2 {
 
 /* Auto-deploy test: 2026年 1月20日 火曜日 22時22分18秒 JST */
 
-/* === Track Page Coming Soon Banner === */
-.track-coming-soon-banner {
-  background-color: #1a1c2c;
-  padding: 1em 1.2em;
-  border-left: 4px solid var(--accent); /* Pink accent color */
-  margin: 2em auto;
-  border-radius: 4px;
-  max-width: 600px;
-  text-align: left;
+/* === Track Page Coming Soon: 上部帯バナー === */
+.track-top-banner {
+  background: linear-gradient(135deg, rgba(255, 75, 139, 0.25), rgba(100, 150, 255, 0.15));
+  border-bottom: 1px solid rgba(255, 75, 139, 0.4);
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 0.9rem;
 }
 
-.track-coming-soon-banner .track-coming-soon-label {
-  margin:0 0 0.3em 0;
-  font-weight: bold;
-  color: #ff9fbe; /* Lighter pink for label */
+.track-top-banner-label {
+  font-weight: 700;
+  color: var(--accent);
+  margin-right: 8px;
+  letter-spacing: 0.1em;
 }
 
-.track-coming-soon-banner .track-coming-soon-date {
-  margin:0;
-  font-size: 0.9em;
+.track-top-banner-date {
   color: var(--text-main);
+}
+
+/* === Track Page Coming Soon: カバー画像オーバーレイ === */
+.track-cover-wrapper {
+  position: relative;
+  display: inline-block;
+  max-width: 400px;
+  width: 100%;
+}
+
+.track-cover-wrapper img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.track-cover-wrapper.coming-soon img {
+  filter: brightness(0.4);
+}
+
+.track-cover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.track-cover-overlay span {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  background: rgba(255, 75, 139, 0.3);
+  padding: 8px 24px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 75, 139, 0.5);
 }
 
 /* === Track Page Listen On Placeholder === */
