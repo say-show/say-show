@@ -354,6 +354,14 @@ h2 {
   font-size: 0.75rem;
 }
 
+/* 配信準備中の無効化ボタン */
+.btn.disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+  border-color: #ffffff33;
+}
+
 
 /* アイコン共通 */
 .btn-icon {
@@ -511,3 +519,49 @@ h2 {
 }
 
 /* Auto-deploy test: 2026年 1月20日 火曜日 22時22分18秒 JST */
+
+/* === Track Page Coming Soon Banner === */
+.track-coming-soon-banner {
+  background-color: #1a1c2c;
+  padding: 1em 1.2em;
+  border-left: 4px solid var(--accent); /* Pink accent color */
+  margin: 2em auto;
+  border-radius: 4px;
+  max-width: 600px;
+  text-align: left;
+}
+
+.track-coming-soon-banner .track-coming-soon-label {
+  margin:0 0 0.3em 0;
+  font-weight: bold;
+  color: #ff9fbe; /* Lighter pink for label */
+}
+
+.track-coming-soon-banner .track-coming-soon-date {
+  margin:0;
+  font-size: 0.9em;
+  color: var(--text-main);
+}
+
+/* === Track Page Listen On Placeholder === */
+.track-listen-on-placeholder {
+  background-color: #1a1c2c;
+  padding: 1em 1.2em;
+  /* border-left はユーザーのフィードバックに従い削除 */
+  margin: 0;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.track-listen-on-placeholder .track-listen-on-label {
+  margin:0 0 0.3em 0;
+  font-weight: bold;
+  color: #ff9fbe; /* Lighter pink for label */
+}
+
+.track-listen-on-placeholder .track-listen-on-message {
+  margin:0;
+  font-size: 0.9em;
+  color: var(--text-main);
+}
+
