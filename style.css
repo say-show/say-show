@@ -511,6 +511,24 @@ h2 {
     font-size: 0.8rem;
   }
 }
+
+/* === タッチデバイス向けフィードバック === */
+@media (hover: none) {
+  .track-card:active {
+    transform: scale(0.97);
+    transition: transform 0.1s;
+  }
+
+  .btn:active {
+    transform: scale(0.95);
+    opacity: 0.85;
+  }
+
+  .btn.small {
+    min-height: 44px;
+  }
+}
+
 /* === ローディングアニメーション === */
 .loading-overlay {
   position: fixed;
