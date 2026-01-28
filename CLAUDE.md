@@ -79,8 +79,14 @@ bundle exec jekyll build
   - Coming Soonバナーは公開日の3日前から表示
 
 #### トラック作成 (create-track.yml)
-- **トリガー**: GitHub Issue「新規トラック追加」テンプレートの作成
-- **処理**: Issueの内容から `_tracks/{slug}.md` を自動生成
+- **トリガー**: GitHub Issue「新規トラック追加」テンプレートの作成（`new-track` ラベル）
+- **処理**:
+  1. Issueの内容から `_tracks/{No}-{slug}.md` を自動生成
+  2. カバーアート画像をダウンロード（添付されている場合）
+  3. `track/{slug}` ブランチを作成してPRを発行
+  4. 内容を確認のうえマージすることで `main` に反映
+  5. 配信リンク不足がある場合、`missing-links` ラベル付きIssueを自動作成
+- **運用ルール**: トラック番号（`track_no`）はファイル名の最大番号+1で自動採番されるため、**前のトラックPRがマージされる前に次のトラックIssueを作成しない**こと（番号の衝突を防ぐため）
 
 #### 画像最適化 (optimize-images.yml)
 - **トリガー**: `images/` 配下への画像追加
@@ -139,7 +145,8 @@ say-show-src/
 ## よくある作業
 
 ### 新規トラック追加
-GitHub Issues → 「新規トラック追加」テンプレート → 自動的に `_tracks/{slug}.md` 生成
+GitHub Issues → 「新規トラック追加」テンプレート → PR自動作成 → レビュー・マージで反映
+※前のトラックPRがマージされるまで次のトラックIssueを作成しないこと
 
 ### 配信リンク追加
 `_tracks/{slug}.md` の `links` セクションを編集 → commit & push → 自動デプロイ

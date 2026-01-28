@@ -856,6 +856,16 @@ h2 {
   }
 }
 
+.track-preview-embed {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.track-preview-embed iframe {
+  display: block;
+  border-radius: 12px;
+}
+
 .track-lyrics {
   font-family: inherit;
   font-size: 0.92rem;
