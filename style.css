@@ -176,21 +176,17 @@ h2 {
   cursor: pointer;
   user-select: none;
   -webkit-user-select: none;
-  /* フェードインアニメーション */
+  /* スクロール連動フェードイン（JSで.visibleを付与） */
   opacity: 0;
-  animation: fadeInUp 0.5s ease-out forwards;
-  animation-delay: 0.8s;
 }
 
-/* カードの順次表示（最初の8枚） */
-.track-card:nth-child(1) { animation-delay: 0.8s; }
-.track-card:nth-child(2) { animation-delay: 0.9s; }
-.track-card:nth-child(3) { animation-delay: 1.0s; }
-.track-card:nth-child(4) { animation-delay: 1.1s; }
-.track-card:nth-child(5) { animation-delay: 1.2s; }
-.track-card:nth-child(6) { animation-delay: 1.3s; }
-.track-card:nth-child(7) { animation-delay: 1.4s; }
-.track-card:nth-child(8) { animation-delay: 1.5s; }
+.track-card.visible {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.track-card.no-animation {
+  opacity: 1;
+}
 
 @keyframes fadeInUp {
   from {
@@ -558,6 +554,8 @@ h2 {
 @media (prefers-reduced-motion: reduce) {
   .track-card {
     opacity: 1;
+  }
+  .track-card.visible {
     animation: none;
   }
 }
