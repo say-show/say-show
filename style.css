@@ -774,10 +774,86 @@ h2 {
   line-height: 1.8;
 }
 
-.track-listen-links {
+.streaming-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.streaming-card {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.3s, background 0.3s, transform 0.3s;
+}
+
+.streaming-card:hover {
+  border-color: var(--accent);
+  background: rgba(255, 75, 139, 0.08);
+  transform: translateY(-2px);
+}
+
+.streaming-card.disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.streaming-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.streaming-card-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.streaming-card-icon.spotify { background: rgba(29, 185, 84, 0.15); }
+.streaming-card-icon.spotify svg circle { fill: #1DB954; }
+.streaming-card-icon.spotify svg path { fill: #000; }
+
+.streaming-card-icon.apple { background: rgba(255, 78, 107, 0.15); }
+.streaming-card-icon.apple svg path { fill: #FF4E6B; }
+
+.streaming-card-icon.amazon { background: rgba(0, 168, 225, 0.15); }
+.streaming-card-icon.amazon svg path { fill: #00A8E1; }
+
+.streaming-card-icon.youtube { background: rgba(255, 0, 0, 0.15); }
+.streaming-card-icon.youtube svg path:first-child { fill: #FF0000; }
+.streaming-card-icon.youtube svg path:last-child { fill: #FFF; }
+
+.streaming-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.streaming-card-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.streaming-card-action {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 500px) {
+  .streaming-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .track-lyrics {
