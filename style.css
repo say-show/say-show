@@ -327,6 +327,10 @@ h2 {
   transition: color 0.2s ease;
 }
 
+.timeline-link:visited {
+  color: var(--text-muted);
+}
+
 .timeline-link:hover {
   color: var(--accent);
 }
@@ -923,6 +927,20 @@ h2 {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.page-content a:not(.timeline-link) {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.page-content a:not(.timeline-link):visited {
+  color: var(--accent);
+}
+
+.page-content a:not(.timeline-link):hover {
+  color: #ff6b9d;
 }
 
 /* ===========================================
