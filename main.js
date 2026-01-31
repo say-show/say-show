@@ -28,40 +28,46 @@ function initCardFadeIn() {
     return;
   }
 
-  // 画面より上にあるカードは即座に表示（アニメーションなし）
-  // 画面内または下にあるカードはIntersection Observerで監視
   const viewportTop = window.scrollY;
   const viewportBottom = viewportTop + window.innerHeight;
 
   const cardsToObserve = [];
+  let initialVisibleIndex = 0;
 
   cards.forEach(card => {
     const rect = card.getBoundingClientRect();
     const cardTop = rect.top + viewportTop;
 
     if (cardTop < viewportTop) {
-      // カードが画面より上にある（既に通過済み）
+      // カードが画面より上にある（既に通過済み）→ 即座に表示
       card.classList.add('no-animation');
+    } else if (cardTop < viewportBottom) {
+      // カードが画面内にある → 遅延付きで即座にフェードイン開始
+      const delay = initialVisibleIndex * 100;
+      setTimeout(() => {
+        card.classList.add('visible');
+      }, delay);
+      initialVisibleIndex++;
     } else {
-      // 画面内または下にある → 監視対象
+      // 画面より下にある → スクロールで監視
       cardsToObserve.push(card);
     }
   });
 
   if (cardsToObserve.length === 0) return;
 
-  // Intersection Observerでスクロール検知
-  let visibleIndex = 0;
+  // Intersection Observerでスクロール検知（画面外のカード用）
+  let scrollVisibleIndex = 0;
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const card = entry.target;
         // 遅延を付けて順次表示（同時に見える場合は0.1秒ずつずらす）
-        const delay = visibleIndex * 100;
+        const delay = scrollVisibleIndex * 100;
         setTimeout(() => {
           card.classList.add('visible');
         }, delay);
-        visibleIndex++;
+        scrollVisibleIndex++;
         observer.unobserve(card);
       }
     });
