@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>SAY-SHOW | Hero Demo - Bokeh Light</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* --- HERO DEMO: ボケ光（シネマティック） --- */
+    .hero.demo-bokeh {
+      position: relative;
+      overflow: hidden;
+      min-height: 80vh;
+      background: linear-gradient(135deg, #0a0a12 0%, #0d1020 50%, #0a0812 100%);
+    }
+
+    /* ボケ光コンテナ */
+    .bokeh-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    /* ボケ光の基本スタイル */
+    .bokeh {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(1px);
+      animation: float-bokeh 8s ease-in-out infinite;
+    }
+
+    @keyframes float-bokeh {
+      0%, 100% {
+        transform: translate(0, 0) scale(1);
+      }
+      25% {
+        transform: translate(40px, -50px) scale(1.15);
+      }
+      50% {
+        transform: translate(-30px, 40px) scale(0.85);
+      }
+      75% {
+        transform: translate(-50px, -20px) scale(1.1);
+      }
+    }
+
+    /* 各ボケ光の設定 - ピンク系 */
+    .bokeh.pink-1 {
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(255, 75, 139, 0.25) 0%, transparent 70%);
+      top: 10%;
+      left: 15%;
+      animation-delay: 0s;
+      animation-duration: 7s;
+    }
+    .bokeh.pink-2 {
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(255, 100, 150, 0.2) 0%, transparent 70%);
+      top: 60%;
+      right: 20%;
+      animation-delay: -2s;
+      animation-duration: 9s;
+    }
+    .bokeh.pink-3 {
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(circle, rgba(255, 75, 139, 0.3) 0%, transparent 70%);
+      top: 35%;
+      right: 10%;
+      animation-delay: -4s;
+      animation-duration: 6s;
+    }
+
+    /* オレンジ/暖色系 */
+    .bokeh.orange-1 {
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255, 140, 66, 0.2) 0%, transparent 70%);
+      top: 25%;
+      right: 25%;
+      animation-delay: -1s;
+      animation-duration: 10s;
+    }
+    .bokeh.orange-2 {
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, rgba(255, 180, 100, 0.25) 0%, transparent 70%);
+      bottom: 20%;
+      left: 10%;
+      animation-delay: -3s;
+      animation-duration: 8s;
+    }
+
+    /* 青系 */
+    .bokeh.blue-1 {
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(100, 150, 255, 0.15) 0%, transparent 70%);
+      top: 50%;
+      left: 5%;
+      animation-delay: -1.5s;
+      animation-duration: 9s;
+    }
+    .bokeh.blue-2 {
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(80, 120, 200, 0.12) 0%, transparent 70%);
+      bottom: 10%;
+      right: 5%;
+      animation-delay: -2.5s;
+      animation-duration: 11s;
+    }
+
+    /* 紫系 */
+    .bokeh.purple-1 {
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle, rgba(150, 100, 200, 0.18) 0%, transparent 70%);
+      top: 5%;
+      right: 35%;
+      animation-delay: -1.8s;
+      animation-duration: 8s;
+    }
+    .bokeh.purple-2 {
+      width: 90px;
+      height: 90px;
+      background: radial-gradient(circle, rgba(180, 120, 220, 0.22) 0%, transparent 70%);
+      bottom: 30%;
+      left: 30%;
+      animation-delay: -2.2s;
+      animation-duration: 7s;
+    }
+
+    /* 小さな光点 */
+    .bokeh.tiny-1 {
+      width: 40px;
+      height: 40px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+      top: 20%;
+      left: 40%;
+      animation-delay: -0.5s;
+      animation-duration: 5s;
+    }
+    .bokeh.tiny-2 {
+      width: 30px;
+      height: 30px;
+      background: radial-gradient(circle, rgba(255, 200, 150, 0.35) 0%, transparent 70%);
+      top: 70%;
+      left: 60%;
+      animation-delay: -3.5s;
+      animation-duration: 6s;
+    }
+    .bokeh.tiny-3 {
+      width: 50px;
+      height: 50px;
+      background: radial-gradient(circle, rgba(255, 75, 139, 0.28) 0%, transparent 70%);
+      top: 45%;
+      right: 40%;
+      animation-delay: -4.5s;
+      animation-duration: 7s;
+    }
+
+    /* 微妙なグラデーションオーバーレイ */
+    .hero.demo-bokeh::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at center, transparent 0%, rgba(5, 6, 11, 0.5) 100%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hero.demo-bokeh .hero-inner {
+      z-index: 10;
+      position: relative;
+    }
+
+    /* タイトルに微妙なグロー */
+    .hero.demo-bokeh h1 {
+      text-shadow: 0 0 60px rgba(255, 75, 139, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <!-- nav -->
+  <nav class="global-nav">
+    <a href="#" class="nav-logo">
+      <img src="favicon-512-transparent.png" alt="SAY-SHOW" width="28" height="28">
+      <span>SAY-SHOW</span>
+    </a>
+    <div class="nav-links">
+      <a href="#">Tracks</a>
+      <a href="#">Timeline</a>
+      <a href="#">About</a>
+    </div>
+  </nav>
+
+  <!-- ヒーロー: ボケ光 -->
+  <header class="hero demo-bokeh">
+    <div class="bokeh-container">
+      <!-- ピンク系 -->
+      <div class="bokeh pink-1"></div>
+      <div class="bokeh pink-2"></div>
+      <div class="bokeh pink-3"></div>
+      <!-- オレンジ系 -->
+      <div class="bokeh orange-1"></div>
+      <div class="bokeh orange-2"></div>
+      <!-- 青系 -->
+      <div class="bokeh blue-1"></div>
+      <div class="bokeh blue-2"></div>
+      <!-- 紫系 -->
+      <div class="bokeh purple-1"></div>
+      <div class="bokeh purple-2"></div>
+      <!-- 小さな光点 -->
+      <div class="bokeh tiny-1"></div>
+      <div class="bokeh tiny-2"></div>
+      <div class="bokeh tiny-3"></div>
+    </div>
+    <div class="hero-inner">
+      <h1>SAY-SHOW</h1>
+      <p class="hero-lead">
+        映画のシーンから生まれる、AIコラボの音楽プロジェクト
+      </p>
+      <p class="hero-sub">
+        映画からインスパイアされたテーマを起点に、AIとアイデアをキャッチボールしながら、歌詞やサウンド、ボーカルを形にしています。<br>
+        「どのシーンから生まれたんだろう？」と思いながら楽しんでいただければ嬉しいです。
+      </p>
+      <div class="hero-buttons">
+        <a href="#" class="btn">
+          <span class="btn-icon spotify-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11"></circle><path d="M17.2 16.1c-.2.3-.6.4-.9.2-2.5-1.5-5.6-1.8-9.2-.9-.3.1-.7-.1-.8-.4-.1-.3.1-.7.4-.8 3.9-1 7.5-.7 10.3 1.1.3.2.4.6.2.8z"></path></svg></span>
+          <span class="btn-label">Spotify</span>
+        </a>
+        <a href="#" class="btn">
+          <span class="btn-icon apple-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 3l-8 2v10.1c-.5-.3-1.1-.4-1.8-.3-1.3.2-2.3 1.2-2.3 2.4 0 1.3 1.2 2.2 2.6 2 1.2-.2 2.2-1.1 2.2-2.3V9.3l7-1.8v6.6c-.5-.3-1.1-.4-1.8-.3-1.3.2-2.3 1.2-2.3 2.4 0 1.3 1.2 2.2 2.6 2 1.2-.2 2.2-1.1 2.2-2.3V3z"></path></svg></span>
+          <span class="btn-label">Apple Music</span>
+        </a>
+        <a href="#" class="btn">
+          <span class="btn-icon amazon-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 15.5c2.2 1.4 4.8 2.3 7.5 2.3 2.7 0 5.3-.9 7.5-2.3-.4.7-1 1.4-1.7 2-1.7 1.4-3.9 2.2-5.8 2.2-1.9 0-4.1-.8-5.8-2.2-.7-.6-1.3-1.3-1.7-2z"></path></svg></span>
+          <span class="btn-label">Amazon Music</span>
+        </a>
+        <a href="#" class="btn">
+          <span class="btn-icon youtube-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 8.2c-.2-1.4-.9-2.1-2.3-2.3C17 5.7 14 5.7 12 5.7s-5 0-6.7.2C3.9 6.1 3.2 6.8 3 8.2 2.8 9.7 2.8 12 2.8 12s0 2.3.2 3.8c.2 1.4.9 2.1 2.3 2.3 1.7.2 4.7.2 6.7.2s5 0 6.7-.2c1.4-.2 2.1-.9 2.3-2.3.2-1.5.2-3.8.2-3.8s0-2.3-.2-3.8z"></path><path d="M10 9.3v5.4l4.5-2.7z" fill="#000"></path></svg></span>
+          <span class="btn-label">YouTube Music</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section style="padding: 40px 20px; text-align: center; color: #a0a3b5;">
+      <p>（ヒーローセクション以降はデモのため省略しています）</p>
+      <p style="margin-top: 20px; font-size: 0.9rem;">Demo: ボケ光（シネマティック）バージョン</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© SAY-SHOW</p>
+  </footer>
+
+</body>
+</html>
