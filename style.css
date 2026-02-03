@@ -848,32 +848,32 @@ h2 {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
 }
 
-.track-cover-wrapper.coming-soon img {
-  filter: brightness(0.4);
-}
-
-.track-cover-overlay {
+/* Coming Soon リボン（右上） */
+.coming-soon-ribbon-container {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
+  top: -6px;
+  right: -6px;
+  width: 140px;
+  height: 140px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 10;
 }
 
-.track-cover-overlay span {
-  font-size: 1.4rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
+.coming-soon-ribbon {
+  position: absolute;
+  left: -35px;
+  top: 38px;
+  width: 220px;
+  padding: 10px 0;
+  background: linear-gradient(135deg, #ff4b8b 0%, #ff6b9d 100%);
   color: #fff;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-  background: rgba(255, 75, 139, 0.3);
-  padding: 8px 24px;
-  border-radius: 6px;
-  border: 1px solid rgba(255, 75, 139, 0.5);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-align: center;
+  transform: rotate(45deg);
+  box-shadow: 0 3px 10px rgba(255, 75, 139, 0.5);
 }
 
 /* === Track Page Listen On Placeholder === */
