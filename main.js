@@ -90,3 +90,43 @@ document.addEventListener('click', (e) => {
     window.location.href = titleLink.href;
   }
 });
+
+// === 動画モーダル ===
+(function() {
+  const modal = document.getElementById('videoModal');
+  if (!modal) return;
+
+  const iframe = document.getElementById('videoIframe');
+  const backdrop = modal.querySelector('.video-modal-backdrop');
+  const closeBtn = modal.querySelector('.video-modal-close');
+
+  function openModal(youtubeId) {
+    iframe.src = 'https://www.youtube.com/embed/' + youtubeId + '?autoplay=1&rel=0';
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    iframe.src = '';
+    document.body.style.overflow = '';
+  }
+
+  // サムネイルクリックでモーダルを開く
+  document.querySelectorAll('.video-card').forEach(function(card) {
+    card.addEventListener('click', function() {
+      var youtubeId = card.getAttribute('data-youtube-id');
+      if (youtubeId) openModal(youtubeId);
+    });
+  });
+
+  // モーダルを閉じる
+  if (backdrop) backdrop.addEventListener('click', closeModal);
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+})();
