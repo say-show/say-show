@@ -33,6 +33,11 @@ J-POPとシティポップ、インディポップをベースにした、映画
 
 ➜ [Timeline](https://say-show.github.io/say-show/timeline/)
 
+### Videos
+Lyrics Video や Music Video をサムネイル付きで一覧表示。モーダルでその場で再生できます。
+
+➜ [Videos](https://say-show.github.io/say-show/videos/)
+
 ### About
 プロジェクトのコンセプトとロゴの意味について紹介しています。
 
@@ -47,6 +52,7 @@ J-POPとシティポップ、インディポップをベースにした、映画
 - 🎵 配信リンク（Spotify、Apple Music など）
 - 🖼️ カバーアート
 - 🎧 試聴プレイヤー（公開後）
+- 🎬 動画（Lyrics Video 等、該当がある場合）
 
 ---
 
