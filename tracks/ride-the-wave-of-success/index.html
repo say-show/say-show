@@ -232,9 +232,20 @@ we’re gonna be more than fine
   </main>
 
   <footer class="footer">
-    <p>© SAY-SHOW</p>
+    <p>© SAY-SHOW / <a href="#" class="qr-trigger" id="qrTrigger">&#x25A3;</a></p>
   </footer>
 
+  <!-- QRコードモーダル -->
+  <div class="qr-modal" id="qrModal">
+    <div class="qr-modal-backdrop" id="qrModalBackdrop"></div>
+    <div class="qr-modal-content">
+      <div id="qrCode"></div>
+      <p class="qr-modal-url" id="qrModalUrl"></p>
+      <button class="qr-modal-close" id="qrModalClose">&times;</button>
+    </div>
+  </div>
+
+  <script src="/say-show/js/qrcode.min.js"></script>
   <script src="/say-show/main.js"></script>
 </body>
 </html>

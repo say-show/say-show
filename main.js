@@ -130,3 +130,49 @@ document.addEventListener('click', (e) => {
     }
   });
 })();
+
+// === QRコードモーダル（トラックページ用） ===
+(function() {
+  var trigger = document.getElementById('qrTrigger');
+  var modal = document.getElementById('qrModal');
+  if (!trigger || !modal) return;
+
+  var backdrop = document.getElementById('qrModalBackdrop');
+  var closeBtn = document.getElementById('qrModalClose');
+  var qrContainer = document.getElementById('qrCode');
+  var urlDisplay = document.getElementById('qrModalUrl');
+  var generated = false;
+
+  function generateQR() {
+    if (generated) return;
+    var url = window.location.href;
+    var qr = qrcode(0, 'M');
+    qr.addData(url);
+    qr.make();
+    qrContainer.innerHTML = qr.createSvgTag({ cellSize: 4, margin: 4 });
+    urlDisplay.textContent = url;
+    generated = true;
+  }
+
+  function openModal(e) {
+    e.preventDefault();
+    generateQR();
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  trigger.addEventListener('click', openModal);
+  if (backdrop) backdrop.addEventListener('click', closeModal);
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+})();
