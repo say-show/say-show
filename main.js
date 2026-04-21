@@ -31,6 +31,10 @@ function initCardFadeIn() {
   const viewportTop = window.scrollY;
   const viewportBottom = viewportTop + window.innerHeight;
 
+  // モバイル幅ではディレイを短縮して軽快に見せる
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  const stepDelay = isMobile ? 50 : 100;
+
   const cardsToObserve = [];
   let initialVisibleIndex = 0;
 
@@ -43,7 +47,7 @@ function initCardFadeIn() {
       card.classList.add('no-animation');
     } else if (cardTop < viewportBottom) {
       // カードが画面内にある → 遅延付きで即座にフェードイン開始
-      const delay = initialVisibleIndex * 100;
+      const delay = initialVisibleIndex * stepDelay;
       setTimeout(() => {
         card.classList.add('visible');
       }, delay);
@@ -62,8 +66,8 @@ function initCardFadeIn() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const card = entry.target;
-        // 遅延を付けて順次表示（同時に見える場合は0.1秒ずつずらす）
-        const delay = scrollVisibleIndex * 100;
+        // 遅延を付けて順次表示（同時に見える場合はstepDelayずつずらす）
+        const delay = scrollVisibleIndex * stepDelay;
         setTimeout(() => {
           card.classList.add('visible');
         }, delay);
