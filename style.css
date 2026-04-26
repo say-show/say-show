@@ -678,6 +678,10 @@ h2 {
     grid-template-columns: 1fr;
   }
 
+  .hero {
+    min-height: 50vh;
+  }
+
   .hero h1 {
     font-size: 2rem;
   }
