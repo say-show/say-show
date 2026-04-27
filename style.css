@@ -679,7 +679,7 @@ h2 {
   }
 
   .hero {
-    min-height: 50vh;
+    min-height: 40vh;
   }
 
   .hero h1 {
@@ -696,6 +696,11 @@ h2 {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
+  }
+
+  /* モバイル版：Timeline / Videos リンクはナビにあるため非表示 */
+  .section-header .timeline-link {
+    display: none;
   }
 
   /* モバイル版：ナビゲーション */
