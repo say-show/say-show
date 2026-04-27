@@ -130,22 +130,32 @@
 
       <!-- プレビュー: 自前MP3が優先、無ければSpotify embed (released時のみ) -->
       
-        
-        
-          
-          
       <section class="track-section">
         <h2>Preview</h2>
-        <div class="track-preview-embed">
-          <iframe
-            src="https://open.spotify.com/embed/album/0tiUBWQ1wFDMaJiptHl6Ca?utm_source=generator&theme=0"
-            width="100%" height="152" frameborder="0"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy">
-          </iframe>
+        <div class="track-audio-card">
+          
+          <img class="track-audio-card-cover" src="/say-show/images/after-school-club-for-good-kids.png" alt="いい子やめた放課後クラブ">
+          
+          <div class="track-audio-card-body">
+            <p class="track-audio-card-title">いい子やめた放課後クラブ</p>
+            <p class="track-audio-card-meta">SAY-SHOW · Preview</p>
+            <div class="track-audio-card-controls">
+              <button type="button" class="track-audio-card-play" aria-label="再生">
+                <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+              </button>
+              <div class="track-audio-card-progress" role="slider" aria-label="再生位置" tabindex="0">
+                <div class="track-audio-card-progress-fill"></div>
+              </div>
+              <span class="track-audio-card-time">0:00 / 0:00</span>
+            </div>
+            <audio class="track-audio-card-element" preload="metadata">
+              <source src="/say-show/audio/after-school-club-for-good-kids.mp3" type="audio/mpeg">
+              お使いのブラウザはオーディオ要素をサポートしていません
+            </audio>
+          </div>
         </div>
       </section>
-        
       
 
                 <section class="track-section">
