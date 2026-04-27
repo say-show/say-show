@@ -135,6 +135,74 @@ document.addEventListener('click', (e) => {
   });
 })();
 
+// === カスタムプレビュープレイヤー ===
+(function() {
+  const cards = document.querySelectorAll('.track-audio-card');
+  if (cards.length === 0) return;
+
+  const formatTime = (sec) => {
+    if (!isFinite(sec)) return '0:00';
+    sec = Math.max(0, Math.floor(sec));
+    const m = Math.floor(sec / 60);
+    const s = sec % 60;
+    return m + ':' + s.toString().padStart(2, '0');
+  };
+
+  cards.forEach((card) => {
+    const audio = card.querySelector('.track-audio-card-element');
+    const playBtn = card.querySelector('.track-audio-card-play');
+    const playIcon = card.querySelector('.icon-play');
+    const pauseIcon = card.querySelector('.icon-pause');
+    const progress = card.querySelector('.track-audio-card-progress');
+    const fill = card.querySelector('.track-audio-card-progress-fill');
+    const timeLabel = card.querySelector('.track-audio-card-time');
+
+    if (!audio || !playBtn || !progress || !fill || !timeLabel) return;
+
+    const updateTime = () => {
+      const cur = audio.currentTime || 0;
+      const dur = audio.duration || 0;
+      const pct = dur > 0 ? (cur / dur) * 100 : 0;
+      fill.style.width = pct + '%';
+      timeLabel.textContent = formatTime(cur) + ' / ' + formatTime(dur);
+    };
+
+    const setPlayingUI = (playing) => {
+      playIcon.style.display = playing ? 'none' : '';
+      pauseIcon.style.display = playing ? '' : 'none';
+      playBtn.setAttribute('aria-label', playing ? '一時停止' : '再生');
+    };
+
+    audio.addEventListener('loadedmetadata', updateTime);
+    audio.addEventListener('timeupdate', updateTime);
+    audio.addEventListener('play', () => setPlayingUI(true));
+    audio.addEventListener('pause', () => setPlayingUI(false));
+    audio.addEventListener('ended', () => {
+      setPlayingUI(false);
+      audio.currentTime = 0;
+      updateTime();
+    });
+
+    playBtn.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    });
+
+    const seek = (clientX) => {
+      const rect = progress.getBoundingClientRect();
+      const ratio = Math.min(1, Math.max(0, (clientX - rect.left) / rect.width));
+      if (audio.duration) {
+        audio.currentTime = ratio * audio.duration;
+      }
+    };
+
+    progress.addEventListener('click', (e) => seek(e.clientX));
+  });
+})();
+
 // === QRコードモーダル（トラックページ用） ===
 (function() {
   var trigger = document.getElementById('qrTrigger');
