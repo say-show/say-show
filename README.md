@@ -12,7 +12,7 @@ J-POPとシティポップ、インディポップをベースにした、映画
 
 すべての楽曲とプロジェクト情報は以下でご覧いただけます：
 
-**➜ [SAY-SHOW LP](https://say-show.github.io/say-show/)**
+**➜ [SAY-SHOW LP](https://say-show.me/)**
 
 ## 🎧 配信サービス
 
@@ -31,17 +31,17 @@ J-POPとシティポップ、インディポップをベースにした、映画
 ### Timeline
 年ごとにリリース履歴を時系列で振り返ることができるページ。プロジェクトの成長の軌跡をご覧いただけます。
 
-➜ [Timeline](https://say-show.github.io/say-show/timeline/)
+➜ [Timeline](https://say-show.me/timeline/)
 
 ### Videos
 Lyrics Video や Music Video をサムネイル付きで一覧表示。モーダルでその場で再生できます。
 
-➜ [Videos](https://say-show.github.io/say-show/videos/)
+➜ [Videos](https://say-show.me/videos/)
 
 ### About
 プロジェクトのコンセプトとロゴの意味について紹介しています。
 
-➜ [About](https://say-show.github.io/say-show/about/)
+➜ [About](https://say-show.me/about/)
 
 ### 各曲の詳細ページ
 トラックごとに以下の情報を掲載しています：
