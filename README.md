@@ -44,15 +44,15 @@ Lyrics Video や Music Video をサムネイル付きで一覧表示。モーダ
 ➜ [About](https://say-show.me/about/)
 
 ### 各曲の詳細ページ
-トラックごとに以下の情報を掲載しています：
+トラックごとに以下の情報を、ページ上から順に掲載しています：
 
-- 🎬 インスパイアされた映画
-- 📝 曲の背景とストーリー
-- 🎤 歌詞
-- 🎵 配信リンク（Spotify、Apple Music など）
 - 🖼️ カバーアート
-- 🎧 試聴プレイヤー（最大60秒のプレビュー音源、配信開始前から再生可能）
-- 🎬 動画（Lyrics Video 等、該当がある場合）
+- 🎬 インスパイア元の映画
+- 📝 **About** — 曲の背景とストーリー
+- 🎧 **Listen** — Spotify 埋め込みプレイヤー（配信中）または最大60秒のプレビュー音源（配信前/未登録時、`audio: true` のトラックのみ）
+- 🎵 **Available on** — 配信サービスへのリンク（Spotify / Apple Music / Amazon Music / YouTube Music）。配信前は非活性ボタンで表示
+- 🎤 **Lyrics** — 歌詞
+- 🎬 **Watch** — Lyrics Video 等の関連動画（該当がある場合）
 
 ---
 
