@@ -39,15 +39,7 @@
       "name": "SAY-SHOW",
       "url": "https://say-show.me/"
     },
-    "image": "https://say-show.me/images/awe-is-akin-to-kindness.png",
-    "offers": [
-      {
-        "@type": "Offer",
-        "url": "https://open.spotify.com/album/0dIsuzrOZrU1xx408XdnTh",
-        "availability": "https://schema.org/InStock",
-        "seller": { "@type": "Organization", "name": "Spotify" }
-      }
-    ]
+    "image": "https://say-show.me/images/awe-is-akin-to-kindness.png"
   }
   </script>
 </head>
@@ -115,17 +107,30 @@
       
       
       
-        
-        
       <section class="track-section">
-        <h2>Listen</h2>
-        <div class="track-preview-embed">
-          <iframe
-            src="https://open.spotify.com/embed/album/0dIsuzrOZrU1xx408XdnTh?utm_source=generator&theme=0"
-            width="100%" height="152" frameborder="0"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy">
-          </iframe>
+        <h2>Preview</h2>
+        <div class="track-audio-card">
+          
+          <img class="track-audio-card-cover" src="/images/awe-is-akin-to-kindness.png" alt="畏れはやさしさに似て">
+          
+          <div class="track-audio-card-body">
+            <p class="track-audio-card-title">畏れはやさしさに似て</p>
+            <p class="track-audio-card-meta">SAY-SHOW · Preview</p>
+            <div class="track-audio-card-controls">
+              <button type="button" class="track-audio-card-play" aria-label="再生">
+                <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+              </button>
+              <div class="track-audio-card-progress" role="slider" aria-label="再生位置" tabindex="0">
+                <div class="track-audio-card-progress-fill"></div>
+              </div>
+              <span class="track-audio-card-time">0:00 / 0:00</span>
+            </div>
+            <audio class="track-audio-card-element" preload="metadata">
+              <source src="/audio/awe-is-akin-to-kindness.mp3" type="audio/mpeg">
+              お使いのブラウザはオーディオ要素をサポートしていません
+            </audio>
+          </div>
         </div>
       </section>
       
@@ -136,7 +141,7 @@
                   <div class="streaming-grid">
                     
                     
-                    <a href="https://open.spotify.com/album/0dIsuzrOZrU1xx408XdnTh" class="streaming-card">
+                    <span class="streaming-card disabled" title="配信準備中">
                     
                       <div class="streaming-card-icon spotify" aria-hidden="true">
                         <svg viewBox="0 0 24 24">
@@ -146,10 +151,10 @@
                       </div>
                       <div class="streaming-card-info">
                         <span class="streaming-card-name">Spotify</span>
-                        <span class="streaming-card-action">Spotifyで聴く</span>
+                        <span class="streaming-card-action">配信準備中</span>
                       </div>
                     
-                    </a>
+                    </span>
                     
 
                     
