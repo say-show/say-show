@@ -20,7 +20,7 @@ J-POPとシティポップ、インディポップをベースにした、映画
 
 - **Spotify** - [SAY-SHOW](https://open.spotify.com/intl-ja/artist/1QQBBrg6L673fnZZOPYtu3)
 - **Apple Music** - [SAY-SHOW](https://apple.co/4snDy58)
-- **Amazon Music** - [SAY-SHOW](https://music.amazon.co.uk/artists/B0FYK1ZQ9C/say-show)
+- **Amazon Music** - [SAY-SHOW](https://music.amazon.co.jp/artists/B0FYK4CDSC/say-show)
 - **YouTube Music** - [SAY-SHOW](https://music.youtube.com/channel/UC96QUBvKpZo1sBSBNj4t31A?si=6YQM4mryzjOwUN0r)
 
 ## 📱 サイト機能
