@@ -126,11 +126,19 @@ document.addEventListener('click', (e) => {
     document.body.style.overflow = '';
   }
 
-  // サムネイルクリックでモーダルを開く
+  // サムネイルクリック／キーボード操作でモーダルを開く
   document.querySelectorAll('.video-card').forEach(function(card) {
-    card.addEventListener('click', function() {
+    function activate() {
       var youtubeId = card.getAttribute('data-youtube-id');
       if (youtubeId) openModal(youtubeId);
+    }
+    card.addEventListener('click', activate);
+    // role="button" のカードを Enter / Space で起動できるようにする
+    card.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+        e.preventDefault();
+        activate();
+      }
     });
   });
 

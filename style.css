@@ -716,6 +716,12 @@ h2 {
   .track-card.visible {
     animation: none;
   }
+  /* ヒーローのボケ光・ローディング演出も動きを止める */
+  .bokeh,
+  .loading-logo-img,
+  .loading-logo-wrapper::after {
+    animation: none;
+  }
 }
 
 /* === ローディングアニメーション === */
