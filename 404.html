@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>404 | SAY-SHOW</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#05060b">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/apple-touch-icon-180.png">
+  <style>
+    .notfound {
+      position: relative;
+      overflow: hidden;
+      min-height: calc(100vh - 56px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px 60px;
+      background: linear-gradient(135deg, #0a0a12 0%, #0d1020 50%, #0a0812 100%);
+      text-align: center;
+    }
+    .notfound-inner {
+      position: relative;
+      z-index: 10;
+      max-width: 560px;
+    }
+    .notfound-logo {
+      width: 72px;
+      height: 72px;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 8px 24px rgba(255, 75, 139, 0.4));
+    }
+    .notfound-code {
+      font-size: clamp(3.5rem, 14vw, 6rem);
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      margin: 0;
+      line-height: 1;
+      text-shadow: 0 0 60px rgba(255, 75, 139, 0.25);
+    }
+    .notfound-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin: 1.2rem 0 0.6rem;
+    }
+    .notfound-text {
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin: 0 0 2rem;
+    }
+    .notfound-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <nav class="global-nav">
+    <a href="/" class="nav-logo">
+      <img src="/favicon-512-transparent.png" alt="">
+      <span>SAY-SHOW</span>
+    </a>
+    <div class="nav-links">
+      <a href="/#tracks">Tracks</a>
+      <a href="/timeline/">Timeline</a>
+      <a href="/videos/">Videos</a>
+      <a href="/about/">About</a>
+    </div>
+  </nav>
+
+  <main class="notfound">
+    <div class="bokeh-container">
+      <div class="bokeh pink-1"></div>
+      <div class="bokeh orange-1"></div>
+      <div class="bokeh blue-1"></div>
+      <div class="bokeh purple-2"></div>
+      <div class="bokeh tiny-1"></div>
+    </div>
+    <div class="notfound-inner">
+      <img src="/favicon-512-transparent.png" alt="SAY-SHOW" class="notfound-logo">
+      <p class="notfound-code">404</p>
+      <h1 class="notfound-title">ページが見つかりませんでした</h1>
+      <p class="notfound-text">
+        お探しのページは移動または削除されたようです。<br>
+        トップページから、映画のシーンから生まれた楽曲をお楽しみください。
+      </p>
+      <div class="notfound-actions">
+        <a href="/" class="btn primary">トップへ戻る</a>
+        <a href="/timeline/" class="btn">Timelineを見る</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
