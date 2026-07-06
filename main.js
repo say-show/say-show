@@ -1,7 +1,16 @@
-// ローディングアニメーション制御
+// ローディングアニメーション制御（セッション初回のみ演出を見せる。
+// 2ページ目以降は head のインラインスクリプトが html に .skip-loading を付与し
+// CSS側で非表示になっているため、ここでは後片付けだけ行う）
 window.addEventListener('load', () => {
   const loadingOverlay = document.getElementById('loadingOverlay');
-  if (loadingOverlay) {
+  const skipLoading = document.documentElement.classList.contains('skip-loading');
+
+  if (loadingOverlay && !skipLoading) {
+    try {
+      sessionStorage.setItem('ssLoadingShown', '1');
+    } catch (e) {
+      // プライベートモード等でsessionStorageが使えない場合は毎回表示になるだけ
+    }
     // アニメーション完了後（0.8秒）にフェードアウト開始
     setTimeout(() => {
       loadingOverlay.classList.add('hidden');
@@ -13,7 +22,8 @@ window.addEventListener('load', () => {
       initCardFadeIn();
     }, 800);
   } else {
-    // ローディングがない場合は即座に開始
+    // ローディングをスキップする場合は即座に開始
+    if (loadingOverlay) loadingOverlay.remove();
     initCardFadeIn();
   }
 });

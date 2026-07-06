@@ -674,6 +674,10 @@ h2 {
 
 /* === スマホ向け微調整 === */
 @media (max-width: 768px) {
+  main {
+    padding: 24px 16px 60px;
+  }
+
   .track-grid {
     grid-template-columns: 1fr;
   }
@@ -763,6 +767,12 @@ h2 {
 .loading-overlay.hidden {
   opacity: 0;
   pointer-events: none;
+}
+
+/* セッション2ページ目以降はローディング演出をスキップ
+   （headのインラインスクリプトが html に .skip-loading を付与） */
+.skip-loading .loading-overlay {
+  display: none;
 }
 
 .loading-logo-wrapper {
