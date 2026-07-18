@@ -47,7 +47,7 @@ Lyrics Video や Music Video をサムネイル付きで一覧表示。モーダ
 トラックごとに以下の情報を、ページ上から順に掲載しています：
 
 - 🖼️ カバーアート
-- 🎬 インスパイア元の映画
+- 🕐 リリース日・曲の長さ・インスパイア元の映画
 - 📝 **About** — 曲の背景とストーリー
 - 🎧 **Listen** — Spotify 埋め込みプレイヤー（配信中）または最大60秒のプレビュー音源（配信前/未登録時、`audio: true` のトラックのみ）
 - 🎵 **Available on** — 配信サービスへのリンク（Spotify / Apple Music / Amazon Music / YouTube Music）。配信前は非活性ボタンで表示
