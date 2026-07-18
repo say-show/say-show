@@ -940,6 +940,32 @@ h2 {
   margin: 1rem 0 0;
 }
 
+/* 曲の長さ（時計アイコン + m:ss）。アイコンと数字を折り返しで分離させない */
+.page-subtitle-duration {
+  white-space: nowrap;
+}
+
+.page-subtitle-duration .icon-duration {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.3em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+}
+
+/* 視覚的には隠すがスクリーンリーダーには読ませるユーティリティ */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .page-content {
   max-width: 800px;
   margin: 0 auto;
