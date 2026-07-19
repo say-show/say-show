@@ -751,9 +751,21 @@ h2 {
   pointer-events: none;
 }
 
-/* セッション2ページ目以降はローディング演出をスキップ
-   （headのインラインスクリプトが html に .skip-loading を付与） */
-.skip-loading .loading-overlay {
+/* セッション2ページ目以降は演出を短縮版にする
+   （headのインラインスクリプトが html に .quick-loading を付与）。
+   ページ遷移のたびに0.8秒待たせず、演出の統一感だけ残す狙い */
+.quick-loading .loading-overlay {
+  transition: opacity 0.25s ease-out;
+}
+
+.quick-loading .loading-logo-img {
+  /* animation-name は上書きしない。動き軽減時に animation: none が
+     効かなくなるのを避けるため、尺だけを差し替える */
+  animation-duration: 0.35s;
+}
+
+/* リップルは短縮版では出さない（尺が短いと広がりきらず散らかって見える） */
+.quick-loading .loading-logo-wrapper::after {
   display: none;
 }
 

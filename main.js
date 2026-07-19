@@ -1,51 +1,62 @@
-// ローディングアニメーション制御（セッション初回のみ演出を見せる。
-// 2ページ目以降は head のインラインスクリプトが html に .skip-loading を付与し
-// CSS側で非表示になっているため、ここでは後片付けだけ行う）
+// ローディングアニメーション制御。
+// セッション初回はフル演出（ロゴ 0.8秒 + リップル）、2ページ目以降は head の
+// インラインスクリプトが html に .quick-loading を付与し、CSS側で短縮版
+// （ロゴ 0.35秒・リップルなし）になる。ページ遷移ごとの演出は残しつつ待ちは最小限にする。
 //
 // 画像の読み込み完了（load）は待たない。トラックカードは aspect-ratio でサイズが
 // 確定するため、画像未読込でもレイアウトは正しく、待つだけ表示が遅くなる
 function initLoading() {
   const loadingOverlay = document.getElementById('loadingOverlay');
-  const skipLoading = document.documentElement.classList.contains('skip-loading');
 
-  if (loadingOverlay && !skipLoading) {
-    try {
-      sessionStorage.setItem('ssLoadingShown', '1');
-    } catch (e) {
-      // プライベートモード等でsessionStorageが使えない場合は毎回表示になるだけ
-    }
-    const finishLoading = () => {
-      loadingOverlay.classList.add('hidden');
-      // フェードアウト完了後にDOMから削除
-      setTimeout(() => {
-        loadingOverlay.remove();
-      }, 400);
-      // ローディング終了後にカードのフェードイン処理を開始
-      initCardFadeIn();
-    };
-
-    // ロゴのCSSアニメーション（0.8秒）はページ描画時から始まっているため、
-    // 固定の待ち時間ではなく「アニメーションの実際の完了」を待つ。
-    // performance.now() を起点に残り時間を計算すると、回線が遅くHTMLの到着が
-    // 800msを超えた場合に待ち時間0となり演出が切れてしまう
-    const animations = loadingOverlay.getAnimations
-      ? loadingOverlay.getAnimations({ subtree: true })
-      : null;
-
-    if (animations === null) {
-      // getAnimations 未対応の旧ブラウザ → 従来どおり固定時間で待つ
-      setTimeout(finishLoading, 800);
-    } else if (animations.length === 0) {
-      // 動き軽減設定でアニメーションが無効 → 待たずに進む
-      finishLoading();
-    } else {
-      // 既に完了済みなら即座に解決する。中断された場合も同様に進める
-      Promise.all(animations.map(a => a.finished)).then(finishLoading, finishLoading);
-    }
-  } else {
-    // ローディングをスキップする場合は即座に開始
-    if (loadingOverlay) loadingOverlay.remove();
+  if (!loadingOverlay) {
     initCardFadeIn();
+    return;
+  }
+
+  try {
+    sessionStorage.setItem('ssLoadingShown', '1');
+  } catch (e) {
+    // プライベートモード等でsessionStorageが使えない場合は毎回フル演出になるだけ
+  }
+
+  // 動き軽減設定では演出を見せず、フェードもせずに即座に取り除く
+  // （一瞬だけ全画面オーバーレイが出て消えるちらつきを避ける）
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    loadingOverlay.remove();
+    initCardFadeIn();
+    return;
+  }
+
+  const quick = document.documentElement.classList.contains('quick-loading');
+  // CSS側のフェードアウト時間（.loading-overlay の transition）と合わせる
+  const fadeOutMs = quick ? 250 : 400;
+
+  const finishLoading = () => {
+    loadingOverlay.classList.add('hidden');
+    // フェードアウト完了後にDOMから削除
+    setTimeout(() => {
+      loadingOverlay.remove();
+    }, fadeOutMs);
+    // ローディング終了後にカードのフェードイン処理を開始
+    initCardFadeIn();
+  };
+
+  // ロゴのCSSアニメーションはページ描画時から始まっているため、固定の待ち時間では
+  // なく「アニメーションの実際の完了」を待つ。performance.now() を起点に残り時間を
+  // 計算すると、回線が遅くHTMLの到着が演出の尺を超えた場合に待ち時間0となり演出が切れる
+  const animations = loadingOverlay.getAnimations
+    ? loadingOverlay.getAnimations({ subtree: true })
+    : null;
+
+  if (animations === null) {
+    // getAnimations 未対応の旧ブラウザ → 固定時間で待つ
+    setTimeout(finishLoading, quick ? 350 : 800);
+  } else if (animations.length === 0) {
+    // アニメーションが既に完了している（DCLが遅かった）→ 待たずに進む
+    finishLoading();
+  } else {
+    // 完了を待つ。中断された場合も同様に進める
+    Promise.all(animations.map(a => a.finished)).then(finishLoading, finishLoading);
   }
 }
 
