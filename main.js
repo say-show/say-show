@@ -1,7 +1,10 @@
 // ローディングアニメーション制御（セッション初回のみ演出を見せる。
 // 2ページ目以降は head のインラインスクリプトが html に .skip-loading を付与し
 // CSS側で非表示になっているため、ここでは後片付けだけ行う）
-window.addEventListener('load', () => {
+//
+// 画像の読み込み完了（load）は待たない。トラックカードは aspect-ratio でサイズが
+// 確定するため、画像未読込でもレイアウトは正しく、待つだけ表示が遅くなる
+function initLoading() {
   const loadingOverlay = document.getElementById('loadingOverlay');
   const skipLoading = document.documentElement.classList.contains('skip-loading');
 
@@ -11,7 +14,9 @@ window.addEventListener('load', () => {
     } catch (e) {
       // プライベートモード等でsessionStorageが使えない場合は毎回表示になるだけ
     }
-    // アニメーション完了後（0.8秒）にフェードアウト開始
+    // ロゴのCSSアニメーション（0.8秒）はページ描画時から動いているため、
+    // 経過済みの時間を差し引いた残りだけ待つ
+    const remaining = Math.max(0, 800 - performance.now());
     setTimeout(() => {
       loadingOverlay.classList.add('hidden');
       // フェードアウト完了後にDOMから削除
@@ -20,13 +25,19 @@ window.addEventListener('load', () => {
       }, 400);
       // ローディング終了後にカードのフェードイン処理を開始
       initCardFadeIn();
-    }, 800);
+    }, remaining);
   } else {
     // ローディングをスキップする場合は即座に開始
     if (loadingOverlay) loadingOverlay.remove();
     initCardFadeIn();
   }
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initLoading);
+} else {
+  initLoading();
+}
 
 // トラックカードのスクロール連動フェードイン
 function initCardFadeIn() {
@@ -43,7 +54,9 @@ function initCardFadeIn() {
 
   // モバイル幅ではディレイを短縮して軽快に見せる
   const isMobile = window.matchMedia('(max-width: 768px)').matches;
-  const stepDelay = isMobile ? 50 : 100;
+  const stepDelay = isMobile ? 35 : 60;
+  // カード枚数が増えても最後の1枚が置いていかれないよう累積ディレイに上限を設ける
+  const maxDelay = 400;
 
   const cardsToObserve = [];
   let initialVisibleIndex = 0;
@@ -57,7 +70,7 @@ function initCardFadeIn() {
       card.classList.add('no-animation');
     } else if (cardTop < viewportBottom) {
       // カードが画面内にある → 遅延付きで即座にフェードイン開始
-      const delay = initialVisibleIndex * stepDelay;
+      const delay = Math.min(initialVisibleIndex * stepDelay, maxDelay);
       setTimeout(() => {
         card.classList.add('visible');
       }, delay);
@@ -77,7 +90,7 @@ function initCardFadeIn() {
       if (entry.isIntersecting) {
         const card = entry.target;
         // 遅延を付けて順次表示（同時に見える場合はstepDelayずつずらす）
-        const delay = scrollVisibleIndex * stepDelay;
+        const delay = Math.min(scrollVisibleIndex * stepDelay, maxDelay);
         setTimeout(() => {
           card.classList.add('visible');
         }, delay);

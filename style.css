@@ -355,7 +355,7 @@ h2 {
 }
 
 .track-card.visible {
-  animation: fadeInUp 0.5s ease-out forwards;
+  animation: fadeInUp 0.4s ease-out forwards;
 }
 
 .track-card.no-animation {
