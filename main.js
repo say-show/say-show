@@ -14,10 +14,7 @@ function initLoading() {
     } catch (e) {
       // プライベートモード等でsessionStorageが使えない場合は毎回表示になるだけ
     }
-    // ロゴのCSSアニメーション（0.8秒）はページ描画時から動いているため、
-    // 経過済みの時間を差し引いた残りだけ待つ
-    const remaining = Math.max(0, 800 - performance.now());
-    setTimeout(() => {
+    const finishLoading = () => {
       loadingOverlay.classList.add('hidden');
       // フェードアウト完了後にDOMから削除
       setTimeout(() => {
@@ -25,7 +22,26 @@ function initLoading() {
       }, 400);
       // ローディング終了後にカードのフェードイン処理を開始
       initCardFadeIn();
-    }, remaining);
+    };
+
+    // ロゴのCSSアニメーション（0.8秒）はページ描画時から始まっているため、
+    // 固定の待ち時間ではなく「アニメーションの実際の完了」を待つ。
+    // performance.now() を起点に残り時間を計算すると、回線が遅くHTMLの到着が
+    // 800msを超えた場合に待ち時間0となり演出が切れてしまう
+    const animations = loadingOverlay.getAnimations
+      ? loadingOverlay.getAnimations({ subtree: true })
+      : null;
+
+    if (animations === null) {
+      // getAnimations 未対応の旧ブラウザ → 従来どおり固定時間で待つ
+      setTimeout(finishLoading, 800);
+    } else if (animations.length === 0) {
+      // 動き軽減設定でアニメーションが無効 → 待たずに進む
+      finishLoading();
+    } else {
+      // 既に完了済みなら即座に解決する。中断された場合も同様に進める
+      Promise.all(animations.map(a => a.finished)).then(finishLoading, finishLoading);
+    }
   } else {
     // ローディングをスキップする場合は即座に開始
     if (loadingOverlay) loadingOverlay.remove();

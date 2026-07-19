@@ -730,22 +730,6 @@ h2 {
   }
 }
 
-/* === 動き軽減設定（アクセシビリティ） === */
-@media (prefers-reduced-motion: reduce) {
-  .track-card {
-    opacity: 1;
-  }
-  .track-card.visible {
-    animation: none;
-  }
-  /* ヒーローのボケ光・ローディング演出も動きを止める */
-  .bokeh,
-  .loading-logo-img,
-  .loading-logo-wrapper::after {
-    animation: none;
-  }
-}
-
 /* === ローディングアニメーション === */
 .loading-overlay {
   position: fixed;
@@ -1564,3 +1548,22 @@ h2 {
   color: var(--text-main);
 }
 
+
+/* === 動き軽減設定（アクセシビリティ） ===
+   後続のルールに上書きされないよう、必ずファイル末尾に置くこと。
+   （以前はローディング演出の定義より前にあったため .loading-logo-img /
+   .loading-logo-wrapper::after への animation: none が効いていなかった） */
+@media (prefers-reduced-motion: reduce) {
+  .track-card {
+    opacity: 1;
+  }
+  .track-card.visible {
+    animation: none;
+  }
+  /* ヒーローのボケ光・ローディング演出も動きを止める */
+  .bokeh,
+  .loading-logo-img,
+  .loading-logo-wrapper::after {
+    animation: none;
+  }
+}
