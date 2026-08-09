@@ -176,29 +176,18 @@
       background: linear-gradient(to right, var(--accent), rgba(255, 75, 139, 0.05) 55%, transparent);
     }
 
-    /* 横スクロールのレーン */
+    /* 棚の中身。横スクロールにすると画面外に隠れる枚数が多すぎる
+       （実測: 390pxで44枚中41枚が隠れ、全部見るのに横スワイプ18回）ため、
+       折り返しグリッドで全部その場に並べる。PCは自動列数、モバイルは2列。 */
     .shelf-lane {
-      display: flex;
-      gap: 16px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 22px 16px;
       padding: 4px 24px 14px;
-      overflow-x: auto;
-      scroll-snap-type: x proximity;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(255, 75, 139, 0.5) transparent;
     }
-
-    .shelf-lane::-webkit-scrollbar { height: 6px; }
-    .shelf-lane::-webkit-scrollbar-track { background: transparent; }
-    .shelf-lane::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.14);
-      border-radius: 3px;
-    }
-    .shelf-lane:hover::-webkit-scrollbar-thumb { background: rgba(255, 75, 139, 0.55); }
 
     /* --- カード --- */
     .film {
-      flex: 0 0 152px;
-      scroll-snap-align: start;
       text-decoration: none;
       color: inherit;
       transition: transform 0.26s ease;
@@ -306,7 +295,8 @@
       .shelf-head, .shelf-lane { padding-left: 16px; padding-right: 16px; }
       .shelf-rule { margin-left: 16px; margin-right: 16px; }
       .shelf-label { font-size: 1.3rem; }
-      .film { flex-basis: 138px; }
+      /* トップページのトラックグリッドと同じ2列に揃える */
+      .shelf-lane { grid-template-columns: repeat(2, 1fr); gap: 18px 12px; }
       .span-viz { display: none; }
     }
   </style>
