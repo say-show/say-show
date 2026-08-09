@@ -1,0 +1,1962 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Movies | SAY-SHOW</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SAY-SHOWの楽曲がインスパイアされた映画の一覧。年代順・五十音順で曲を探せます。">
+  <link rel="canonical" href="https://say-show.me/movies/">
+  <link rel="stylesheet" href="/style.css">
+  <script>try{if(sessionStorage.getItem('ssLoadingShown'))document.documentElement.classList.add('quick-loading')}catch(e){}</script>
+  <noscript><style>.loading-overlay{display:none}.track-card{opacity:1}</style></noscript>
+  <meta property="og:title" content="Movies | SAY-SHOW">
+  <meta property="og:description" content="SAY-SHOWの楽曲がインスパイアされた映画の一覧。年代順・五十音順で曲を探せます。">
+  <meta property="og:url" content="https://say-show.me/movies/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://say-show.me/ogp.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Movies | SAY-SHOW">
+  <meta name="twitter:description" content="SAY-SHOWの楽曲がインスパイアされた映画の一覧。年代順・五十音順で曲を探せます。">
+  <meta name="twitter:image" content="https://say-show.me/ogp.png">
+  <link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/apple-touch-icon-180.png">
+  <style>
+    /* === 映画インデックス専用スタイル === */
+
+    .movies-page {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 0 90px;
+    }
+
+    /* hidden 属性が display 指定に負けないようにする */
+    [hidden] { display: none !important; }
+
+    /* --- ソート切替（JSが有効なときだけ出す） --- */
+    .shelf-toolbar {
+      position: sticky;
+      top: 56px;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      padding: 14px 20px;
+      margin-bottom: 10px;
+      background: rgba(5, 6, 11, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .seg {
+      display: inline-flex;
+      padding: 3px;
+      border-radius: 20px;
+      background: var(--bg-alt);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .seg button {
+      padding: 7px 16px;
+      border: 0;
+      border-radius: 17px;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.83rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .seg button:hover { color: var(--text-main); }
+
+    .seg button[aria-pressed="true"] {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .shelf-stat {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .shelf-stat strong { color: var(--accent); font-size: 1rem; }
+
+    /* --- 年代の分布バー --- */
+    .span-viz {
+      display: flex;
+      align-items: stretch;
+      gap: 4px;
+      height: 76px;
+      margin: 6px 24px 4px;
+    }
+
+    .span-viz-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+    }
+
+    /* 棒が伸びる領域（ここを基準に % 指定する） */
+    .span-viz-track {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 3px;
+      min-height: 0;
+    }
+
+    .span-viz-n {
+      font-size: 0.63rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .span-viz-bar {
+      width: 100%;
+      background: rgba(255, 75, 139, 0.32);
+      border-radius: 3px 3px 0 0;
+      transition: background 0.2s ease;
+    }
+
+    .span-viz-col:hover .span-viz-bar { background: var(--accent); }
+    .span-viz-col:hover .span-viz-n { color: var(--accent); }
+
+    .span-viz-tick {
+      height: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.62rem;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 4px;
+      box-sizing: content-box;
+    }
+
+    /* --- 棚 --- */
+    .shelf { margin-top: 22px; scroll-margin-top: 130px; }
+
+    .shelf-head {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      padding: 0 24px 8px;
+    }
+
+    .shelf-label {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: var(--text-main);
+      line-height: 1;
+      margin: 0;
+    }
+
+    .shelf-n {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* 棚板のライン */
+    .shelf-rule {
+      height: 1px;
+      margin: 0 24px 13px;
+      background: linear-gradient(to right, var(--accent), rgba(255, 75, 139, 0.05) 55%, transparent);
+    }
+
+    /* 横スクロールのレーン */
+    .shelf-lane {
+      display: flex;
+      gap: 16px;
+      padding: 4px 24px 14px;
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 75, 139, 0.5) transparent;
+    }
+
+    .shelf-lane::-webkit-scrollbar { height: 6px; }
+    .shelf-lane::-webkit-scrollbar-track { background: transparent; }
+    .shelf-lane::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.14);
+      border-radius: 3px;
+    }
+    .shelf-lane:hover::-webkit-scrollbar-thumb { background: rgba(255, 75, 139, 0.55); }
+
+    /* --- カード --- */
+    .film {
+      flex: 0 0 152px;
+      scroll-snap-align: start;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.26s ease;
+    }
+
+    .film:hover { transform: translateY(-5px); }
+
+    .film-art {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      border-radius: 9px;
+      overflow: hidden;
+      background: var(--bg-alt);
+      box-shadow: 0 5px 14px rgba(0, 0, 0, 0.55);
+      transition: box-shadow 0.26s ease;
+    }
+
+    .film:hover .film-art {
+      box-shadow: 0 12px 26px rgba(255, 75, 139, 0.32);
+    }
+
+    .film-art img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.45s ease;
+    }
+
+    .film:hover .film-art img { transform: scale(1.07); }
+
+    .film-art-placeholder {
+      width: 100%;
+      height: 100%;
+      background: var(--bg-alt);
+      border: 1px dashed rgba(255, 255, 255, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    /* ホバーで曲名を出すオーバーレイ */
+    .film-veil {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 12px;
+      background: linear-gradient(to top, rgba(5, 6, 11, 0.94) 15%, rgba(5, 6, 11, 0.2) 65%, transparent);
+      opacity: 0;
+      transition: opacity 0.26s ease;
+    }
+
+    .film:hover .film-veil { opacity: 1; }
+
+    .film-veil-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .film-veil-track {
+      font-size: 0.83rem;
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--text-main);
+    }
+
+    .film-body { padding: 10px 2px 0; }
+
+    .film-title {
+      font-size: 0.86rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text-main);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .film-year {
+      margin-top: 3px;
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.04em;
+    }
+
+    .film-year-todo { color: #ffbe3c; }
+
+    /* タッチデバイスはホバーが効かないので、曲名を常時うっすら出す */
+    @media (hover: none) {
+      .film-veil { opacity: 1; background: linear-gradient(to top, rgba(5, 6, 11, 0.9) 8%, transparent 55%); }
+      .film-veil-label { display: none; }
+    }
+
+    @media (max-width: 768px) {
+      .shelf-head, .shelf-lane { padding-left: 16px; padding-right: 16px; }
+      .shelf-rule { margin-left: 16px; margin-right: 16px; }
+      .shelf-label { font-size: 1.3rem; }
+      .film { flex-basis: 138px; }
+      .span-viz { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ローディングアニメーション -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-logo-wrapper">
+      <img src="/favicon-512-transparent.png" alt="SAY-SHOW" class="loading-logo-img">
+    </div>
+  </div>
+
+  <nav class="global-nav">
+  <a href="/" class="nav-logo">
+    <img src="/favicon-512-transparent.png" alt="">
+    <span>SAY-SHOW</span>
+  </a>
+  <div class="nav-links">
+    <a href="/#tracks">Tracks</a>
+    <a href="/timeline/">Timeline</a>
+    <a href="/movies/">Movies</a>
+    <a href="/videos/">Videos</a>
+    <a href="/about/">About</a>
+  </div>
+</nav>
+
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  <header class="page-header">
+    <h1 class="page-title">Movies</h1>
+    <p class="page-subtitle">1939年から2026年まで、44本の映画から</p>
+  </header>
+
+  <main class="movies-page">
+    <div class="shelf-toolbar">
+      
+      <div class="seg" id="sortSeg" hidden>
+        <button type="button" data-mode="decade" aria-pressed="true">年代順</button>
+        <button type="button" data-mode="kana" aria-pressed="false">五十音順</button>
+      </div>
+      <span class="shelf-stat"><strong>44</strong> 本 / <strong>87</strong> 年分</span>
+    </div>
+
+    <div class="span-viz" id="spanViz" hidden></div>
+
+    
+    <div id="shelvesDecade">
+      
+      
+        
+        
+
+        
+        
+
+        
+          
+          
+          
+          
+          <section class="shelf" id="shelf-1970s" data-label="〜1970s" data-count="4">
+            <div class="shelf-head">
+              <h2 class="shelf-label">〜1970s</h2>
+              <span class="shelf-n">4本</span>
+            </div>
+            <div class="shelf-rule"></div>
+            <div class="shelf-lane">
+        
+
+        
+          
+<a class="film" href="/tracks/in-the-middle-of-the-yellow-road/" data-kana="おずのまほうつかい">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/in-the-middle-of-the-yellow-road.webp" type="image/webp">
+        <img src="/images/in-the-middle-of-the-yellow-road.png" alt="黄色い道の真ん中で" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">黄色い道の真ん中で</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">オズの魔法使い</div>
+    <div class="film-year">1939</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/holiday-of-memories/" data-kana="ろーまのきゅうじつ">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/holiday-of-memories.webp" type="image/webp">
+        <img src="/images/holiday-of-memories.png" alt="記憶の休日" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">記憶の休日</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">ローマの休日</div>
+    <div class="film-year">1953</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/spirit-of-the-wingbeat/" data-kana="もすら">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/spirit-of-the-wingbeat.webp" type="image/webp">
+        <img src="/images/spirit-of-the-wingbeat.png" alt="羽音ノ言霊" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">羽音ノ言霊</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">モスラ</div>
+    <div class="film-year">1961</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/star-sign/" data-kana="みちとのそうぐう">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/star-sign.webp" type="image/webp">
+        <img src="/images/star-sign.png" alt="星の合図 (70s Synth Edit)" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">星の合図 (70s Synth Edit)</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">未知との遭遇</div>
+    <div class="film-year">1977</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+          
+            </div>
+          </section>
+          
+          
+          
+          
+          <section class="shelf" id="shelf-1980s" data-label="1980s" data-count="6">
+            <div class="shelf-head">
+              <h2 class="shelf-label">1980s</h2>
+              <span class="shelf-n">6本</span>
+            </div>
+            <div class="shelf-rule"></div>
+            <div class="shelf-lane">
+        
+
+        
+          
+<a class="film" href="/tracks/outside-of-speed/" data-kana="きゃのんぼーる">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/outside-of-speed.webp" type="image/webp">
+        <img src="/images/outside-of-speed.png" alt="速度の外側" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">速度の外側</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">キャノンボール</div>
+    <div class="film-year">1981</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/secret-ghost/" data-kana="ごーすとばすたーず">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/secret-ghost.webp" type="image/webp">
+        <img src="/images/secret-ghost.png" alt="ひそかなゴースト" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">ひそかなゴースト</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">ゴーストバスターズ</div>
+    <div class="film-year">1984</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/nameless-light-as-of-yet/" data-kana="ぐーにーず">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/nameless-light-as-of-yet.webp" type="image/webp">
+        <img src="/images/nameless-light-as-of-yet.png" alt="まだ名前のない光" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">まだ名前のない光</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">グーニーズ</div>
+    <div class="film-year">1985</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/not-yet-future/" data-kana="ばっくとぅーざふゅーちゃー">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/not-yet-future.webp" type="image/webp">
+        <img src="/images/not-yet-future.png" alt="未来未満" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">未来未満</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">バック・トゥー・ザ・フューチャー</div>
+    <div class="film-year">1985</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/the-blue-echo-resonating-on-the-asphalt/" data-kana="りとるしょっぷおぶほらーず">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/the-blue-echo-resonating-on-the-asphalt.webp" type="image/webp">
+        <img src="/images/the-blue-echo-resonating-on-the-asphalt.png" alt="アスファルトに響く青の残響" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">アスファルトに響く青の残響</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">リトル・ショップ・オブ・ホラーズ</div>
+    <div class="film-year">1986</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/the-striped-heart-is-not-broken-yet/" data-kana="びーとるじゅーす">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/the-striped-heart-is-not-broken-yet.webp" type="image/webp">
+        <img src="/images/the-striped-heart-is-not-broken-yet.png" alt="しま模様のハートはまだ割れてない" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">しま模様のハートはまだ割れてない</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">ビートルジュース</div>
+    <div class="film-year">1988</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+          
+            </div>
+          </section>
+          
+          
+          
+          
+          <section class="shelf" id="shelf-1990s" data-label="1990s" data-count="7">
+            <div class="shelf-head">
+              <h2 class="shelf-label">1990s</h2>
+              <span class="shelf-n">7本</span>
+            </div>
+            <div class="shelf-rule"></div>
+            <div class="shelf-lane">
+        
+
+        
+          
+<a class="film" href="/tracks/light-that-melts-without-being-touched/" data-kana="しざーはんず">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/light-that-melts-without-being-touched.webp" type="image/webp">
+        <img src="/images/light-that-melts-without-being-touched.png" alt="触れずに、溶けていく光" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">触れずに、溶けていく光</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">シザーハンズ</div>
+    <div class="film-year">1990</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/in-a-gentle-loop/" data-kana="こいはでじゃぶ">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/in-a-gentle-loop.webp" type="image/webp">
+        <img src="/images/in-a-gentle-loop.png" alt="やさしいループの中で" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">やさしいループの中で</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">恋はデジャ・ブ</div>
+    <div class="film-year">1993</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/awe-is-akin-to-kindness/" data-kana="じゅらしっくぱーく">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/awe-is-akin-to-kindness.webp" type="image/webp">
+        <img src="/images/awe-is-akin-to-kindness.png" alt="畏れはやさしさに似て" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">畏れはやさしさに似て</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">ジュラシック・パーク</div>
+    <div class="film-year">1993</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/fragments-of-dreams-bloom-in-the-night/" data-kana="ないとめあびふぉあくりすます">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/fragments-of-dreams-bloom-in-the-night.webp" type="image/webp">
+        <img src="/images/fragments-of-dreams-bloom-in-the-night.png" alt="夢のかけらは夜に咲く" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">夢のかけらは夜に咲く</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">ナイトメア・ビフォア・クリスマス</div>
+    <div class="film-year">1993</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/sky-belongs-to-no-one/" data-kana="しょーしゃんくのそらに">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/sky-belongs-to-no-one.webp" type="image/webp">
+        <img src="/images/sky-belongs-to-no-one.png" alt="Sky Belongs to No One" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">Sky Belongs to No One</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">ショーシャンクの空に</div>
+    <div class="film-year">1994</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/whispers-blooming-in-the-forest/" data-kana="もののけひめ">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/whispers-blooming-in-the-forest.webp" type="image/webp">
+        <img src="/images/whispers-blooming-in-the-forest.png" alt="森に咲くささやき" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">森に咲くささやき</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">もののけ姫</div>
+    <div class="film-year">1997</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/a-single-star-and-a-speaker/" data-kana="あいあんじゃいあんと">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/a-single-star-and-a-speaker.webp" type="image/webp">
+        <img src="/images/a-single-star-and-a-speaker.png" alt="ひとりの星とスピーカー" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">ひとりの星とスピーカー</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">アイアン・ジャイアント</div>
+    <div class="film-year">1999</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+          
+            </div>
+          </section>
+          
+          
+          
+          
+          <section class="shelf" id="shelf-2000s" data-label="2000s" data-count="11">
+            <div class="shelf-head">
+              <h2 class="shelf-label">2000s</h2>
+              <span class="shelf-n">11本</span>
+            </div>
+            <div class="shelf-rule"></div>
+            <div class="shelf-lane">
+        
+
+        
+          
+<a class="film" href="/tracks/smile-code-angel/" data-kana="ちゃーりーずえんじぇる">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/smile-code-angel.webp" type="image/webp">
+        <img src="/images/smile-code-angel.png" alt="Smile Code: Angel" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">Smile Code: Angel</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">チャーリーズ・エンジェル</div>
+    <div class="film-year">2000</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/mirror-talk/" data-kana="あめり">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/mirror-talk.webp" type="image/webp">
+        <img src="/images/mirror-talk.png" alt="Mirror Talk" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">Mirror Talk</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">アメリ</div>
+    <div class="film-year">2001</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/shadow-switch/" data-kana="すぱいきっず">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/shadow-switch.webp" type="image/webp">
+        <img src="/images/shadow-switch.png" alt="影のスイッチ" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">影のスイッチ</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">スパイキッズ</div>
+    <div class="film-year">2001</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/formless-night/" data-kana="せんとちひろのかみかくし">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/formless-night.webp" type="image/webp">
+        <img src="/images/formless-night.png" alt="かたちのない夜" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">かたちのない夜</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">千と千尋の神隠し</div>
+    <div class="film-year">2001</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/unreasonable-steps-with-you/" data-kana="りょうきてきなかのじょ">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/unreasonable-steps-with-you.webp" type="image/webp">
+        <img src="/images/unreasonable-steps-with-you.png" alt="理不尽なステップを君と" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">理不尽なステップを君と</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">猟奇的な彼女</div>
+    <div class="film-year">2001</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/late-into-your-future/" data-kana="ときをかけるしょうじょ">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/late-into-your-future.webp" type="image/webp">
+        <img src="/images/late-into-your-future.png" alt="君に遅刻していく" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">君に遅刻していく</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">時をかける少女</div>
+    <div class="film-year">2006</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/rusty-air-and-a-soft-heart-still-earth/" data-kana="うぉーりー">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/rusty-air-and-a-soft-heart-still-earth.webp" type="image/webp">
+        <img src="/images/rusty-air-and-a-soft-heart-still-earth.png" alt="さびた空気と、やわらかい心 / Still Earth" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">さびた空気と、やわらかい心 / Still Earth</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">ウォーリー</div>
+    <div class="film-year">2008</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/gravity-balloon/" data-kana="かーるじいさんのそらとぶいえ">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/gravity-balloon.webp" type="image/webp">
+        <img src="/images/gravity-balloon.png" alt="Gravity Balloon" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">Gravity Balloon</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">カールじいさんの空飛ぶ家</div>
+    <div class="film-year">2009</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/ride-the-wave-of-success/" data-kana="きっとうまくいく">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/ride-the-wave-of-success.webp" type="image/webp">
+        <img src="/images/ride-the-wave-of-success.png" alt="うまくいく風に乗れ" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">うまくいく風に乗れ</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">きっと、うまくいく</div>
+    <div class="film-year">2009</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/reaching-out-without-being-connected/" data-kana="さまーうぉーず">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/reaching-out-without-being-connected.webp" type="image/webp">
+        <img src="/images/reaching-out-without-being-connected.png" alt="未接続のまま、手を伸ばす" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">未接続のまま、手を伸ばす</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">サマーウォーズ</div>
+    <div class="film-year">2009</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/fox-footprints-a-dawn-cafe/" data-kana="ふぁんたすてぃっくみすたーふぉっくす">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/fox-footprints-a-dawn-cafe.webp" type="image/webp">
+        <img src="/images/fox-footprints-a-dawn-cafe.png" alt="きつねの足跡、夜明けのカフェ" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">きつねの足跡、夜明けのカフェ</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">ファンタスティック Mr.FOX</div>
+    <div class="film-year">2009</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+          
+            </div>
+          </section>
+          
+          
+          
+          
+          <section class="shelf" id="shelf-2010s" data-label="2010s" data-count="9">
+            <div class="shelf-head">
+              <h2 class="shelf-label">2010s</h2>
+              <span class="shelf-n">9本</span>
+            </div>
+            <div class="shelf-rule"></div>
+            <div class="shelf-lane">
+        
+
+        
+          
+<a class="film" href="/tracks/one-up-love/" data-kana="すこっとぴるぐりむ">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/one-up-love.webp" type="image/webp">
+        <img src="/images/one-up-love.png" alt="1UP の恋心" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">1UP の恋心</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">スコット・ピルグリム VS. 邪悪な元カレ軍団</div>
+    <div class="film-year">2010</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/between-rain-and-snow/" data-kana="おおかみこどものあめとゆき">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/between-rain-and-snow.webp" type="image/webp">
+        <img src="/images/between-rain-and-snow.png" alt="雨と雪のあいだで" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">雨と雪のあいだで</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">おおかみこどもの雨と雪</div>
+    <div class="film-year">2012</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/warmth-of-a-voice/" data-kana="her">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/warmth-of-a-voice.webp" type="image/webp">
+        <img src="/images/warmth-of-a-voice.png" alt="声だけの体温" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">声だけの体温</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">her/世界でひとつの彼女</div>
+    <div class="film-year">2013</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/tiny-rain-gentle-town/" data-kana="ぱでぃんとん">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/tiny-rain-gentle-town.webp" type="image/webp">
+        <img src="/images/tiny-rain-gentle-town.png" alt="Tiny Rain, Gentle Town" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">Tiny Rain, Gentle Town</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">パディントン</div>
+    <div class="film-year">2014</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/colors-on-an-ordinary-day/" data-kana="いんさいどへっど">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/colors-on-an-ordinary-day.webp" type="image/webp">
+        <img src="/images/colors-on-an-ordinary-day.png" alt="ふつうの日に色を" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">ふつうの日に色を</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">インサイド・ヘッド</div>
+    <div class="film-year">2015</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/between-the-glare-and-me/" data-kana="ずーとぴあ">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/between-the-glare-and-me.webp" type="image/webp">
+        <img src="/images/between-the-glare-and-me.png" alt="まぶしさと僕の間" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">まぶしさと僕の間</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">ズートピア</div>
+    <div class="film-year">2016</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/i-am-not-finished-yet/" data-kana="めっせーじ">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/i-am-not-finished-yet.webp" type="image/webp">
+        <img src="/images/i-am-not-finished-yet.png" alt="わたしはまだ終わらない" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">わたしはまだ終わらない</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">メッセージ</div>
+    <div class="film-year">2016</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/corner-pop-anthem/" data-kana="sing">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/corner-pop-anthem.webp" type="image/webp">
+        <img src="/images/corner-pop-anthem.png" alt="片隅ポップ・アンセム" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">片隅ポップ・アンセム</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">SING/シング</div>
+    <div class="film-year">2016</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/shade-line/" data-kana="れでぃぷれいやーわん">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/shade-line.webp" type="image/webp">
+        <img src="/images/shade-line.png" alt="シェイドライン" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">シェイドライン</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">レディ・プレイヤー1</div>
+    <div class="film-year">2018</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+          
+            </div>
+          </section>
+          
+          
+          
+          
+          <section class="shelf" id="shelf-2020s" data-label="2020s" data-count="7">
+            <div class="shelf-head">
+              <h2 class="shelf-label">2020s</h2>
+              <span class="shelf-n">7本</span>
+            </div>
+            <div class="shelf-rule"></div>
+            <div class="shelf-lane">
+        
+
+        
+          
+<a class="film" href="/tracks/deep-blue/" data-kana="ねつれつ">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/deep-blue.webp" type="image/webp">
+        <img src="/images/deep-blue.png" alt="Deep Blue" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">Deep Blue</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">熱烈</div>
+    <div class="film-year">2023</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/after-school-club-for-good-kids/" data-kana="ばーびー">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/after-school-club-for-good-kids.webp" type="image/webp">
+        <img src="/images/after-school-club-for-good-kids.png" alt="いい子やめた放課後クラブ" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">いい子やめた放課後クラブ</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">バービー</div>
+    <div class="film-year">2023</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/repeating-boundary/" data-kana="ぶるーびーとる">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/repeating-boundary.webp" type="image/webp">
+        <img src="/images/repeating-boundary.png" alt="反復する境界" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">反復する境界</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">ブルービートル</div>
+    <div class="film-year">2023</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/instant-paradox/" data-kana="the flash">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/instant-paradox.webp" type="image/webp">
+        <img src="/images/instant-paradox.png" alt="インスタント・パラドックス" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">インスタント・パラドックス</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">THE FLASH</div>
+    <div class="film-year">2023</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/hunt-the-light/" data-kana="kpop">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/hunt-the-light.webp" type="image/webp">
+        <img src="/images/hunt-the-light.png" alt="HUNT THE LIGHT" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">HUNT THE LIGHT</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">KPOPガールズ! デーモン・ハンターズ</div>
+    <div class="film-year">2025</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/why-we-share-the-light/" data-kana="ぷろじぇくとへいるめありー">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/why-we-share-the-light.webp" type="image/webp">
+        <img src="/images/why-we-share-the-light.png" alt="光をわけあう理由" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">光をわけあう理由</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">プロジェクト・ヘイル・メアリー</div>
+    <div class="film-year">2026</div>
+  </div>
+</a>
+
+        
+      
+        
+        
+
+        
+        
+
+        
+
+        
+          
+<a class="film" href="/tracks/change-the-flow/" data-kana="わたしがびーばーになるとき">
+  <div class="film-art">
+    
+      <picture>
+        <source srcset="/images/change-the-flow.webp" type="image/webp">
+        <img src="/images/change-the-flow.png" alt="流れを変える" loading="lazy" decoding="async">
+      </picture>
+    
+    <div class="film-veil">
+      <div class="film-veil-label">INSPIRED TRACK</div>
+      <div class="film-veil-track">流れを変える</div>
+    </div>
+  </div>
+  <div class="film-body">
+    <div class="film-title">私がビーバーになる時</div>
+    <div class="film-year">2026</div>
+  </div>
+</a>
+
+        
+      
+
+      
+            </div>
+          </section>
+      
+
+      
+      
+    </div>
+
+    
+    <div id="shelvesKana" hidden></div>
+  </main>
+
+  <footer class="footer">
+    <p>© SAY-SHOW</p>
+  </footer>
+
+  <script src="/main.js"></script>
+  <script>
+  (function () {
+    var decadeWrap = document.getElementById('shelvesDecade');
+    var kanaWrap = document.getElementById('shelvesKana');
+    var spanViz = document.getElementById('spanViz');
+    var seg = document.getElementById('sortSeg');
+    if (!decadeWrap || !kanaWrap) return;
+
+    // 読み込み時のカードと、その置き場所を覚えておく。
+    // 五十音順ではこのカード自体を移動させる（DOMを複製しない＝画像を二重取得しない）
+    var cards = Array.prototype.slice.call(decadeWrap.querySelectorAll('.film'));
+    var homes = cards.map(function (c) { return c.parentNode; });
+
+    // --- 年代の分布バー（装飾なのでJSで組む） ---
+    var shelves = Array.prototype.slice.call(decadeWrap.querySelectorAll('.shelf'));
+    if (shelves.length) {
+      var counts = shelves.map(function (s) { return parseInt(s.dataset.count, 10) || 0; });
+      var max = Math.max.apply(null, counts);
+      spanViz.innerHTML = shelves.map(function (s, i) {
+        var label = s.dataset.label;
+        var h = Math.max(4, Math.round(counts[i] / max * 100));
+        return '<a class="span-viz-col" href="#' + s.id + '" title="' + label + ': ' + counts[i] + '本">' +
+                 '<span class="span-viz-track">' +
+                   '<span class="span-viz-n">' + counts[i] + '</span>' +
+                   '<span class="span-viz-bar" style="height:' + h + '%"></span>' +
+                 '</span>' +
+                 '<span class="span-viz-tick">' + label.split('s').join('') + '</span>' +
+               '</a>';
+      }).join('');
+      spanViz.hidden = false;
+    }
+
+    // --- 読み仮名から五十音の行を判定する ---
+    var ROWS = [
+      ['あ', 'あいうえおぁぃぅぇぉ'],
+      ['か', 'かきくけこがぎぐげご'],
+      ['さ', 'さしすせそざじずぜぞ'],
+      ['た', 'たちつてとだぢづでどっ'],
+      ['な', 'なにぬねの'],
+      ['は', 'はひふへほばびぶべぼぱぴぷぺぽ'],
+      ['ま', 'まみむめも'],
+      ['や', 'やゆよゃゅょ'],
+      ['ら', 'らりるれろ'],
+      ['わ', 'わをんゎ']
+    ];
+    var KANA_ORDER = ['あ', 'か', 'さ', 'た', 'な', 'は', 'ま', 'や', 'ら', 'わ', 'A-Z', '不明'];
+
+    function rowOf(kana) {
+      if (!kana) return '不明';
+      var c = kana.charAt(0);
+      for (var i = 0; i < ROWS.length; i++) {
+        if (ROWS[i][1].indexOf(c) !== -1) return ROWS[i][0];
+      }
+      return /[0-9A-Za-z]/.test(c) ? 'A-Z' : '不明';
+    }
+
+    function buildKana() {
+      var groups = {};
+      cards.forEach(function (c) {
+        var r = rowOf(c.dataset.kana);
+        (groups[r] = groups[r] || []).push(c);
+      });
+      kanaWrap.innerHTML = '';
+      KANA_ORDER.forEach(function (r) {
+        var list = groups[r];
+        if (!list) return;
+        list.sort(function (a, b) {
+          return (a.dataset.kana || '').localeCompare(b.dataset.kana || '', 'ja');
+        });
+        var sec = document.createElement('section');
+        sec.className = 'shelf';
+        sec.innerHTML =
+          '<div class="shelf-head"><h2 class="shelf-label">' + r + '</h2>' +
+          '<span class="shelf-n">' + list.length + '本</span></div>' +
+          '<div class="shelf-rule"></div><div class="shelf-lane"></div>';
+        var lane = sec.querySelector('.shelf-lane');
+        list.forEach(function (c) { lane.appendChild(c); });
+        kanaWrap.appendChild(sec);
+      });
+    }
+
+    function restoreDecade() {
+      // cards は元のDOM順なので、元の親へ順に戻せば並びも復元される
+      cards.forEach(function (c, i) { homes[i].appendChild(c); });
+      kanaWrap.innerHTML = '';
+    }
+
+    var mode = 'decade';
+    function setMode(next) {
+      if (next === mode) return;
+      if (next === 'kana') {
+        buildKana();
+        decadeWrap.hidden = true;
+        kanaWrap.hidden = false;
+        spanViz.hidden = true;
+      } else {
+        restoreDecade();
+        kanaWrap.hidden = true;
+        decadeWrap.hidden = false;
+        spanViz.hidden = shelves.length === 0;
+      }
+      mode = next;
+      Array.prototype.forEach.call(seg.querySelectorAll('button'), function (b) {
+        b.setAttribute('aria-pressed', String(b.dataset.mode === next));
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    seg.addEventListener('click', function (e) {
+      var btn = e.target.closest('button');
+      if (btn) setMode(btn.dataset.mode);
+    });
+    seg.hidden = false;
+  })();
+  </script>
+</body>
+</html>
