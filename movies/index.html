@@ -290,17 +290,20 @@
       flex-direction: column;
       justify-content: flex-end;
       padding: 12px;
-      background: linear-gradient(to top, rgba(5, 6, 11, 0.94) 15%, rgba(5, 6, 11, 0.2) 65%, transparent);
+      /* 暗転させない。ポスターやカバーアートを隠さず、文字は影だけで読ませる */
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95), 0 0 10px rgba(0, 0, 0, 0.8);
       opacity: 0;
       transition: opacity 0.26s ease;
     }
 
     .film:hover .film-veil { opacity: 1; }
 
+    /* 暗転をやめたので、明るい絵の上でも読めるよう白系にする
+       （アクセントのピンクは淡い背景に埋もれてしまう） */
     .film-veil-label {
       font-size: 0.65rem;
       letter-spacing: 0.12em;
-      color: var(--accent);
+      color: rgba(255, 255, 255, 0.78);
       font-weight: 700;
       margin-bottom: 4px;
     }
@@ -337,7 +340,7 @@
 
     /* タッチデバイスはホバーが効かないので、曲名を常時うっすら出す */
     @media (hover: none) {
-      .film-veil { opacity: 1; background: linear-gradient(to top, rgba(5, 6, 11, 0.9) 8%, transparent 55%); }
+      .film-veil { opacity: 1; }
       .film-veil-label { display: none; }
     }
 
