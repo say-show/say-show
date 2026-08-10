@@ -33,6 +33,11 @@ J-POPとシティポップ、インディポップをベースにした、映画
 
 ➜ [Timeline](https://say-show.me/timeline/)
 
+### Movies
+楽曲のインスパイア元になった映画のインデックス。**年代順**と**五十音順**を切り替えて、作品から曲をたどれます。カードにポスターまたはカバーアートを表示し、選ぶとその曲の詳細ページへ移動します。
+
+➜ [Movies](https://say-show.me/movies/)
+
 ### Videos
 Lyrics Video や Music Video をサムネイル付きで一覧表示。モーダルでその場で再生できます。
 
