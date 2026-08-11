@@ -310,7 +310,8 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 20px;
   margin-bottom: 2.5rem;
 }
 
@@ -694,7 +695,7 @@ h2 {
     gap: 12px;
   }
 
-  /* モバイル版：Timeline / Videos リンクはナビにあるため非表示 */
+  /* モバイル版：Timeline / Movies / Videos リンクはナビにあるため非表示 */
   .section-header .timeline-link {
     display: none;
   }
