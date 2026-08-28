@@ -121,11 +121,17 @@
   <main>
     <!-- 楽曲一覧 -->
 <section class="tracks" id="tracks">
+  
+  <input type="checkbox" id="trackInfoToggle" class="track-info-switch-input" role="switch" checked>
   <div class="section-header">
     <h2>Tracks</h2>
     <a href="/timeline/" class="timeline-link">→ Timelineを見る</a>
     <a href="/movies/" class="timeline-link">→ Moviesを見る</a>
     <a href="/videos/" class="timeline-link">→ Videosを見る</a>
+    <label for="trackInfoToggle" class="track-info-switch">
+      <span class="track-info-switch-label">曲情報</span>
+      <span class="track-info-switch-track" aria-hidden="true"></span>
+    </label>
   </div>
 
   <!-- モバイル用 Coming Soon バナー -->

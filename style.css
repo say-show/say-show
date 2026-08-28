@@ -335,6 +335,102 @@ h2 {
   color: var(--accent);
 }
 
+/* === 曲情報オーバーレイの表示切替スイッチ === */
+
+/* 実体のチェックボックス。視覚的には隠すが、キーボードフォーカスは受け取れる状態に
+   保つ必要があるため display:none / visibility:hidden は使わない。 */
+.track-info-switch-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.track-info-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.track-info-switch-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.track-info-switch:hover .track-info-switch-label {
+  color: var(--accent);
+}
+
+.track-info-switch-track {
+  position: relative;
+  flex-shrink: 0;
+  width: 34px;
+  height: 18px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.track-info-switch-track::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background 0.25s ease;
+}
+
+.track-info-switch-input:checked ~ .section-header .track-info-switch-track {
+  background: rgba(255, 75, 139, 0.35);
+  border-color: rgba(255, 75, 139, 0.6);
+}
+
+.track-info-switch-input:checked ~ .section-header .track-info-switch-track::after {
+  transform: translateX(16px);
+  background: var(--accent);
+}
+
+/* キーボード操作時のフォーカスリング（input本体は見えないのでラベル側に出す） */
+.track-info-switch-input:focus-visible ~ .section-header .track-info-switch-track {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* OFF: ジャケット上のオーバーレイを消す。
+   display:none / visibility:hidden にするとアクセシビリティツリーから外れ、
+   カード全体クリック（JS依存）しか導線が無いキーボード利用者が曲詳細へ辿れなくなるため、
+   opacity だけで消す。 */
+.track-info-switch-input:not(:checked) ~ .track-grid .track-body {
+  opacity: 0;
+}
+
+/* OFF かつホバーできるデバイスでは、カードに触れている間だけ表示する。
+   タッチデバイスはタップが詳細ページ遷移に割り当たっているため、OFF中は出さない。 */
+@media (hover: hover) {
+  .track-info-switch-input:not(:checked) ~ .track-grid .track-card:hover .track-body {
+    opacity: 1;
+  }
+}
+
+/* OFF中もTabでタイトルリンクにフォーカスすれば表示される（到達性の確保） */
+.track-info-switch-input:not(:checked) ~ .track-grid .track-card:focus-within .track-body {
+  opacity: 1;
+}
+
 .track-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -698,6 +794,12 @@ h2 {
   /* モバイル版：Timeline / Movies / Videos リンクはナビにあるため非表示 */
   .section-header .timeline-link {
     display: none;
+  }
+
+  /* モバイル版：section-headerが縦並びになるため、スイッチは見出しの下に左揃えで置く
+     （margin-left:auto のままだと画面右端に飛ぶ） */
+  .track-info-switch {
+    margin-left: 0;
   }
 
   /* モバイル版：ナビゲーション */
