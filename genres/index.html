@@ -1,0 +1,2156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Genres | SAY-SHOW</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SAY-SHOWの楽曲をジャンル別に並べた索引。シティポップ、エレクトロポップ、バラードなど10のジャンルから曲を探せます。">
+  <link rel="canonical" href="https://say-show.me/genres/">
+  <link rel="stylesheet" href="/style.css">
+  <script>try{if(sessionStorage.getItem('ssLoadingShown'))document.documentElement.classList.add('quick-loading')}catch(e){}</script>
+  <noscript><style>.loading-overlay{display:none}.track-card{opacity:1}</style></noscript>
+  <meta property="og:title" content="Genres | SAY-SHOW">
+  <meta property="og:description" content="SAY-SHOWの楽曲をジャンル別に並べた索引。シティポップ、エレクトロポップ、バラードなど10のジャンルから曲を探せます。">
+  <meta property="og:url" content="https://say-show.me/genres/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://say-show.me/ogp.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Genres | SAY-SHOW">
+  <meta name="twitter:description" content="SAY-SHOWの楽曲をジャンル別に並べた索引。シティポップ、エレクトロポップ、バラードなど10のジャンルから曲を探せます。">
+  <meta name="twitter:image" content="https://say-show.me/ogp.png">
+  <link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/apple-touch-icon-180.png">
+  <style>
+    /* === ジャンル索引専用スタイル === */
+
+    .genres-page {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 20px 90px;
+    }
+
+    .genre-shelf {
+      margin: 0 0 3.4rem;
+      scroll-margin-top: 70px;   /* ハッシュリンクで飛んだとき見出しがナビに隠れないように */
+    }
+
+    .genre-shelf-title {
+      display: flex;
+      align-items: baseline;
+      gap: .6rem;
+      font-size: 1.05rem;
+      margin: 0 0 .9rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .genre-shelf-title .count {
+      font-size: .8rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    /* 本番の .track-grid は auto-fit なので、カードが1枚の棚だと
+       空カラムが潰れて横いっぱいに伸びる。auto-fill にすると幅が揃う */
+    .genre-shelf .track-grid {
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 22px;
+    }
+
+    /* --- 「近い音」の曲。主ジャンルの曲と混ざらないよう小さく控えめに --- */
+    .genre-near-label {
+      display: flex;
+      align-items: baseline;
+      gap: .5rem;
+      font-size: .82rem;
+      color: var(--text-muted);
+      margin: 1.6rem 0 .7rem;
+    }
+
+    .genre-near-label::before {
+      content: "";
+      width: 14px;
+      height: 1px;
+      background: rgba(255, 255, 255, .25);
+      align-self: center;
+    }
+
+    .genre-near-grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
+      gap: 14px !important;
+      opacity: .72;
+      transition: opacity .2s;
+    }
+
+    .genre-near-grid:hover {
+      opacity: 1;
+    }
+
+    .genre-near-grid .track-title {
+      font-size: .82rem;
+    }
+
+    .genre-near-grid .track-meta {
+      font-size: .72rem;
+    }
+
+    @media (max-width: 768px) {
+      .genre-shelf .track-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+
+      .genre-near-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ローディングアニメーション -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-logo-wrapper">
+      <img src="/favicon-512-transparent.png" alt="SAY-SHOW" class="loading-logo-img">
+    </div>
+  </div>
+
+  <nav class="global-nav">
+  <a href="/" class="nav-logo">
+    <img src="/favicon-512-transparent.png" alt="">
+    <span>SAY-SHOW</span>
+  </a>
+  <div class="nav-links">
+    <a href="/#tracks">Tracks</a>
+    <a href="/timeline/">Timeline</a>
+    <a href="/movies/">Movies</a>
+    <a href="/genres/">Genres</a>
+    <a href="/videos/">Videos</a>
+    <a href="/about/">About</a>
+  </div>
+</nav>
+
+
+  
+  
+
+  <header class="page-header">
+    <h1 class="page-title">Genres</h1>
+    <p class="page-subtitle">10のジャンル、48曲</p>
+  </header>
+
+  <main class="genres-page">
+    
+    
+      
+      
+      <section class="genre-shelf" id="folk-acoustic">
+        <h2 class="genre-shelf-title">フォーク / アコースティック<span class="count">4曲</span></h2>
+        <div class="track-grid">
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/whispers-blooming-in-the-forest.webp" type="image/webp">
+                  <img src="/images/whispers-blooming-in-the-forest.png" alt="森に咲くささやき" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/whispers-blooming-in-the-forest/">森に咲くささやき</a>
+              </h3>
+              <div class="track-meta">
+                2026.07.31 release / Inspired by 「もののけ姫」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/gravity-balloon.webp" type="image/webp">
+                  <img src="/images/gravity-balloon.png" alt="Gravity Balloon" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/gravity-balloon/">Gravity Balloon</a>
+              </h3>
+              <div class="track-meta">
+                2026.07.24 release / Inspired by 「カールじいさんの空飛ぶ家」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/change-the-flow.webp" type="image/webp">
+                  <img src="/images/change-the-flow.png" alt="流れを変える" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/change-the-flow/">流れを変える</a>
+              </h3>
+              <div class="track-meta">
+                2026.06.26 release / Inspired by 「私がビーバーになる時」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/holiday-of-memories.webp" type="image/webp">
+                  <img src="/images/holiday-of-memories.png" alt="記憶の休日" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/holiday-of-memories/">記憶の休日</a>
+              </h3>
+              <div class="track-meta">
+                2026.01.30 release / Inspired by 「ローマの休日」
+              </div>
+            </div>
+          </article>
+          
+        </div>
+
+        
+        
+        
+        
+        <p class="genre-near-label">近い音 <span class="count">5曲</span></p>
+        <div class="track-grid genre-near-grid">
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/why-we-share-the-light.webp" type="image/webp">
+                  <img src="/images/why-we-share-the-light.png" alt="光をわけあう理由" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/why-we-share-the-light/">光をわけあう理由</a>
+              </h3>
+              <div class="track-meta">バラード</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/late-into-your-future.webp" type="image/webp">
+                  <img src="/images/late-into-your-future.png" alt="君に遅刻していく" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/late-into-your-future/">君に遅刻していく</a>
+              </h3>
+              <div class="track-meta">バラード</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/between-the-glare-and-me.webp" type="image/webp">
+                  <img src="/images/between-the-glare-and-me.png" alt="まぶしさと僕の間" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/between-the-glare-and-me/">まぶしさと僕の間</a>
+              </h3>
+              <div class="track-meta">バラード</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/between-rain-and-snow.webp" type="image/webp">
+                  <img src="/images/between-rain-and-snow.png" alt="雨と雪のあいだで" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/between-rain-and-snow/">雨と雪のあいだで</a>
+              </h3>
+              <div class="track-meta">シネマティック</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/colors-on-an-ordinary-day.webp" type="image/webp">
+                  <img src="/images/colors-on-an-ordinary-day.png" alt="ふつうの日に色を" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/colors-on-an-ordinary-day/">ふつうの日に色を</a>
+              </h3>
+              <div class="track-meta">インディー・ポップ</div>
+            </div>
+          </article>
+          
+        </div>
+        
+      </section>
+      
+    
+      
+      
+      <section class="genre-shelf" id="indie-pop">
+        <h2 class="genre-shelf-title">インディー・ポップ<span class="count">8曲</span></h2>
+        <div class="track-grid">
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/person-ahead-of-me.webp" type="image/webp">
+                  <img src="/images/person-ahead-of-me.png" alt="前を歩くひと" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/person-ahead-of-me/">前を歩くひと</a>
+              </h3>
+              <div class="track-meta">
+                2026.09.04 release / Inspired by 「スター・ウォーズ／マンダロリアン・アンド・グローグー」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/drinking-the-future-with-cold-coffee.webp" type="image/webp">
+                  <img src="/images/drinking-the-future-with-cold-coffee.png" alt="冷めたコーヒーで、未来を飲む" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/drinking-the-future-with-cold-coffee/">冷めたコーヒーで、未来を飲む</a>
+              </h3>
+              <div class="track-meta">
+                2026.08.28 release / Inspired by 「リトル・ミス・サンシャイン」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/how-to-tame-midnight.webp" type="image/webp">
+                  <img src="/images/how-to-tame-midnight.png" alt="午前零時の飼い方" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/how-to-tame-midnight/">午前零時の飼い方</a>
+              </h3>
+              <div class="track-meta">
+                2026.08.14 release / Inspired by 「グレムリン」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/secret-ghost.webp" type="image/webp">
+                  <img src="/images/secret-ghost.png" alt="ひそかなゴースト" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/secret-ghost/">ひそかなゴースト</a>
+              </h3>
+              <div class="track-meta">
+                2026.07.17 release / Inspired by 「ゴーストバスターズ」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/rusty-air-and-a-soft-heart-still-earth.webp" type="image/webp">
+                  <img src="/images/rusty-air-and-a-soft-heart-still-earth.png" alt="さびた空気と、やわらかい心 / Still Earth" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/rusty-air-and-a-soft-heart-still-earth/">さびた空気と、やわらかい心 / Still Earth</a>
+              </h3>
+              <div class="track-meta">
+                2026.03.13 release / Inspired by 「ウォーリー」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/in-the-middle-of-the-yellow-road.webp" type="image/webp">
+                  <img src="/images/in-the-middle-of-the-yellow-road.png" alt="黄色い道の真ん中で" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/in-the-middle-of-the-yellow-road/">黄色い道の真ん中で</a>
+              </h3>
+              <div class="track-meta">
+                2026.02.27 release / Inspired by 「オズの魔法使い」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/unreasonable-steps-with-you.webp" type="image/webp">
+                  <img src="/images/unreasonable-steps-with-you.png" alt="理不尽なステップを君と" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/unreasonable-steps-with-you/">理不尽なステップを君と</a>
+              </h3>
+              <div class="track-meta">
+                2026.02.20 release / Inspired by 「猟奇的な彼女」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/colors-on-an-ordinary-day.webp" type="image/webp">
+                  <img src="/images/colors-on-an-ordinary-day.png" alt="ふつうの日に色を" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/colors-on-an-ordinary-day/">ふつうの日に色を</a>
+              </h3>
+              <div class="track-meta">
+                2025.11.13 release / Inspired by 「インサイド・ヘッド」
+              </div>
+            </div>
+          </article>
+          
+        </div>
+
+        
+        
+        
+        
+        <p class="genre-near-label">近い音 <span class="count">2曲</span></p>
+        <div class="track-grid genre-near-grid">
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/the-striped-heart-is-not-broken-yet.webp" type="image/webp">
+                  <img src="/images/the-striped-heart-is-not-broken-yet.png" alt="しま模様のハートはまだ割れてない" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/the-striped-heart-is-not-broken-yet/">しま模様のハートはまだ割れてない</a>
+              </h3>
+              <div class="track-meta">ロック</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/corner-pop-anthem.webp" type="image/webp">
+                  <img src="/images/corner-pop-anthem.png" alt="片隅ポップ・アンセム" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/corner-pop-anthem/">片隅ポップ・アンセム</a>
+              </h3>
+              <div class="track-meta">ネオ・ソウル / R&B</div>
+            </div>
+          </article>
+          
+        </div>
+        
+      </section>
+      
+    
+      
+      
+      <section class="genre-shelf" id="rock">
+        <h2 class="genre-shelf-title">ロック<span class="count">4曲</span></h2>
+        <div class="track-grid">
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/instant-paradox.webp" type="image/webp">
+                  <img src="/images/instant-paradox.png" alt="インスタント・パラドックス" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/instant-paradox/">インスタント・パラドックス</a>
+              </h3>
+              <div class="track-meta">
+                2026.06.19 release / Inspired by 「THE FLASH」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/ride-the-wave-of-success.webp" type="image/webp">
+                  <img src="/images/ride-the-wave-of-success.png" alt="うまくいく風に乗れ" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/ride-the-wave-of-success/">うまくいく風に乗れ</a>
+              </h3>
+              <div class="track-meta">
+                2026.04.03 release / Inspired by 「きっと、うまくいく」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/shadow-switch.webp" type="image/webp">
+                  <img src="/images/shadow-switch.png" alt="影のスイッチ" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/shadow-switch/">影のスイッチ</a>
+              </h3>
+              <div class="track-meta">
+                2026.03.06 release / Inspired by 「スパイキッズ」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/the-striped-heart-is-not-broken-yet.webp" type="image/webp">
+                  <img src="/images/the-striped-heart-is-not-broken-yet.png" alt="しま模様のハートはまだ割れてない" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/the-striped-heart-is-not-broken-yet/">しま模様のハートはまだ割れてない</a>
+              </h3>
+              <div class="track-meta">
+                2026.01.01 release / Inspired by 「ビートルジュース」
+              </div>
+            </div>
+          </article>
+          
+        </div>
+
+        
+        
+        
+        
+        <p class="genre-near-label">近い音 <span class="count">5曲</span></p>
+        <div class="track-grid genre-near-grid">
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/gravity-balloon.webp" type="image/webp">
+                  <img src="/images/gravity-balloon.png" alt="Gravity Balloon" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/gravity-balloon/">Gravity Balloon</a>
+              </h3>
+              <div class="track-meta">フォーク / アコースティック</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/change-the-flow.webp" type="image/webp">
+                  <img src="/images/change-the-flow.png" alt="流れを変える" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/change-the-flow/">流れを変える</a>
+              </h3>
+              <div class="track-meta">フォーク / アコースティック</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/not-yet-future.webp" type="image/webp">
+                  <img src="/images/not-yet-future.png" alt="未来未満" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/not-yet-future/">未来未満</a>
+              </h3>
+              <div class="track-meta">エレクトロポップ</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/sky-belongs-to-no-one.webp" type="image/webp">
+                  <img src="/images/sky-belongs-to-no-one.png" alt="Sky Belongs to No One" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/sky-belongs-to-no-one/">Sky Belongs to No One</a>
+              </h3>
+              <div class="track-meta">エレクトロポップ</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/after-school-club-for-good-kids.webp" type="image/webp">
+                  <img src="/images/after-school-club-for-good-kids.png" alt="いい子やめた放課後クラブ" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/after-school-club-for-good-kids/">いい子やめた放課後クラブ</a>
+              </h3>
+              <div class="track-meta">エレクトロポップ</div>
+            </div>
+          </article>
+          
+        </div>
+        
+      </section>
+      
+    
+      
+      
+      <section class="genre-shelf" id="city-pop">
+        <h2 class="genre-shelf-title">シティポップ<span class="count">1曲</span></h2>
+        <div class="track-grid">
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/tiny-rain-gentle-town.webp" type="image/webp">
+                  <img src="/images/tiny-rain-gentle-town.png" alt="Tiny Rain, Gentle Town" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/tiny-rain-gentle-town/">Tiny Rain, Gentle Town</a>
+              </h3>
+              <div class="track-meta">
+                2025.11.13 release / Inspired by 「パディントン」
+              </div>
+            </div>
+          </article>
+          
+        </div>
+
+        
+        
+        
+        
+        <p class="genre-near-label">近い音 <span class="count">12曲</span></p>
+        <div class="track-grid genre-near-grid">
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/person-ahead-of-me.webp" type="image/webp">
+                  <img src="/images/person-ahead-of-me.png" alt="前を歩くひと" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/person-ahead-of-me/">前を歩くひと</a>
+              </h3>
+              <div class="track-meta">インディー・ポップ</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/drinking-the-future-with-cold-coffee.webp" type="image/webp">
+                  <img src="/images/drinking-the-future-with-cold-coffee.png" alt="冷めたコーヒーで、未来を飲む" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/drinking-the-future-with-cold-coffee/">冷めたコーヒーで、未来を飲む</a>
+              </h3>
+              <div class="track-meta">インディー・ポップ</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/star-sign.webp" type="image/webp">
+                  <img src="/images/star-sign.png" alt="星の合図 (70s Synth Edit)" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/star-sign/">星の合図 (70s Synth Edit)</a>
+              </h3>
+              <div class="track-meta">エレクトロポップ</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/warmth-of-a-voice.webp" type="image/webp">
+                  <img src="/images/warmth-of-a-voice.png" alt="声だけの体温" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/warmth-of-a-voice/">声だけの体温</a>
+              </h3>
+              <div class="track-meta">エレクトロポップ</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/outside-of-speed.webp" type="image/webp">
+                  <img src="/images/outside-of-speed.png" alt="速度の外側" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/outside-of-speed/">速度の外側</a>
+              </h3>
+              <div class="track-meta">ネオ・ソウル / R&B</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/i-am-not-finished-yet.webp" type="image/webp">
+                  <img src="/images/i-am-not-finished-yet.png" alt="わたしはまだ終わらない" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/i-am-not-finished-yet/">わたしはまだ終わらない</a>
+              </h3>
+              <div class="track-meta">ネオ・ソウル / R&B</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/unreasonable-steps-with-you.webp" type="image/webp">
+                  <img src="/images/unreasonable-steps-with-you.png" alt="理不尽なステップを君と" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/unreasonable-steps-with-you/">理不尽なステップを君と</a>
+              </h3>
+              <div class="track-meta">インディー・ポップ</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/deep-blue.webp" type="image/webp">
+                  <img src="/images/deep-blue.png" alt="Deep Blue" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/deep-blue/">Deep Blue</a>
+              </h3>
+              <div class="track-meta">ネオ・ソウル / R&B</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/fox-footprints-a-dawn-cafe.webp" type="image/webp">
+                  <img src="/images/fox-footprints-a-dawn-cafe.png" alt="きつねの足跡、夜明けのカフェ" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/fox-footprints-a-dawn-cafe/">きつねの足跡、夜明けのカフェ</a>
+              </h3>
+              <div class="track-meta">ネオ・ソウル / R&B</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/shade-line.webp" type="image/webp">
+                  <img src="/images/shade-line.png" alt="シェイドライン" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/shade-line/">シェイドライン</a>
+              </h3>
+              <div class="track-meta">ネオ・ソウル / R&B</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/in-a-gentle-loop.webp" type="image/webp">
+                  <img src="/images/in-a-gentle-loop.png" alt="やさしいループの中で" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/in-a-gentle-loop/">やさしいループの中で</a>
+              </h3>
+              <div class="track-meta">エレクトロポップ</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/the-blue-echo-resonating-on-the-asphalt.webp" type="image/webp">
+                  <img src="/images/the-blue-echo-resonating-on-the-asphalt.png" alt="アスファルトに響く青の残響" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/the-blue-echo-resonating-on-the-asphalt/">アスファルトに響く青の残響</a>
+              </h3>
+              <div class="track-meta">渋谷系 / ジャズ</div>
+            </div>
+          </article>
+          
+        </div>
+        
+      </section>
+      
+    
+      
+      
+      <section class="genre-shelf" id="shibuya-kei-jazz">
+        <h2 class="genre-shelf-title">渋谷系 / ジャズ<span class="count">1曲</span></h2>
+        <div class="track-grid">
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/the-blue-echo-resonating-on-the-asphalt.webp" type="image/webp">
+                  <img src="/images/the-blue-echo-resonating-on-the-asphalt.png" alt="アスファルトに響く青の残響" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/the-blue-echo-resonating-on-the-asphalt/">アスファルトに響く青の残響</a>
+              </h3>
+              <div class="track-meta">
+                2025.10.30 release / Inspired by 「ラ・ラ・ランド」
+              </div>
+            </div>
+          </article>
+          
+        </div>
+
+        
+        
+        
+        
+        <p class="genre-near-label">近い音 <span class="count">2曲</span></p>
+        <div class="track-grid genre-near-grid">
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/unreasonable-steps-with-you.webp" type="image/webp">
+                  <img src="/images/unreasonable-steps-with-you.png" alt="理不尽なステップを君と" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/unreasonable-steps-with-you/">理不尽なステップを君と</a>
+              </h3>
+              <div class="track-meta">インディー・ポップ</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/mirror-talk.webp" type="image/webp">
+                  <img src="/images/mirror-talk.png" alt="Mirror Talk" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/mirror-talk/">Mirror Talk</a>
+              </h3>
+              <div class="track-meta">ネオ・ソウル / R&B</div>
+            </div>
+          </article>
+          
+        </div>
+        
+      </section>
+      
+    
+      
+      
+      <section class="genre-shelf" id="neo-soul-rnb">
+        <h2 class="genre-shelf-title">ネオ・ソウル / R&B<span class="count">8曲</span></h2>
+        <div class="track-grid">
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/outside-of-speed.webp" type="image/webp">
+                  <img src="/images/outside-of-speed.png" alt="速度の外側" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/outside-of-speed/">速度の外側</a>
+              </h3>
+              <div class="track-meta">
+                2026.06.12 release / Inspired by 「キャノンボール」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/nameless-light-as-of-yet.webp" type="image/webp">
+                  <img src="/images/nameless-light-as-of-yet.png" alt="まだ名前のない光" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/nameless-light-as-of-yet/">まだ名前のない光</a>
+              </h3>
+              <div class="track-meta">
+                2026.05.15 release / Inspired by 「グーニーズ」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/i-am-not-finished-yet.webp" type="image/webp">
+                  <img src="/images/i-am-not-finished-yet.png" alt="わたしはまだ終わらない" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/i-am-not-finished-yet/">わたしはまだ終わらない</a>
+              </h3>
+              <div class="track-meta">
+                2026.04.24 release / Inspired by 「メッセージ」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/deep-blue.webp" type="image/webp">
+                  <img src="/images/deep-blue.png" alt="Deep Blue" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/deep-blue/">Deep Blue</a>
+              </h3>
+              <div class="track-meta">
+                2026.02.13 release / Inspired by 「熱烈」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/fox-footprints-a-dawn-cafe.webp" type="image/webp">
+                  <img src="/images/fox-footprints-a-dawn-cafe.png" alt="きつねの足跡、夜明けのカフェ" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/fox-footprints-a-dawn-cafe/">きつねの足跡、夜明けのカフェ</a>
+              </h3>
+              <div class="track-meta">
+                2025.12.26 release / Inspired by 「ファンタスティック Mr.FOX」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/mirror-talk.webp" type="image/webp">
+                  <img src="/images/mirror-talk.png" alt="Mirror Talk" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/mirror-talk/">Mirror Talk</a>
+              </h3>
+              <div class="track-meta">
+                2025.12.05 release / Inspired by 「アメリ」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/shade-line.webp" type="image/webp">
+                  <img src="/images/shade-line.png" alt="シェイドライン" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/shade-line/">シェイドライン</a>
+              </h3>
+              <div class="track-meta">
+                2025.11.28 release / Inspired by 「レディ・プレイヤー1」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/corner-pop-anthem.webp" type="image/webp">
+                  <img src="/images/corner-pop-anthem.png" alt="片隅ポップ・アンセム" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/corner-pop-anthem/">片隅ポップ・アンセム</a>
+              </h3>
+              <div class="track-meta">
+                2025.11.17 release / Inspired by 「SING/シング」
+              </div>
+            </div>
+          </article>
+          
+        </div>
+
+        
+        
+        
+        
+        <p class="genre-near-label">近い音 <span class="count">6曲</span></p>
+        <div class="track-grid genre-near-grid">
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/drinking-the-future-with-cold-coffee.webp" type="image/webp">
+                  <img src="/images/drinking-the-future-with-cold-coffee.png" alt="冷めたコーヒーで、未来を飲む" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/drinking-the-future-with-cold-coffee/">冷めたコーヒーで、未来を飲む</a>
+              </h3>
+              <div class="track-meta">インディー・ポップ</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/warmth-of-a-voice.webp" type="image/webp">
+                  <img src="/images/warmth-of-a-voice.png" alt="声だけの体温" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/warmth-of-a-voice/">声だけの体温</a>
+              </h3>
+              <div class="track-meta">エレクトロポップ</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/reaching-out-without-being-connected.webp" type="image/webp">
+                  <img src="/images/reaching-out-without-being-connected.png" alt="未接続のまま、手を伸ばす" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/reaching-out-without-being-connected/">未接続のまま、手を伸ばす</a>
+              </h3>
+              <div class="track-meta">エレクトロポップ</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/repeating-boundary.webp" type="image/webp">
+                  <img src="/images/repeating-boundary.png" alt="反復する境界" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/repeating-boundary/">反復する境界</a>
+              </h3>
+              <div class="track-meta">エレクトロポップ</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/colors-on-an-ordinary-day.webp" type="image/webp">
+                  <img src="/images/colors-on-an-ordinary-day.png" alt="ふつうの日に色を" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/colors-on-an-ordinary-day/">ふつうの日に色を</a>
+              </h3>
+              <div class="track-meta">インディー・ポップ</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/tiny-rain-gentle-town.webp" type="image/webp">
+                  <img src="/images/tiny-rain-gentle-town.png" alt="Tiny Rain, Gentle Town" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/tiny-rain-gentle-town/">Tiny Rain, Gentle Town</a>
+              </h3>
+              <div class="track-meta">シティポップ</div>
+            </div>
+          </article>
+          
+        </div>
+        
+      </section>
+      
+    
+      
+      
+      <section class="genre-shelf" id="electro-pop">
+        <h2 class="genre-shelf-title">エレクトロポップ<span class="count">14曲</span></h2>
+        <div class="track-grid">
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/star-sign.webp" type="image/webp">
+                  <img src="/images/star-sign.png" alt="星の合図 (70s Synth Edit)" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/star-sign/">星の合図 (70s Synth Edit)</a>
+              </h3>
+              <div class="track-meta">
+                2026.08.07 release / Inspired by 「未知との遭遇」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/warmth-of-a-voice.webp" type="image/webp">
+                  <img src="/images/warmth-of-a-voice.png" alt="声だけの体温" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/warmth-of-a-voice/">声だけの体温</a>
+              </h3>
+              <div class="track-meta">
+                2026.07.03 release / Inspired by 「her/世界でひとつの彼女」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/reaching-out-without-being-connected.webp" type="image/webp">
+                  <img src="/images/reaching-out-without-being-connected.png" alt="未接続のまま、手を伸ばす" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/reaching-out-without-being-connected/">未接続のまま、手を伸ばす</a>
+              </h3>
+              <div class="track-meta">
+                2026.06.05 release / Inspired by 「サマーウォーズ」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/awe-is-akin-to-kindness.webp" type="image/webp">
+                  <img src="/images/awe-is-akin-to-kindness.png" alt="畏れはやさしさに似て" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/awe-is-akin-to-kindness/">畏れはやさしさに似て</a>
+              </h3>
+              <div class="track-meta">
+                2026.05.29 release / Inspired by 「ジュラシック・パーク」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/smile-code-angel.webp" type="image/webp">
+                  <img src="/images/smile-code-angel.png" alt="Smile Code: Angel" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/smile-code-angel/">Smile Code: Angel</a>
+              </h3>
+              <div class="track-meta">
+                2026.05.22 release / Inspired by 「チャーリーズ・エンジェル」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/formless-night.webp" type="image/webp">
+                  <img src="/images/formless-night.png" alt="かたちのない夜" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/formless-night/">かたちのない夜</a>
+              </h3>
+              <div class="track-meta">
+                2026.05.08 release / Inspired by 「千と千尋の神隠し」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/not-yet-future.webp" type="image/webp">
+                  <img src="/images/not-yet-future.png" alt="未来未満" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/not-yet-future/">未来未満</a>
+              </h3>
+              <div class="track-meta">
+                2026.05.01 release / Inspired by 「バック・トゥー・ザ・フューチャー」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/hunt-the-light.webp" type="image/webp">
+                  <img src="/images/hunt-the-light.png" alt="HUNT THE LIGHT" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/hunt-the-light/">HUNT THE LIGHT</a>
+              </h3>
+              <div class="track-meta">
+                2026.04.17 release / Inspired by 「KPOPガールズ! デーモン・ハンターズ」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/repeating-boundary.webp" type="image/webp">
+                  <img src="/images/repeating-boundary.png" alt="反復する境界" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/repeating-boundary/">反復する境界</a>
+              </h3>
+              <div class="track-meta">
+                2026.03.27 release / Inspired by 「ブルービートル」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/sky-belongs-to-no-one.webp" type="image/webp">
+                  <img src="/images/sky-belongs-to-no-one.png" alt="Sky Belongs to No One" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/sky-belongs-to-no-one/">Sky Belongs to No One</a>
+              </h3>
+              <div class="track-meta">
+                2026.03.20 release / Inspired by 「ショーシャンクの空に」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/one-up-love.webp" type="image/webp">
+                  <img src="/images/one-up-love.png" alt="1UP の恋心" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/one-up-love/">1UP の恋心</a>
+              </h3>
+              <div class="track-meta">
+                2026.02.06 release / Inspired by 「スコット・ピルグリム VS. 邪悪な元カレ軍団」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/after-school-club-for-good-kids.webp" type="image/webp">
+                  <img src="/images/after-school-club-for-good-kids.png" alt="いい子やめた放課後クラブ" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/after-school-club-for-good-kids/">いい子やめた放課後クラブ</a>
+              </h3>
+              <div class="track-meta">
+                2026.01.23 release / Inspired by 「バービー」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/a-single-star-and-a-speaker.webp" type="image/webp">
+                  <img src="/images/a-single-star-and-a-speaker.png" alt="ひとりの星とスピーカー" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/a-single-star-and-a-speaker/">ひとりの星とスピーカー</a>
+              </h3>
+              <div class="track-meta">
+                2025.12.12 release / Inspired by 「アイアン・ジャイアント」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/in-a-gentle-loop.webp" type="image/webp">
+                  <img src="/images/in-a-gentle-loop.png" alt="やさしいループの中で" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/in-a-gentle-loop/">やさしいループの中で</a>
+              </h3>
+              <div class="track-meta">
+                2025.11.23 release / Inspired by 「恋はデジャ・ブ」
+              </div>
+            </div>
+          </article>
+          
+        </div>
+
+        
+        
+        
+        
+        <p class="genre-near-label">近い音 <span class="count">7曲</span></p>
+        <div class="track-grid genre-near-grid">
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/secret-ghost.webp" type="image/webp">
+                  <img src="/images/secret-ghost.png" alt="ひそかなゴースト" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/secret-ghost/">ひそかなゴースト</a>
+              </h3>
+              <div class="track-meta">インディー・ポップ</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/nameless-light-as-of-yet.webp" type="image/webp">
+                  <img src="/images/nameless-light-as-of-yet.png" alt="まだ名前のない光" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/nameless-light-as-of-yet/">まだ名前のない光</a>
+              </h3>
+              <div class="track-meta">ネオ・ソウル / R&B</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/i-am-not-finished-yet.webp" type="image/webp">
+                  <img src="/images/i-am-not-finished-yet.png" alt="わたしはまだ終わらない" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/i-am-not-finished-yet/">わたしはまだ終わらない</a>
+              </h3>
+              <div class="track-meta">ネオ・ソウル / R&B</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/shadow-switch.webp" type="image/webp">
+                  <img src="/images/shadow-switch.png" alt="影のスイッチ" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/shadow-switch/">影のスイッチ</a>
+              </h3>
+              <div class="track-meta">ロック</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/in-the-middle-of-the-yellow-road.webp" type="image/webp">
+                  <img src="/images/in-the-middle-of-the-yellow-road.png" alt="黄色い道の真ん中で" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/in-the-middle-of-the-yellow-road/">黄色い道の真ん中で</a>
+              </h3>
+              <div class="track-meta">インディー・ポップ</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/light-that-melts-without-being-touched.webp" type="image/webp">
+                  <img src="/images/light-that-melts-without-being-touched.png" alt="触れずに、溶けていく光" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/light-that-melts-without-being-touched/">触れずに、溶けていく光</a>
+              </h3>
+              <div class="track-meta">アンビエント / ドリーム</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/corner-pop-anthem.webp" type="image/webp">
+                  <img src="/images/corner-pop-anthem.png" alt="片隅ポップ・アンセム" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/corner-pop-anthem/">片隅ポップ・アンセム</a>
+              </h3>
+              <div class="track-meta">ネオ・ソウル / R&B</div>
+            </div>
+          </article>
+          
+        </div>
+        
+      </section>
+      
+    
+      
+      
+      <section class="genre-shelf" id="ballad">
+        <h2 class="genre-shelf-title">バラード<span class="count">4曲</span></h2>
+        <div class="track-grid">
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/spirit-of-the-wingbeat.webp" type="image/webp">
+                  <img src="/images/spirit-of-the-wingbeat.png" alt="羽音ノ言霊" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/spirit-of-the-wingbeat/">羽音ノ言霊</a>
+              </h3>
+              <div class="track-meta">
+                2026.07.10 release / Inspired by 「モスラ」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/why-we-share-the-light.webp" type="image/webp">
+                  <img src="/images/why-we-share-the-light.png" alt="光をわけあう理由" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/why-we-share-the-light/">光をわけあう理由</a>
+              </h3>
+              <div class="track-meta">
+                2026.04.10 release / Inspired by 「プロジェクト・ヘイル・メアリー」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/late-into-your-future.webp" type="image/webp">
+                  <img src="/images/late-into-your-future.png" alt="君に遅刻していく" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/late-into-your-future/">君に遅刻していく</a>
+              </h3>
+              <div class="track-meta">
+                2026.01.09 release / Inspired by 「時をかける少女」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/between-the-glare-and-me.webp" type="image/webp">
+                  <img src="/images/between-the-glare-and-me.png" alt="まぶしさと僕の間" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/between-the-glare-and-me/">まぶしさと僕の間</a>
+              </h3>
+              <div class="track-meta">
+                2026.01.02 release / Inspired by 「ズートピア」
+              </div>
+            </div>
+          </article>
+          
+        </div>
+
+        
+        
+        
+        
+        <p class="genre-near-label">近い音 <span class="count">1曲</span></p>
+        <div class="track-grid genre-near-grid">
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/fox-footprints-a-dawn-cafe.webp" type="image/webp">
+                  <img src="/images/fox-footprints-a-dawn-cafe.png" alt="きつねの足跡、夜明けのカフェ" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/fox-footprints-a-dawn-cafe/">きつねの足跡、夜明けのカフェ</a>
+              </h3>
+              <div class="track-meta">ネオ・ソウル / R&B</div>
+            </div>
+          </article>
+          
+        </div>
+        
+      </section>
+      
+    
+      
+      
+      <section class="genre-shelf" id="cinematic">
+        <h2 class="genre-shelf-title">シネマティック<span class="count">3曲</span></h2>
+        <div class="track-grid">
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/deep-breath.webp" type="image/webp">
+                  <img src="/images/deep-breath.png" alt="深き呼吸" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/deep-breath/">深き呼吸</a>
+              </h3>
+              <div class="track-meta">
+                2026.08.21 release / Inspired by 「アビス」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/between-rain-and-snow.webp" type="image/webp">
+                  <img src="/images/between-rain-and-snow.png" alt="雨と雪のあいだで" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/between-rain-and-snow/">雨と雪のあいだで</a>
+              </h3>
+              <div class="track-meta">
+                2025.12.19 release / Inspired by 「おおかみこどもの雨と雪」
+              </div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/fragments-of-dreams-bloom-in-the-night.webp" type="image/webp">
+                  <img src="/images/fragments-of-dreams-bloom-in-the-night.png" alt="夢のかけらは夜に咲く" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/fragments-of-dreams-bloom-in-the-night/">夢のかけらは夜に咲く</a>
+              </h3>
+              <div class="track-meta">
+                2025.10.30 release / Inspired by 「ナイトメア・ビフォア・クリスマス」
+              </div>
+            </div>
+          </article>
+          
+        </div>
+
+        
+        
+        
+        
+        <p class="genre-near-label">近い音 <span class="count">4曲</span></p>
+        <div class="track-grid genre-near-grid">
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/whispers-blooming-in-the-forest.webp" type="image/webp">
+                  <img src="/images/whispers-blooming-in-the-forest.png" alt="森に咲くささやき" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/whispers-blooming-in-the-forest/">森に咲くささやき</a>
+              </h3>
+              <div class="track-meta">フォーク / アコースティック</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/spirit-of-the-wingbeat.webp" type="image/webp">
+                  <img src="/images/spirit-of-the-wingbeat.png" alt="羽音ノ言霊" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/spirit-of-the-wingbeat/">羽音ノ言霊</a>
+              </h3>
+              <div class="track-meta">バラード</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/why-we-share-the-light.webp" type="image/webp">
+                  <img src="/images/why-we-share-the-light.png" alt="光をわけあう理由" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/why-we-share-the-light/">光をわけあう理由</a>
+              </h3>
+              <div class="track-meta">バラード</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/late-into-your-future.webp" type="image/webp">
+                  <img src="/images/late-into-your-future.png" alt="君に遅刻していく" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/late-into-your-future/">君に遅刻していく</a>
+              </h3>
+              <div class="track-meta">バラード</div>
+            </div>
+          </article>
+          
+        </div>
+        
+      </section>
+      
+    
+      
+      
+      <section class="genre-shelf" id="ambient-dream">
+        <h2 class="genre-shelf-title">アンビエント / ドリーム<span class="count">1曲</span></h2>
+        <div class="track-grid">
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/light-that-melts-without-being-touched.webp" type="image/webp">
+                  <img src="/images/light-that-melts-without-being-touched.png" alt="触れずに、溶けていく光" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/light-that-melts-without-being-touched/">触れずに、溶けていく光</a>
+              </h3>
+              <div class="track-meta">
+                2026.01.16 release / Inspired by 「シザーハンズ」
+              </div>
+            </div>
+          </article>
+          
+        </div>
+
+        
+        
+        
+        
+        <p class="genre-near-label">近い音 <span class="count">8曲</span></p>
+        <div class="track-grid genre-near-grid">
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/person-ahead-of-me.webp" type="image/webp">
+                  <img src="/images/person-ahead-of-me.png" alt="前を歩くひと" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/person-ahead-of-me/">前を歩くひと</a>
+              </h3>
+              <div class="track-meta">インディー・ポップ</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/how-to-tame-midnight.webp" type="image/webp">
+                  <img src="/images/how-to-tame-midnight.png" alt="午前零時の飼い方" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/how-to-tame-midnight/">午前零時の飼い方</a>
+              </h3>
+              <div class="track-meta">インディー・ポップ</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/secret-ghost.webp" type="image/webp">
+                  <img src="/images/secret-ghost.png" alt="ひそかなゴースト" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/secret-ghost/">ひそかなゴースト</a>
+              </h3>
+              <div class="track-meta">インディー・ポップ</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/spirit-of-the-wingbeat.webp" type="image/webp">
+                  <img src="/images/spirit-of-the-wingbeat.png" alt="羽音ノ言霊" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/spirit-of-the-wingbeat/">羽音ノ言霊</a>
+              </h3>
+              <div class="track-meta">バラード</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/awe-is-akin-to-kindness.webp" type="image/webp">
+                  <img src="/images/awe-is-akin-to-kindness.png" alt="畏れはやさしさに似て" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/awe-is-akin-to-kindness/">畏れはやさしさに似て</a>
+              </h3>
+              <div class="track-meta">エレクトロポップ</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/formless-night.webp" type="image/webp">
+                  <img src="/images/formless-night.png" alt="かたちのない夜" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/formless-night/">かたちのない夜</a>
+              </h3>
+              <div class="track-meta">エレクトロポップ</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/rusty-air-and-a-soft-heart-still-earth.webp" type="image/webp">
+                  <img src="/images/rusty-air-and-a-soft-heart-still-earth.png" alt="さびた空気と、やわらかい心 / Still Earth" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/rusty-air-and-a-soft-heart-still-earth/">さびた空気と、やわらかい心 / Still Earth</a>
+              </h3>
+              <div class="track-meta">インディー・ポップ</div>
+            </div>
+          </article>
+          
+          <article class="track-card">
+            <div class="track-cover">
+              
+                <picture>
+                  <source srcset="/images/tiny-rain-gentle-town.webp" type="image/webp">
+                  <img src="/images/tiny-rain-gentle-town.png" alt="Tiny Rain, Gentle Town" loading="lazy" decoding="async">
+                </picture>
+              
+            </div>
+            <div class="track-body">
+              <h3 class="track-title">
+                <a href="/tracks/tiny-rain-gentle-town/">Tiny Rain, Gentle Town</a>
+              </h3>
+              <div class="track-meta">シティポップ</div>
+            </div>
+          </article>
+          
+        </div>
+        
+      </section>
+      
+    
+
+    
+    
+    
+    
+    
+    
+  </main>
+
+  <footer class="footer">
+    <p>© SAY-SHOW</p>
+  </footer>
+
+  <script src="/main.js"></script>
+</body>
+</html>
