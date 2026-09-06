@@ -40,6 +40,11 @@ J-POPとシティポップ、インディポップをベースにした、映画
 
 ➜ [Movies](https://say-show.me/movies/)
 
+### Genres
+楽曲をジャンル別に並べた索引。フォーク / アコースティック、エレクトロポップ、バラードなど10の棚に分かれ、ページ先頭の目次から目当てのジャンルへ飛べます。各棚には、そのジャンルの曲に加えて「近い音」の曲も並びます。
+
+➜ [Genres](https://say-show.me/genres/)
+
 ### Videos
 Lyrics Video や Music Video をサムネイル付きで一覧表示。モーダルでその場で再生できます。
 
@@ -56,6 +61,7 @@ Lyrics Video や Music Video をサムネイル付きで一覧表示。モーダ
 - 🖼️ カバーアート
 - 🕐 リリース日・曲の長さ・インスパイア元の映画
 - 📝 **About** — 曲の背景とストーリー
+- 🎚️ **Sound** — ジャンル・テンポ（BPM）・編成・雰囲気。ジャンルのタグから [Genres](https://say-show.me/genres/) の該当の棚へ移動できます
 - 🎧 **Listen** — Spotify 埋め込みプレイヤー（配信中）または最大60秒のプレビュー音源（配信前/未登録時、`audio: true` のトラックのみ）
 - 🎵 **Available on** — 配信サービスへのリンク（Spotify / Apple Music / Amazon Music / YouTube Music）。配信前は非活性ボタンで表示
 - 🎤 **Lyrics** — 歌詞
