@@ -30,6 +30,44 @@
       padding: 0 20px 90px;
     }
 
+    /* --- ジャンル目次。ページ先頭に一度だけ置く（追従はしない） --- */
+    .genre-toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin: 0 0 3rem;
+    }
+
+    .genre-toc-item {
+      display: inline-flex;
+      align-items: baseline;
+      gap: .4rem;
+      padding: .4rem .85rem;
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 999px;
+      font-size: .84rem;
+      color: var(--text-main);
+      text-decoration: none;
+      transition: border-color .2s, color .2s, background .2s;
+    }
+
+    .genre-toc-item:hover,
+    .genre-toc-item:focus-visible {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(255, 75, 139, .08);
+    }
+
+    .genre-toc-item .count {
+      font-size: .72rem;
+      color: var(--text-muted);
+    }
+
+    .genre-toc-item:hover .count,
+    .genre-toc-item:focus-visible .count {
+      color: inherit;
+    }
+
     .genre-shelf {
       margin: 0 0 3.4rem;
       scroll-margin-top: 70px;   /* ハッシュリンクで飛んだとき見出しがナビに隠れないように */
@@ -96,6 +134,23 @@
     }
 
     @media (max-width: 768px) {
+      /* 既定サイズのままだと390pxで6行255pxになり、ファーストビューが目次で埋まって
+         最初の棚が見えなくなる。文字と余白を詰めて5行172pxに収める（実測値） */
+      .genre-toc {
+        gap: .38rem;
+        margin-bottom: 2.2rem;
+      }
+
+      .genre-toc-item {
+        gap: .3rem;
+        padding: .3rem .6rem;
+        font-size: .76rem;
+      }
+
+      .genre-toc-item .count {
+        font-size: .66rem;
+      }
+
       .genre-shelf .track-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 14px;
@@ -134,12 +189,74 @@
   
   
 
+  
+  
+  
+  
+  
+
   <header class="page-header">
     <h1 class="page-title">Genres</h1>
     <p class="page-subtitle">10のジャンル、48曲</p>
   </header>
 
   <main class="genres-page">
+    
+    <nav class="genre-toc" aria-label="ジャンル一覧">
+      
+        
+        
+      <a class="genre-toc-item" href="#folk-acoustic">フォーク / アコースティック<span class="count">4</span></a>
+        
+      
+        
+        
+      <a class="genre-toc-item" href="#indie-pop">インディー・ポップ<span class="count">8</span></a>
+        
+      
+        
+        
+      <a class="genre-toc-item" href="#rock">ロック<span class="count">4</span></a>
+        
+      
+        
+        
+      <a class="genre-toc-item" href="#city-pop">シティポップ<span class="count">1</span></a>
+        
+      
+        
+        
+      <a class="genre-toc-item" href="#shibuya-kei-jazz">渋谷系 / ジャズ<span class="count">1</span></a>
+        
+      
+        
+        
+      <a class="genre-toc-item" href="#neo-soul-rnb">ネオ・ソウル / R&B<span class="count">8</span></a>
+        
+      
+        
+        
+      <a class="genre-toc-item" href="#electro-pop">エレクトロポップ<span class="count">14</span></a>
+        
+      
+        
+        
+      <a class="genre-toc-item" href="#ballad">バラード<span class="count">4</span></a>
+        
+      
+        
+        
+      <a class="genre-toc-item" href="#cinematic">シネマティック<span class="count">3</span></a>
+        
+      
+        
+        
+      <a class="genre-toc-item" href="#ambient-dream">アンビエント / ドリーム<span class="count">1</span></a>
+        
+      
+      
+    </nav>
+
     
     
       
@@ -2139,10 +2256,6 @@
       
     
 
-    
-    
-    
-    
     
     
   </main>
