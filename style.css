@@ -791,7 +791,7 @@ h2 {
     gap: 12px;
   }
 
-  /* モバイル版：Timeline / Movies / Genres / Videos リンクはナビにあるため非表示 */
+  /* モバイル版：Timeline / Movies / Genres リンクはナビにあるため非表示 */
   .section-header .timeline-link {
     display: none;
   }
