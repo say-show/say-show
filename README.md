@@ -59,13 +59,14 @@ Lyrics Video や Music Video をサムネイル付きで一覧表示。モーダ
 トラックごとに以下の情報を、ページ上から順に掲載しています：
 
 - 🖼️ カバーアート
-- 🕐 リリース日・曲の長さ・インスパイア元の映画
+- 🕐 リリース日・曲の長さ・インスパイア元の映画（映画名を選ぶとページ下部の **Inspired by** へ移動します）
 - 📝 **About** — 曲の背景とストーリー
 - 🎚️ **Sound** — ジャンル・テンポ（BPM）・編成・雰囲気。ジャンルのタグから [Genres](https://say-show.me/genres/) の該当の棚へ移動できます
 - 🎧 **Listen** — Spotify 埋め込みプレイヤー（配信中）または最大60秒のプレビュー音源（配信前/未登録時、`audio: true` のトラックのみ）
 - 🎵 **Available on** — 配信サービスへのリンク（Spotify / Apple Music / Amazon Music / YouTube Music）。配信前は非活性ボタンで表示
 - 🎤 **Lyrics** — 歌詞
 - 🎬 **Watch** — Lyrics Video 等の関連動画（該当がある場合）
+- 🎞️ **Inspired by** — インスパイア元になった映画のポスターと公開年。[Movies](https://say-show.me/movies/) へ移動して、他の映画から曲をたどれます（ポスター未登録の映画では表示されません）
 
 ---
 
