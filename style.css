@@ -1136,6 +1136,110 @@ h2 {
   line-height: 1.8;
 }
 
+/* ===== 着想元の映画 ===== */
+
+/* ヘッダーのメタ行にある映画名。本文中のリンクなので、色だけだと気付けない。
+   控えめな下線を敷いて「押せる」ことを示し、ホバーでアクセント色に上げる */
+.page-subtitle-movie {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.25);
+  text-underline-offset: 2px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.page-subtitle-movie:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+/* メタ行からアンカーで飛んでくる先。グローバルナビが position:fixed の 56px なので、
+   その分を空けないと見出しがナビの下に潜る */
+#inspired-by {
+  scroll-margin-top: 72px;
+}
+
+/* ページ最下部の着想元映画。
+
+   枠で囲わず影だけで持ち上げるのは、カバーアート（400px・角丸12px・影付き）と
+   /movies/ のポスターに共通するこのサイトの流儀。.streaming-card の枠付きの箱を
+   借りるとポスターが「配信サービスのアイコン」と同じ格に落ちる。
+
+   全体はリンクにしない。/movies/ への導線は「映画から曲を探す」の1本だけにする
+   （ポスターも囲みも同じ行き先にすると、同じことを何度も言うことになる）。
+   リンクでないものにホバー効果は付けない。動くのに押せないのは嘘になるため。
+
+   テキストはポスターの上端に揃える。 */
+.inspired-movie {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+/* 幅と比率を先に決め、画像の読み込み前後でページが跳ねないようにする */
+.inspired-movie-poster {
+  display: block;
+  width: 200px;
+  flex-shrink: 0;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 9px;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.55);
+}
+
+.inspired-movie-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  min-width: 0;
+}
+
+/* ポスター上端との光学的なズレを詰める */
+.inspired-movie-title {
+  margin-top: -0.2em;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.inspired-movie-year {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* このセクションで唯一のリンク */
+.inspired-movie-more {
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.25);
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.inspired-movie-more:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+.inspired-movie-more:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* モバイルは横幅が足りないため、ポスターを縮めてテキストの折り返しを抑える */
+@media (max-width: 768px) {
+  .inspired-movie {
+    gap: 20px;
+  }
+
+  .inspired-movie-poster {
+    width: 150px;
+  }
+}
+
 /* ===== ジャンル表示 ===== */
 
 /* Sound 見出しの直下に置くジャンルのハッシュタグ。全部 /genres/ へのリンク。
