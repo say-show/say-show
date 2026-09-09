@@ -1011,8 +1011,14 @@ h2 {
   transition: opacity 0.35s ease;
 }
 
-.cover-flip:hover .cover-poster {
-  opacity: 1;
+/* ホバーできるデバイスに限定すること。ガードを外すと、タッチ端末は
+   タップで :hover が当たり、その状態が「別の場所をタップするまで」残る。
+   同じ場所を再タップしても解除されないので、ポスターに貼り付いて戻らなくなる。
+   （トップページの曲情報スイッチ・/movies/ のカードでも同じ理由で分岐している） */
+@media (hover: hover) {
+  .cover-flip:hover .cover-poster {
+    opacity: 1;
+  }
 }
 
 /* 2:3 を 1:1 の枠に置くと左右が空くので、同じ絵をぼかして敷き詰める */
