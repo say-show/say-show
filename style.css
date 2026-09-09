@@ -964,6 +964,114 @@ h2 {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
 }
 
+/* === カバーアート ⇄ 映画ポスター（ホバー） ===
+   /movies/ のカード（表=ポスター、ホバーでカバーアート）の裏返し。
+   枠は 1:1・400px のままなので、レイアウトは一切動かない。
+
+   リンクにしていないので、ホバーで影も浮き上がりもカーソルも変えない。
+   絵が入れ替わること自体がフィードバックで、それ以上は「押せる」という嘘になる。
+   マウスのある人だけのおまけであり、最下部の Inspired by セクションが
+   タッチ・キーボードと /movies/ 導線を担保している（#inspired-by 参照）。 */
+.cover-flip {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* 枠側で角丸と影を持つので、中の img は .track-cover-wrapper img の指定を打ち消す */
+.track-cover-wrapper .cover-flip img {
+  max-width: none;
+  border-radius: 0;
+  box-shadow: none;
+  display: block;
+}
+
+.cover-flip-art {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ポスター層。縦一列にして「絵」と「文字」で高さを分け合う。
+   帯を固定値にすると、タイトルが2行になる映画（スター・ウォーズ／マンダロリアン・
+   アンド・グローグー 等）で文字が絵に重なる。flex で分け合えば絵が縮むだけで済む */
+.cover-poster {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 14px 0 0;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.cover-flip:hover .cover-poster {
+  opacity: 1;
+}
+
+/* 2:3 を 1:1 の枠に置くと左右が空くので、同じ絵をぼかして敷き詰める */
+.track-cover-wrapper .cover-flip .cover-poster-blur {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(24px) saturate(1.25) brightness(0.5);
+  transform: scale(1.25);
+}
+
+/* flex: 1 + min-height: 0 + contain で、文字が使い残した高さだけ絵が伸び縮みする */
+.track-cover-wrapper .cover-flip .cover-poster-main {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  object-fit: contain;
+}
+
+/* 帯だけ暗く沈める。ポスター本体には掛けない。
+   グラデーションは必ずこの要素の背景として持つこと。
+   .cover-poster::after にすると、position 指定のあるこの要素より後に描画され、
+   文字の上に乗って文字ごと暗くしてしまう */
+.cover-veil {
+  position: relative;
+  flex: none;
+  padding: 34px 18px 16px;
+  background: linear-gradient(to top,
+    rgba(5, 6, 11, 0.88),
+    rgba(5, 6, 11, 0.72) 55%,
+    rgba(5, 6, 11, 0));
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95), 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.cover-veil-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 5px;
+}
+
+.cover-veil-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #fff;
+}
+
+.cover-veil-year {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 0.5em;
+}
+
 /* Coming Soon リボン（右上） */
 .coming-soon-ribbon-container {
   position: absolute;
