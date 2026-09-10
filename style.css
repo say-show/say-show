@@ -972,6 +972,8 @@ h2 {
    絵が入れ替わること自体がフィードバックで、それ以上は「押せる」という嘘になる。
    マウスのある人だけのおまけであり、最下部の Inspired by セクションが
    タッチ・キーボードと /movies/ 導線を担保している（#inspired-by 参照）。 */
+/* 実体は <label>。タッチ端末ではタップで下の隠しチェックボックスを反転させる。
+   タップ時の灰色のハイライトは絵の上では目障りなので消す */
 .cover-flip {
   position: relative;
   display: block;
@@ -981,6 +983,22 @@ h2 {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* タップ切り替えの実体。視覚的に隠すが、タッチ端末では支援技術から
+   操作できる状態に保つため display:none / visibility:hidden は使わない
+   （トップページの .track-info-switch-input と同じ手法）。 */
+.cover-flip-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 /* 枠側で角丸と影を持つので、中の img は .track-cover-wrapper img の指定を打ち消す */
@@ -1011,12 +1029,27 @@ h2 {
   transition: opacity 0.35s ease;
 }
 
-/* ホバーできるデバイスに限定すること。ガードを外すと、タッチ端末は
-   タップで :hover が当たり、その状態が「別の場所をタップするまで」残る。
-   同じ場所を再タップしても解除されないので、ポスターに貼り付いて戻らなくなる。
-   （トップページの曲情報スイッチ・/movies/ のカードでも同じ理由で分岐している） */
+/* 入り口はデバイスで完全に分ける。混ぜてはいけない。
+
+   マウス機（hover: hover）… ホバーしている間だけ表示。タップ切り替えは使わない
+   タッチ機（hover: none） … タップのたびに反転。:hover は一切使わない
+
+   タッチ機で :hover を使うと、タップで当たった状態が「別の場所をタップするまで」
+   残り、同じ場所を再タップしても解除されず、ポスターに貼り付いて戻らなくなる
+   （2026-09-09 に実際に発生）。 */
 @media (hover: hover) {
   .cover-flip:hover .cover-poster {
+    opacity: 1;
+  }
+
+  /* マウス機ではタップ切り替えを使わないので、Tab 順に見えない項目を残さない */
+  .cover-flip-input {
+    display: none;
+  }
+}
+
+@media (hover: none) {
+  .cover-flip-input:checked ~ .cover-flip .cover-poster {
     opacity: 1;
   }
 }
