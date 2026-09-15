@@ -1563,22 +1563,26 @@ h2 {
 }
 
 /* === カスタムプレビュープレイヤー === */
+/* 2026-09-15 「箱を残して締める」案に更新（比較: design-track-preview-player.html の案B）。
+   枠線は薄く、再生ボタンはアクセント色1pxのゴーストリング（ホバー／再生中だけ塗る）、
+   バーは2pxでホバー／フォーカス時だけつまみを出す。再生中に動くのはバーの塗りだけ */
 .track-audio-card {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 16px;
+  gap: 14px;
+  padding: 14px 16px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.02));
 }
 
 .track-audio-card-cover {
-  width: 80px;
-  height: 80px;
+  width: 72px;
+  height: 72px;
   border-radius: 8px;
   object-fit: cover;
   flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
 }
 
 .track-audio-card-body {
@@ -1592,7 +1596,7 @@ h2 {
 .track-audio-card-title {
   margin: 0;
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--text-main);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1601,36 +1605,39 @@ h2 {
 
 .track-audio-card-meta {
   margin: 0;
-  font-size: 0.8rem;
-  color: var(--text-muted);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(160, 163, 181, 0.85);
 }
 
 .track-audio-card-controls {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
 .track-audio-card-play {
-  width: 40px;
-  height: 40px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  border: none;
-  background: var(--accent);
-  color: #fff;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   padding: 0;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-.track-audio-card-play:hover {
-  transform: scale(1.05);
-  background: #ff6ba0;
+.track-audio-card-play:hover,
+.track-audio-card.is-playing .track-audio-card-play {
+  background: var(--accent);
+  color: #fff;
 }
 
 .track-audio-card-play:focus-visible {
@@ -1639,36 +1646,69 @@ h2 {
 }
 
 .track-audio-card-play svg {
-  width: 18px;
-  height: 18px;
-  fill: #fff;
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
 }
 
 .track-audio-card-progress {
   flex: 1;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 3px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 1px;
   cursor: pointer;
   position: relative;
-  overflow: hidden;
+}
+
+.track-audio-card-progress:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 75, 139, 0.55);
 }
 
 .track-audio-card-progress-fill {
   height: 100%;
   width: 0;
   background: var(--accent);
-  border-radius: 3px;
+  border-radius: 1px;
+  position: relative;
   transition: width 0.1s linear;
 }
 
+/* つまみ。塗りの右端に置き、ホバー／フォーカス時だけ現れる（タッチ端末では出ない） */
+.track-audio-card-progress-fill::after {
+  content: "";
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  transform: translateY(-50%) scale(0);
+  transition: transform 0.15s ease;
+}
+
+.track-audio-card-progress:hover .track-audio-card-progress-fill::after,
+.track-audio-card-progress:focus-visible .track-audio-card-progress-fill::after {
+  transform: translateY(-50%) scale(1);
+}
+
 .track-audio-card-time {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
   font-variant-numeric: tabular-nums;
   flex-shrink: 0;
-  min-width: 80px;
+  min-width: 66px;
   text-align: right;
+}
+
+.track-audio-card-time-total {
+  color: rgba(160, 163, 181, 0.6);
+  margin-left: 2px;
+}
+
+.track-audio-card-time-total::before {
+  content: "/ ";
 }
 
 .track-audio-card-element {
@@ -1691,8 +1731,8 @@ h2 {
     gap: 8px;
   }
   .track-audio-card-time {
-    min-width: 70px;
-    font-size: 0.75rem;
+    min-width: 60px;
+    font-size: 0.68rem;
   }
 }
 

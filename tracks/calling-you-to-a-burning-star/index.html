@@ -170,7 +170,8 @@
       </section>
       
 
-      <!-- 試聴: 配信中はSpotify embed優先、未配信または未登録なら自前MP3 -->
+      <!-- 試聴: 自前MP3（audio: true）を優先。無い曲だけ、配信中で Spotify リンクがあれば Spotify embed
+           （Apple Music 埋め込み / MusicKit は 2026-09-15 に却下。経緯は .claude/rules/design.md） -->
       
       
       
@@ -192,7 +193,7 @@
               <div class="track-audio-card-progress" role="slider" aria-label="再生位置" tabindex="0">
                 <div class="track-audio-card-progress-fill"></div>
               </div>
-              <span class="track-audio-card-time">0:00 / 0:00</span>
+              <span class="track-audio-card-time"><span class="track-audio-card-time-current">0:00</span><span class="track-audio-card-time-total">0:00</span></span>
             </div>
             <audio class="track-audio-card-element" preload="metadata">
               <source src="/audio/calling-you-to-a-burning-star.mp3" type="audio/mpeg">

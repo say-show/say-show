@@ -214,6 +214,8 @@ document.addEventListener('click', (e) => {
     const progress = card.querySelector('.track-audio-card-progress');
     const fill = card.querySelector('.track-audio-card-progress-fill');
     const timeLabel = card.querySelector('.track-audio-card-time');
+    const timeCurrent = card.querySelector('.track-audio-card-time-current');
+    const timeTotal = card.querySelector('.track-audio-card-time-total');
 
     if (!audio || !playBtn || !progress || !fill || !timeLabel) return;
 
@@ -222,13 +224,21 @@ document.addEventListener('click', (e) => {
       const dur = audio.duration || 0;
       const pct = dur > 0 ? (cur / dur) * 100 : 0;
       fill.style.width = pct + '%';
-      timeLabel.textContent = formatTime(cur) + ' / ' + formatTime(dur);
+      // 現在位置と総尺は別の span（総尺は薄く表示し、区切りの "/" は CSS で付ける）
+      if (timeCurrent && timeTotal) {
+        timeCurrent.textContent = formatTime(cur);
+        timeTotal.textContent = formatTime(dur);
+      } else {
+        timeLabel.textContent = formatTime(cur) + ' / ' + formatTime(dur);
+      }
     };
 
     const setPlayingUI = (playing) => {
       playIcon.style.display = playing ? 'none' : '';
       pauseIcon.style.display = playing ? '' : 'none';
       playBtn.setAttribute('aria-label', playing ? '一時停止' : '再生');
+      // 再生中はゴーストリングのボタンを塗る（style.css の .is-playing）
+      card.classList.toggle('is-playing', playing);
     };
 
     audio.addEventListener('loadedmetadata', updateTime);
@@ -258,6 +268,18 @@ document.addEventListener('click', (e) => {
     };
 
     progress.addEventListener('click', (e) => seek(e.clientX));
+
+    // role="slider" なので ←→ で 5 秒シーク（バーを Tab でフォーカスしたとき）
+    progress.addEventListener('keydown', (e) => {
+      if (!audio.duration) return;
+      if (e.key === 'ArrowRight') {
+        audio.currentTime = Math.min(audio.duration, audio.currentTime + 5);
+        e.preventDefault();
+      } else if (e.key === 'ArrowLeft') {
+        audio.currentTime = Math.max(0, audio.currentTime - 5);
+        e.preventDefault();
+      }
+    });
   });
 })();
 

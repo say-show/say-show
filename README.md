@@ -62,7 +62,7 @@ Lyrics Video や Music Video をサムネイル付きで一覧表示。モーダ
 - 🕐 リリース日・曲の長さ・インスパイア元の映画（映画名を選ぶとページ下部の **Inspired by** へ移動します）
 - 📝 **About** — 曲の背景とストーリー
 - 🎚️ **Sound** — ジャンル・テンポ（BPM）・編成・雰囲気。ジャンルのタグから [Genres](https://say-show.me/genres/) の該当の棚へ移動できます
-- 🎧 **Listen** — Spotify 埋め込みプレイヤー（配信中）または最大60秒のプレビュー音源（配信前/未登録時、`audio: true` のトラックのみ）
+- 🎧 **Preview** — 最大60秒のプレビュー音源を再生できる自前プレイヤー（`audio: true` のトラック。配信前後を問わず表示）。音源が無い配信中の曲だけ Spotify 埋め込みプレイヤー（Listen）に切り替わります
 - 🎵 **Available on** — 配信サービスへのリンク（Spotify / Apple Music / Amazon Music / YouTube Music）。配信前は非活性ボタンで表示
 - 🎤 **Lyrics** — 歌詞
 - 🎬 **Watch** — Lyrics Video 等の関連動画（該当がある場合）
