@@ -55,6 +55,11 @@ Lyrics Video や Music Video をサムネイル付きで一覧表示。モーダ
 
 ➜ [About](https://say-show.me/about/)
 
+### RSS
+新曲の公開を RSS で受け取れます。RSS リーダーや自動化サービス（IFTTT など）に登録してご利用ください。
+
+➜ [feed.xml](https://say-show.me/feed.xml)
+
 ### 各曲の詳細ページ
 トラックごとに以下の情報を、ページ上から順に掲載しています：
 
