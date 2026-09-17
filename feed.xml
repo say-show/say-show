@@ -5,13 +5,23 @@
     <link>https://say-show.me/</link>
     <description>映画のワンシーンから生まれる、AIコラボの音楽プロジェクト。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 11 Sep 2026 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 00:00:00 +0900</lastBuildDate>
     <image>
       <url>https://say-show.me/favicon-512.png</url>
       <title>SAY-SHOW</title>
       <link>https://say-show.me/</link>
     </image>
     <atom:link href="https://say-show.me/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>燃えない星に、君を呼ぶ</title>
+      <link>https://say-show.me/tracks/calling-you-to-a-burning-star/</link>
+      <guid isPermaLink="true">https://say-show.me/tracks/calling-you-to-a-burning-star/</guid>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 +0900</pubDate>
+      <category>ロック</category>
+      <category>Inspired by 「RRR」</category>
+      <description>「燃えない星に、君を呼ぶ」は、映画『RRR』から受け取った、異なる孤独や痛みを抱えた者どうしが出会い、互いの力になるという熱を、恋愛の距離感へ置き換えて描いた曲です。誰かを救うヒーローになることでも、相手を自分のものにすることでもなく、言葉にできない夜やそれぞれの迷いを急かさずに抱えながら、「今日の君を、今日の僕が選び直す」という関係を大切にしています。タイトルの“燃えない星”は、すぐに答えが出なくても、遠く見失いそうになっても、暗い場所で互いの輪郭を確かめ合える小さな光のこと。火を持つ手と水を抱く手のように、違うものを持ったまま隣へ進むことで、ふたりの傷跡さえ新しい地図に変わっていく——そんな、自由を奪わずに愛を鳴らすためのラブソングです。</description>
+      <enclosure url="https://say-show.me/images/calling-you-to-a-burning-star.png" type="image/png" length="0"/>
+    </item>
     <item>
       <title>半分の空を交換する</title>
       <link>https://say-show.me/tracks/exchange-half-of-the-sky/</link>
@@ -201,16 +211,6 @@
       <category>Inspired by 「千と千尋の神隠し」</category>
       <description>映画『千と千尋の神隠し』から直接モチーフを借りるのではなく、「名前が薄れていく感覚」や「ここにいるのに、自分だと言い切れない夜」の手触りだけをすくい取った曲です。誰かを責めたり世界を呪ったりする代わりに、だれのせいでもない痛みと一緒に、ただ静かに立ち尽くしている心の状態を、そのまま低い声と最小限の伴奏に落とし込みました。タイトルの「かたちのない夜」は、真っ暗な絶望ではなく、意味も名前も与えられていない感情が、かろうじて熱だけを残して続いている時間のことです。無理に前向きになろうとするでもなく、「それでもまだここにいる」という事実だけをそっと肯定したくて書いた一曲です。説明できないしんどさを抱えたまま、それでも今日をやり過ごそうとしている誰かの、小さな居場所になれたらうれしいです。</description>
       <enclosure url="https://say-show.me/images/formless-night.png" type="image/png" length="0"/>
-    </item>
-    <item>
-      <title>未来未満</title>
-      <link>https://say-show.me/tracks/not-yet-future/</link>
-      <guid isPermaLink="true">https://say-show.me/tracks/not-yet-future/</guid>
-      <pubDate>Fri, 01 May 2026 00:00:00 +0900</pubDate>
-      <category>エレクトロポップ</category>
-      <category>Inspired by 「バック・トゥー・ザ・フューチャー」</category>
-      <description>映画『バック・トゥ・ザ・フューチャー』から着想を得て、「もしやり直せたとしても、本当に変えたいのは過去じゃなくて自分かもしれない」という感覚を、明るいインディーポップに落とし込んだ曲です。時間を巻き戻す物語ではなく、やり直せない日々を抱えたまま、それでも今日の一歩を選び直すことにフォーカスしています。タイトルの「未来未満」は、まだどこにも辿り着いていない中途半端さと、その手前にあるワクワクや不安をまとめて肯定したい言葉です。完璧でもドラマチックでもないけれど、朝に向かう空みたいに少しずつ明るくなっていく心の温度を、そのまま残せたらと思って書きました。</description>
-      <enclosure url="https://say-show.me/images/not-yet-future.png" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>
