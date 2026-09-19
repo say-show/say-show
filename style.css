@@ -242,14 +242,8 @@ button { font-family: inherit; }
 .gallery-nav { display: flex; gap: 20px; font-size: 14px; color: var(--ink-soft); }
 .gallery-nav a:hover { color: var(--ink); }
 
-/* 週の帯: 初回リリース週から今週まで 1 週 = 1 マス。Timeline ページの代替（毎週リリースしている事実の可視化） */
-.weeks { display: flex; align-items: center; gap: 14px; margin: 0 0 30px; font-size: 12px; color: var(--ink-soft); }
-.weeks-strip { display: flex; flex-wrap: wrap; gap: 3px; }
-.weeks-strip a { display: block; }
-.weeks-strip i { display: block; width: 9px; height: 9px; border-radius: 2px; border: 1px solid var(--rule); box-sizing: border-box; }
-.weeks-strip i.on { background: var(--ink); border-color: var(--ink); }
-.weeks-strip a:hover i { background: var(--accent); border-color: var(--accent); }
-.weeks-note { white-space: nowrap; }
+/* リリースの継続を示す 1 行（Timeline ページの代替） */
+.weeks { margin: 0 0 30px; font-size: 12px; color: var(--ink-soft); }
 
 .bento {
   list-style: none; margin: 0; padding: 0;
@@ -468,7 +462,6 @@ button { font-family: inherit; }
   .tile.large { grid-column: 1 / -1; grid-row: auto; }
   .tile-title { font-size: 12px; }
   .tile.large .tile-title { font-size: 15px; }
-  .weeks { flex-direction: column; align-items: flex-start; gap: 8px; }
   .shelf-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .shelf-lane { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 12px; }
   .span-viz { display: none; }
