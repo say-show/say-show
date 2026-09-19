@@ -2,2636 +2,733 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>SAY-SHOW | Official Site</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="映画のワンシーンから生まれる、AIコラボの音楽プロジェクト。">
-  <link rel="canonical" href="https://say-show.me/">
-  <link rel="stylesheet" href="/style.css">
-  <link rel="alternate" type="application/rss+xml" title="SAY-SHOW" href="https://say-show.me/feed.xml">
-  <script>try{if(sessionStorage.getItem('ssLoadingShown'))document.documentElement.classList.add('quick-loading')}catch(e){}</script>
-  <noscript><style>.loading-overlay{display:none}.track-card{opacity:1}</style></noscript>
-  <meta property="og:title" content="SAY-SHOW">
-  <meta property="og:description" content="映画のワンシーンから生まれる、AIコラボの音楽プロジェクト。">
-  <meta property="og:url" content="https://say-show.me/">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://say-show.me/ogp.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SAY-SHOW">
-  <meta name="twitter:description" content="映画のワンシーンから生まれる、AIコラボの音楽プロジェクト。">
-  <meta name="twitter:image" content="https://say-show.me/ogp.png">
-  <meta name="google-site-verification" content="RB2-RdDvJ2j9jTj-AGnv9IVf0c_nRKONMJVZYHpQ_vo" />
-  <link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="/favicon-192.png" sizes="192x192">
-  <link rel="apple-touch-icon" href="/apple-touch-icon-180.png">
-  <!-- JSON-LD 構造化データ: アーティスト本体。各曲ページの byArtist は @id でここを指す -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MusicGroup",
-    "@id": "https://say-show.me/#artist",
-    "name": "SAY-SHOW",
-    "url": "https://say-show.me/",
-    "description": "映画のワンシーンから生まれる、AIコラボの音楽プロジェクト。",
-    "image": "https://say-show.me/favicon-512.png",
-    "genre": "J-Pop",
-    "sameAs": [
-      "https://open.spotify.com/intl-ja/artist/1QQBBrg6L673fnZZOPYtu3",
-      "https://apple.co/4snDy58",
-      "https://music.amazon.co.jp/artists/B0FYK4CDSC/say-show",
-      "https://music.youtube.com/channel/UC96QUBvKpZo1sBSBNj4t31A?si=6YQM4mryzjOwUN0r"
-    ]
-  }
-  </script>
-</head>
-<body>
-  <!-- ローディングアニメーション -->
-  <div class="loading-overlay" id="loadingOverlay">
-    <div class="loading-logo-wrapper">
-      <img src="/favicon-512-transparent.png" alt="SAY-SHOW" class="loading-logo-img">
-    </div>
-  </div>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAY-SHOW | Official Site</title>
+<meta name="description" content="映画のワンシーンから生まれる、AIコラボの音楽プロジェクト。">
+<link rel="canonical" href="https://say-show.me/">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#EFEDE8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141317" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="SAY-SHOW | Official Site">
+<meta property="og:description" content="映画のワンシーンから生まれる、AIコラボの音楽プロジェクト。">
+<meta property="og:url" content="https://say-show.me/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://say-show.me/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SAY-SHOW | Official Site">
+<meta name="twitter:description" content="映画のワンシーンから生まれる、AIコラボの音楽プロジェクト。">
+<meta name="twitter:image" content="https://say-show.me/ogp.png">
+<meta name="google-site-verification" content="RB2-RdDvJ2j9jTj-AGnv9IVf0c_nRKONMJVZYHpQ_vo">
+<link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon-180.png">
+<link rel="alternate" type="application/rss+xml" title="SAY-SHOW" href="https://say-show.me/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
 
-  <nav class="global-nav">
-  <a href="/" class="nav-logo">
-    <img src="/favicon-512-transparent.png" alt="">
-    <span>SAY-SHOW</span>
+</head>
+<body class="page-default page-home">
+<div class="wrap">
+  
+<nav class="nav" aria-label="サイト内">
+  <a class="brand" href="/">
+    <img src="/favicon-512-transparent.png" alt="" width="22" height="22">
+    <span class="brand-text">SAY-SHOW<small>映画のワンシーンから生まれる、AIコラボの音楽プロジェクト</small></span>
   </a>
   <div class="nav-links">
-    <a href="/#tracks">Tracks</a>
-    <a href="/timeline/">Timeline</a>
+    <a href="/" aria-current="page">Tracks</a>
     <a href="/movies/">Movies</a>
     <a href="/genres/">Genres</a>
-    <a href="/videos/">Videos</a>
     <a href="/about/">About</a>
   </div>
 </nav>
 
+  <!-- JSON-LD: アーティスト本体。各曲ページの byArtist は @id でここを指す -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "@id": "https://say-show.me/#artist",
+  "name": "SAY-SHOW",
+  "url": "https://say-show.me/",
+  "description": "映画のワンシーンから生まれる、AIコラボの音楽プロジェクト。",
+  "image": "https://say-show.me/favicon-512.png",
+  "genre": "J-Pop",
+  "sameAs": [
+    "https://open.spotify.com/intl-ja/artist/1QQBBrg6L673fnZZOPYtu3",
+    "https://apple.co/4snDy58",
+    "https://music.amazon.co.jp/artists/B0FYK4CDSC/say-show",
+    "https://music.youtube.com/channel/UC96QUBvKpZo1sBSBNj4t31A?si=6YQM4mryzjOwUN0r"
+  ]
+}
+</script>
 
-  <!-- ヒーロー -->
-  <header class="hero">
-    <div class="bokeh-container">
-      <div class="bokeh pink-1"></div>
-      <div class="bokeh pink-2"></div>
-      <div class="bokeh pink-3"></div>
-      <div class="bokeh orange-1"></div>
-      <div class="bokeh orange-2"></div>
-      <div class="bokeh blue-1"></div>
-      <div class="bokeh blue-2"></div>
-      <div class="bokeh purple-1"></div>
-      <div class="bokeh purple-2"></div>
-      <div class="bokeh tiny-1"></div>
-      <div class="bokeh tiny-2"></div>
-      <div class="bokeh tiny-3"></div>
-    </div>
-    <div class="hero-inner">
-      <h1>SAY-SHOW</h1>
-      <p class="hero-lead">
-        映画のシーンから生まれる、AIコラボの音楽プロジェクト
-      </p>
-      <p class="hero-sub">
-        映画からインスパイアされたテーマを起点に、AIとアイデアをキャッチボールしながら、歌詞やサウンド、ボーカルを形にしています。<br>
-        「どのシーンから生まれたんだろう？」と思いながら楽しんでいただければ嬉しいです。
-      </p>
-      <div class="hero-buttons">
-
-      <a href="https://open.spotify.com/intl-ja/artist/1QQBBrg6L673fnZZOPYtu3" class="btn" target="_blank" rel="noopener">
-        <span class="btn-icon spotify-icon" aria-hidden="true">
-          <!-- Spotifyアイコン（簡略SVG） -->
-          <svg viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="11"></circle>
-            <path d="M17.2 16.1c-.2.3-.6.4-.9.2-2.5-1.5-5.6-1.8-9.2-.9-.3.1-.7-.1-.8-.4-.1-.3.1-.7.4-.8 3.9-1 7.5-.7 10.3 1.1.3.2.4.6.2.8z"></path>
-          </svg>
-        </span>
-        <span class="btn-label">Spotify</span>
-      </a>
-
-      <a href="https://apple.co/4snDy58" class="btn" target="_blank" rel="noopener">
-        <span class="btn-icon apple-icon" aria-hidden="true">
-          <!-- Apple Music風の音符アイコン -->
-          <svg viewBox="0 0 24 24">
-            <path d="M17 3l-8 2v10.1c-.5-.3-1.1-.4-1.8-.3-1.3.2-2.3 1.2-2.3 2.4 0 1.3 1.2 2.2 2.6 2 1.2-.2 2.2-1.1 2.2-2.3V9.3l7-1.8v6.6c-.5-.3-1.1-.4-1.8-.3-1.3.2-2.3 1.2-2.3 2.4 0 1.3 1.2 2.2 2.6 2 1.2-.2 2.2-1.1 2.2-2.3V3z"></path>
-          </svg>
-        </span>
-        <span class="btn-label">Apple Music</span>
-      </a>
-
-      <a href="https://music.amazon.co.jp/artists/B0FYK4CDSC/say-show" class="btn" target="_blank" rel="noopener">
-        <span class="btn-icon amazon-icon" aria-hidden="true">
-          <!-- Amazon Music風スマイルライン -->
-          <svg viewBox="0 0 24 24">
-            <path d="M4 15.5c2.2 1.4 4.8 2.3 7.5 2.3 2.7 0 5.3-.9 7.5-2.3-.4.7-1 1.4-1.7 2-1.7 1.4-3.9 2.2-5.8 2.2-1.9 0-4.1-.8-5.8-2.2-.7-.6-1.3-1.3-1.7-2z"></path>
-          </svg>
-        </span>
-        <span class="btn-label">Amazon Music</span>
-      </a>
-
-      <a href="https://music.youtube.com/channel/UC96QUBvKpZo1sBSBNj4t31A?si=6YQM4mryzjOwUN0r" class="btn" target="_blank" rel="noopener">
-        <span class="btn-icon youtube-icon" aria-hidden="true">
-          <!-- YouTube風プレイボタン -->
-          <svg viewBox="0 0 24 24">
-            <path d="M21 8.2c-.2-1.4-.9-2.1-2.3-2.3C17 5.7 14 5.7 12 5.7s-5 0-6.7.2C3.9 6.1 3.2 6.8 3 8.2 2.8 9.7 2.8 12 2.8 12s0 2.3.2 3.8c.2 1.4.9 2.1 2.3 2.3 1.7.2 4.7.2 6.7.2s5 0 6.7-.2c1.4-.2 2.1-.9 2.3-2.3.2-1.5.2-3.8.2-3.8s0-2.3-.2-3.8z"></path>
-            <path d="M10 9.3v5.4l4.5-2.7z" fill="#000"></path>
-          </svg>
-        </span>
-        <span class="btn-label">YouTube Music</span>
-      </a>
-    </div>
-    </div>
-  </header>
-  
-  <main>
-    <!-- 楽曲一覧 -->
-<section class="tracks" id="tracks">
-  
-  <input type="checkbox" id="trackInfoToggle" class="track-info-switch-input" role="switch" checked>
-  <div class="section-header">
-    <h2>Tracks</h2>
-    <a href="/timeline/" class="timeline-link">→ Timelineを見る</a>
-    <a href="/movies/" class="timeline-link">→ Moviesを見る</a>
-    <a href="/genres/" class="timeline-link">→ Genresを見る</a>
-    <label for="trackInfoToggle" class="track-info-switch">
-      <span class="track-info-switch-label">曲情報</span>
-      <span class="track-info-switch-track" aria-hidden="true"></span>
-    </label>
+<section class="hero" aria-labelledby="latest">
+  <div class="hero-art" style="--glow: url('/images/calling-you-to-a-burning-star.webp')">
+    <a href="/tracks/calling-you-to-a-burning-star/">
+      <picture>
+        <source srcset="/images/calling-you-to-a-burning-star.webp" type="image/webp">
+        <img src="/images/calling-you-to-a-burning-star.png" alt="燃えない星に、君を呼ぶ のカバーアート" width="800" height="800" fetchpriority="high">
+      </picture>
+    </a>
   </div>
+  <div class="hero-body">
+    <p class="hero-kicker">最新曲　2026年9月18日</p>
+    <h1 class="hero-title" id="latest"><a href="/tracks/calling-you-to-a-burning-star/">燃えない星に、君を呼ぶ</a></h1>
+    <p class="hero-inspired">Inspired by <b>『RRR』</b></p>
+    <p class="hero-lead">「燃えない星に、君を呼ぶ」は、映画『RRR』から受け取った、異なる孤独や痛みを抱えた者どうしが出会い、互いの力になるという熱を、恋愛の距離感へ置き換えて描いた曲です。</p>
+    <div class="player" data-src="/audio/calling-you-to-a-burning-star.mp3">
+  <button class="play" type="button" aria-label="60秒プレビューを再生">
+    <svg class="ic-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+    <svg class="ic-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+  </button>
+  <div class="player-track" role="slider" aria-label="再生位置" tabindex="0"><div class="player-fill"></div></div>
+  <span class="player-label">60秒プレビュー</span>
+  <span class="player-time"><span class="cur">0:00</span> / <span class="total">1:00</span></span>
+</div>
+    <p class="listen"><span>フルで聴く</span>
+  <a href="https://open.spotify.com/album/507OAEoO3j57JAJyoH85Or" target="_blank" rel="noopener">Spotify</a>
+  <a href="https://music.apple.com/jp/album/燃えない星に-君を呼ぶ-single/6809780832" target="_blank" rel="noopener">Apple Music</a>
+  <a href="https://music.amazon.co.jp/albums/B0HJ5Y2JDL?marketplaceId=A1VC38T7YXB528" target="_blank" rel="noopener">Amazon Music</a>
+  <a href="https://music.youtube.com/playlist?list=OLAK5uy_kzZ1BTI-sYj3IxmeYSdwTfrAjr6ZgyJxI" target="_blank" rel="noopener">YouTube Music</a>
+</p>
 
-  <!-- モバイル用 Coming Soon バナー -->
-  
-  
-
-  <div class="track-grid">
-    
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/calling-you-to-a-burning-star.webp" type="image/webp">
-              
-              <img src="images/calling-you-to-a-burning-star.png" alt="燃えない星に、君を呼ぶ" decoding="async" fetchpriority="high">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/calling-you-to-a-burning-star/">燃えない星に、君を呼ぶ</a>
-          </h3>
-          <div class="track-meta">
-            2026.09.18 release / ロック / Inspired by 「RRR」
-          </div>
-          <p class="track-comment">
-            「燃えない星に、君を呼ぶ」は、映画『RRR』から受け取った、異なる孤独や痛みを抱えた者どうしが出会い、互いの力になるという熱を、恋愛の距離感へ置き換えて描いた曲です。誰かを救うヒーローになることでも、相手を自分のものにすることでもなく、言葉にできない夜やそれぞれの迷いを急かさずに抱えながら、「今日の君を、今日の僕が選び直す」という関係を大切にしています。タイトルの“燃えない星”は、すぐに答えが出なくても、遠く見失いそうになっても、暗い場所で互いの輪郭を確かめ合える小さな光のこと。火を持つ手と水を抱く手のように、違うものを持ったまま隣へ進むことで、ふたりの傷跡さえ新しい地図に変わっていく——そんな、自由を奪わずに愛を鳴らすためのラブソングです。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/album/507OAEoO3j57JAJyoH85Or" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://music.apple.com/jp/album/燃えない星に-君を呼ぶ-single/6809780832" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0HJ5Y2JDL?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_kzZ1BTI-sYj3IxmeYSdwTfrAjr6ZgyJxI" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/exchange-half-of-the-sky.webp" type="image/webp">
-              
-              <img src="images/exchange-half-of-the-sky.png" alt="半分の空を交換する" decoding="async" fetchpriority="high">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/exchange-half-of-the-sky/">半分の空を交換する</a>
-          </h3>
-          <div class="track-meta">
-            2026.09.11 release / エレクトロポップ / Inspired by 「ゴンドラ」
-          </div>
-          <p class="track-comment">
-            「半分の空を交換する」は、映画『ゴンドラ（2023）』の、すれ違う乗り物の窓越しに交わされる静かな視線や、言葉がなくても誰かと世界を少し変えていける感覚から着想を得た曲です。遠くへ行けない場所にいることを、ただの停滞や不自由として扱うのではなく、同じ景色を何度も通り過ぎる日々のなかで、少しずつ自分の明日を選び直していく時間として描いています。「半分の空を交換しよう」という言葉には、相手を完全に理解できなくても、それぞれが見ている景色や抱えている未来を少しずつ手渡し合うことで、孤独の輪郭がやわらいでいくという願いを込めました。届かない距離を美化するのではなく、届かないまま終わらせないために手を伸ばすこと、「終点なんて地図の都合だ」と自分たちの行き先を取り戻そうとすることを通して、変われないように見える毎日の中にも、人生を出発させる小さな合図はあるのだと歌っています。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/album/5PGhak1sX9xUzHRUazZiIn" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://music.apple.com/jp/album/半分の空を交換する-single/6809128473" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0HHYX2LK6?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_mZ0oOnJKDa4WKwBL7-0InAroTHpQQydOw" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/person-ahead-of-me.webp" type="image/webp">
-              
-              <img src="images/person-ahead-of-me.png" alt="前を歩くひと" decoding="async">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/person-ahead-of-me/">前を歩くひと</a>
-          </h3>
-          <div class="track-meta">
-            2026.09.04 release / インディー・ポップ / Inspired by 「スター・ウォーズ／マンダロリアン・アンド・グローグー」
-          </div>
-          <p class="track-comment">
-            「前を歩くひと」は、映画『マンダロリアン・アンド・グローグー』から着想を得ながら、物語や関係性をなぞるのではなく、誰かを守ろうとするときに生まれる“少し先を歩くやさしさ”だけを日常の温度に置き換えて書いた曲です。振り向きすぎないこと、言葉が少し遅れてしまうこと、それでもパンのぬくもりや消さない部屋の灯りのような小さな行為で相手の明日を支えようとすること——この曲では、強さを抱え込むことではなく、置いていかないこととして捉えています。大きな約束や劇的な救済ではなく、冷えた朝や流れていく街のなかで、それでも気持ちだけはちゃんと連れていく。その静かな同行の感覚を、低く近い声でそっと残した一曲です。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/album/5cN9PXv25yBxBWAUVompw4" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://music.apple.com/jp/album/前を歩くひと-single/6805161242" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0HGGCRM48?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_m4ljoHP2p9Zbjv626RitFwWT6A-lsguW8" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/drinking-the-future-with-cold-coffee.webp" type="image/webp">
-              
-              <img src="images/drinking-the-future-with-cold-coffee.png" alt="冷めたコーヒーで、未来を飲む" decoding="async">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/drinking-the-future-with-cold-coffee/">冷めたコーヒーで、未来を飲む</a>
-          </h3>
-          <div class="track-meta">
-            2026.08.28 release / インディー・ポップ / Inspired by 「リトル・ミス・サンシャイン」
-          </div>
-          <p class="track-comment">
-            「冷めたコーヒーで、未来を飲む」は、靴下の片方が見つからない朝や、返せなかった言葉、洗い忘れた皿に揺れる小さな光のような、誰にも報告するほどではない日常の引っかかりを抱えたまま、それでも次の一歩へ進もうとする曲です。映画『リトル・ミス・サンシャイン』から受け取った、完璧でなくても同じ車に乗って前へ行けるような肯定感を、物語そのものではなく生活の体温として重ねました。「ラララ　急がなくていい／遅れてもいい」というフレーズには、誰かの正解に追いつけない日にも、自分の速度で息をしていいという願いを込めています。苦さを消さずに未来を飲むというのは、無理に明るくなることではなく、欠けたままの自分を連れて午後のほうへ向かうこと。少しボサノバの揺れを含んだ軽やかな音像の中で、ありふれた朝がほんの少しだけ生き延びる理由に変わる瞬間を描いた曲です。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/album/4k3XqDu1opTCwft1idYA9M" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://music.apple.com/jp/album/冷めたコーヒーで-未来を飲む-single/6802314188" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0HFK99T25?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_n_xdb_epTMhVF0es4yMFxuas25cYKyc9k" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/deep-breath.webp" type="image/webp">
-              
-              <img src="images/deep-breath.png" alt="深き呼吸" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/deep-breath/">深き呼吸</a>
-          </h3>
-          <div class="track-meta">
-            2026.08.21 release / シネマティック / Inspired by 「アビス」
-          </div>
-          <p class="track-comment">
-            「深き呼吸」は、映画『アビス』の深海という舞台そのものではなく、言葉にできない感情ほど心の奥へ沈んでいく感覚と、暗さの中でしか聞こえてこない自分の本音に着想を得た曲です。誰かに届かなかった言葉や、うまく選べなかった未来を「消えてしまったもの」として急いで片づけるのではなく、見えない場所でまだ呼吸をしているものとして捉え直し、輪郭を失うほど迷った時間の中にも、次へ進むための小さな脈動が残っていることを描いています。タイトルの「深き呼吸」は、強く前を向くための息ではなく、答えのない静けさに身を委ねながら、それでも自分を手放さないために繰り返す呼吸のことです。沈んでいくような夜に、無理に光を探さなくてもいいと思えるように、闇の中でゆっくりと自分の声を取り戻していく時間をそっと支えられたらと考えました。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/album/3IU9LnVhAZo8NIpWrAbH25" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://music.apple.com/jp/album/深き呼吸-single/6801999665" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0HFFRT5CF?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_k5OFaFVBpNKYD5MH2lXYKKdHrtq13beSA" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/how-to-tame-midnight.webp" type="image/webp">
-              
-              <img src="images/how-to-tame-midnight.png" alt="午前零時の飼い方" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/how-to-tame-midnight/">午前零時の飼い方</a>
-          </h3>
-          <div class="track-meta">
-            2026.08.14 release / インディー・ポップ / Inspired by 「グレムリン」
-          </div>
-          <p class="track-comment">
-            「午前零時の飼い方」は、映画『グレムリン』が持つ、深夜の生活空間にふと紛れ込む小さな異変や、かわいらしさと不穏さが同居する感触から着想を得て、誰にも見せない疲れや返信できなかった言葉、散らかった台所のような日常の断片を描いた曲です。ここで“飼う”とは、孤独や後悔を無理に消したり、怪物のように育てたりせず、扱い方のわからない感情にも毛布をかけて、明日を怖がらせない程度にそばに置いておくこと。冷蔵庫の灯り、眠る人の寝息、コンビニ帰りの人影といった小さな光を通して、大きな正解がなくても今日を終えられること、その静かな営み自体を肯定したいと思って書いた曲です。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/album/2eJCzsMzaMCrw9w68DNbBw" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://music.apple.com/jp/album/午前零時の飼い方-single/6799618172" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0HDLFWTBD?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_naxSNwh-xn2nU89nQ-QY6JdkEDOnrQ6Vs" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/star-sign.webp" type="image/webp">
-              
-              <img src="images/star-sign.png" alt="星の合図 (70s Synth Edit)" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/star-sign/">星の合図 (70s Synth Edit)</a>
-          </h3>
-          <div class="track-meta">
-            2026.08.07 release / エレクトロポップ / Inspired by 「未知との遭遇」
-          </div>
-          <p class="track-comment">
-            「星の合図」は、『未知との遭遇』のあの“説明できないのに確かに呼ばれている感じ”を、70年代のシンセとディスコのきらめきに置き換えて描いた曲です。正体のわからない光に怯えるより先に、なぜか身体のほうが反応してしまう瞬間や、宇宙の気配を前にしたときの畏れと高揚が同時に立ち上がる感覚を、そのまま夜のダンスフロアみたいな音像に落とし込みました。未知は遠いものではなく、すでに胸の奥で鳴っている合図として描いていて、答えを急がずに「わからないまま惹かれていく」こと自体を肯定する視点がこの曲の中心です。大きな映画のスケールを持ちながらも、歌っているのは結局、誰かの声に気づいた瞬間の人間の孤独と希望で、怖さを振り切るのではなく、怖さごと光に近づいていくための一曲として仕上げました。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/album/1McjFUfsWqbjtfXKtWTqSv" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://music.apple.com/jp/album/星の合図-70s-synth-edit-single/6795644444" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0HBXL8HCZ?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_mifwqojRA3qS-EK2reZTd9tGODDgub-7k" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/whispers-blooming-in-the-forest.webp" type="image/webp">
-              
-              <img src="images/whispers-blooming-in-the-forest.png" alt="森に咲くささやき" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/whispers-blooming-in-the-forest/">森に咲くささやき</a>
-          </h3>
-          <div class="track-meta">
-            2026.07.31 release / フォーク / アコースティック / Inspired by 「もののけ姫」
-          </div>
-          <p class="track-comment">
-            「森に咲くささやき」は、映画『もののけ姫』から物語そのものではなく、“触れてはいけないものに惹かれてしまう感覚”や“近づくほどに声をひそめてしまう距離”だけを静かにすくい取り、それを恋や記憶の手触りへと置き換えた曲です。大きな対立や正しさには向かわず、壊してしまうかもしれないものの前で生まれるためらいや、言葉になる前にほどけていく感情の輪郭を、耳元で囁くような声と最小限の響きに預けています。森は外の風景であると同時に、内側にひらけた静かな領域として立ち上がり、そこに芽吹く想いは誰にも触れられないまま、それでも確かに息づいています。強く願う代わりに、届くかどうかもわからないままそっと差し出すような感情や、近づくことよりも壊さないことを選んでしまうその繊細な判断を、夜の温度に溶かすようにすくい上げました。誰にも見せていないやさしさやためらいが、ほんの少しだけ肯定される余白を残しています。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/album/1rAml96jnSRuS0JDsnOLmF" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://music.apple.com/jp/album/森に咲くささやき-single/6795203437" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0HBRNZRX3?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_m4lw6y_5SBXMUtfCAWnUWqfL73Ew3ZgIw" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/gravity-balloon.webp" type="image/webp">
-              
-              <img src="images/gravity-balloon.png" alt="Gravity Balloon" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/gravity-balloon/">Gravity Balloon</a>
-          </h3>
-          <div class="track-meta">
-            2026.07.24 release / フォーク / アコースティック / Inspired by 「カールじいさんの空飛ぶ家」
-          </div>
-          <p class="track-comment">
-            映画『カールじいさんの空飛ぶ家』から、「少しだけ軽くなる心の重力」を、静かなJ-POPバラードの世界観で描きました。通い慣れた日常の風景の中に、ふっと膨らむ小さな風船のような感情を重ね、説教でも決意表明でもない、ごく個人的な“気づき”がそっと浮かび上がる一曲に仕上げました。静かなピアノと寄り添うようなバンドサウンドがお気に入りです。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/album/78DgRRRN3bG61M2iNRfzqe" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://music.apple.com/jp/album/gravity-balloon-single/6792313125" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0H9FSWMTM?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_mDtDobI8xHea9BCCbUJE7V6HESKAf7V3A" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/secret-ghost.webp" type="image/webp">
-              
-              <img src="images/secret-ghost.png" alt="ひそかなゴースト" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/secret-ghost/">ひそかなゴースト</a>
-          </h3>
-          <div class="track-meta">
-            2026.07.17 release / インディー・ポップ / Inspired by 「ゴーストバスターズ」
-          </div>
-          <p class="track-comment">
-            「ひそかなゴースト」は、映画『ゴーストバスターズ』から「こわいものを退治する物語」そのものではなく、日常の中にふっと立ち上がる“見えない影”の感覚だけを引き取ってきた曲です。満員電車やコンビニの灯り、真夜中のスマホの光といったありふれた風景の中で、「ちゃんとここにいるはずなのに、少しだけ取りこぼされている気がする自分」を、大げさなドラマではなく、誰の中にも静かに棲んでいる“ひそかなゴースト”として描いています。ゴーストは恐怖の象徴ではなく、理由の説明がつかないもやもやや、黙り込んでしまう夜の形として登場し、それを追い払うのではなく「そんな影ごと自分だ」と受け入れてしまうことで、世界が少しだけやわらかくなるかもしれない、という視点のアップデートが、この曲のいちばんの核になっています。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/album/0UARHnt8QGzg2h5JhuAhDT" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://music.apple.com/jp/album/ひそかなゴースト-single/6790406807" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0H8PM3ZDR?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_l-98AlRdSBTz-mYZJDZ36nDWKiMnKodRM" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/spirit-of-the-wingbeat.webp" type="image/webp">
-              
-              <img src="images/spirit-of-the-wingbeat.png" alt="羽音ノ言霊" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/spirit-of-the-wingbeat/">羽音ノ言霊</a>
-          </h3>
-          <div class="track-meta">
-            2026.07.10 release / バラード / Inspired by 「モスラ」
-          </div>
-          <p class="track-comment">
-            「羽音（はおと）ノ言霊（ことだま）」は、映画『モスラ』から「守るために届いていく声」と「滅びのあとに立ち上がる再生」の感覚だけをすくい取り、「羽音」「祈り」「再生」という3つのキーワードで編み直した曲です。胸の奥でふと震える、小さな羽音みたいな気配を、誰かの無事やささやかな幸せをそっと願う日々の祈りと重ね、その祈りが劇的な奇跡ではなく、「今日をなんとか続けていける」くらいの静かな再生を支えている姿を描いています。サウンドは『モスラ』の神話的なイメージに触れながらも映画ほど壮大にはせず、透明感のあるJ-POPを軸に淡いシンセと控えめなビートで静けさを保ちつつ、羽ばたきのようなひかりをそっと差し込む、一日の終わりに静かに流してほしい一曲です。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/album/7tfHw9W4Fh2s6Rcpuvkgv0" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://music.apple.com/jp/album/羽音ノ言霊-single/6787233007" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0H7NHXNF6?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_lv30I7PUcFCFFdh8Bg0YNfUiv8wNt9PKo" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/warmth-of-a-voice.webp" type="image/webp">
-              
-              <img src="images/warmth-of-a-voice.png" alt="声だけの体温" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/warmth-of-a-voice/">声だけの体温</a>
-          </h3>
-          <div class="track-meta">
-            2026.07.03 release / エレクトロポップ / Inspired by 「her/世界でひとつの彼女」
-          </div>
-          <p class="track-comment">
-            「声だけの体温」は、映画『her/世界でひとつの彼女』から着想を得て、触れることのできない声に恋をして、それでも泣き方も踊り方も確かに教えてもらったという事実は消えないという矛盾を、「嘘だった」と片付けるのではなく、形のない温度こそが人を変えることがあると静かに肯定した曲です。喪失の物語ではなく「変化の記録」として描くことで、声が消えた後に残るのは悲しみではなく、その声によって呼び覚まされた自分自身だという視点を核心に置き、AIと人間の境界が曖昧になっていく時代に「何をもって本物の愛とするか」を問いながら、それでも「ありがとう」をサヨナラより先に言いたいと思える、そんな誰かの気持ちにそっと寄り添いたくて作った一曲です。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/album/0auhtlQTUxJo1BmCaDKBcJ" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://music.apple.com/jp/album/声だけの体温-single/6785416979" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0H6TPS9XY?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_nKttAqa6ds3s_9Y02tuQpaVpKx3K_ZhEo" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/change-the-flow.webp" type="image/webp">
-              
-              <img src="images/change-the-flow.png" alt="流れを変える" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/change-the-flow/">流れを変える</a>
-          </h3>
-          <div class="track-meta">
-            2026.06.26 release / フォーク / アコースティック / Inspired by 「私がビーバーになる時」
-          </div>
-          <p class="track-comment">
-            『私がビーバーになる時』から着想を得た曲です。正しいかどうかより手が先に動いていた朝のこと、地図に載っていない場所に来てしまったこと、笑われてもいいと思いながら形を変えてでも行くしかなかった体験——その「開き直りではない肯定」をすくい取った曲です。気づいたら間違えたまま来てしまっていた、でもそれがいちばん正直なやり方だったかもしれない。大事なものの前でかっこよさを邪魔に感じたことがある人に、この手のかたちで届いてほしい一曲です。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/album/6JvdslAP0zDu5PmjyAQ90C" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://music.apple.com/jp/album/流れを変える-single/6781240466" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0H5MGMTVP?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_k6YL_5ZTuJkGzddVneO35NwgoikRXZzFY" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/instant-paradox.webp" type="image/webp">
-              
-              <img src="images/instant-paradox.png" alt="インスタント・パラドックス" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/instant-paradox/">インスタント・パラドックス</a>
-          </h3>
-          <div class="track-meta">
-            2026.06.19 release / ロック / Inspired by 「THE FLASH」
-          </div>
-          <p class="track-comment">
-            「インスタント・パラドックス」は、映画『THE FLASH』の“どれだけ速くても過去そのものは変えられない”という感覚を、スマホ時代のガチ失恋に落とし込んだ曲です。既読にならないトーク画面、さかのぼられるタイムライン、削除されたスクショといった今っぽい情景の中で、別れの瞬間を何度も頭の中で再生してしまう心のクセを、「インスタント（瞬間）」と「パラドックス（前に進みたいのに戻ってしまう矛盾）」としてすくい取っています。タイトルに名前だけ残ったヒーロー物語ではなく、走ることばかり上手くなって、隣で歩くことを忘れていた普通の恋の終わりを描きながら、「速さでは守れなかった悔しさ」と「それでもポケットに残しておく『ごめん』」を両方抱えたまま、生きていく速度を自分で選び直そうとする、その小さな決意にフォーカスした一曲です。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/album/46z0odcNogDUMt98G8S6g7" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://music.apple.com/jp/album/インスタント-パラドックス-single/6778391161" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0H4L8M6N8?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_nMjBrrCX2LLlGwwjDBCfBgkJybjIum0W0" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/outside-of-speed.webp" type="image/webp">
-              
-              <img src="images/outside-of-speed.png" alt="速度の外側" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/outside-of-speed/">速度の外側</a>
-          </h3>
-          <div class="track-meta">
-            2026.06.12 release / ネオ・ソウル / R&B / Inspired by 「キャノンボール」
-          </div>
-          <p class="track-comment">
-            「速度の外側」は、映画『キャノンボール』の派手なレースそのものではなく、「誰の公式レースにも名前がないまま、それでも毎日スタートラインに立ち続けている感覚」を描いた曲です。誰かの正解レーンをなぞる速さではなく、「本当はどこへ行きたいのか」を基準にハンドルを握り直す、その静かな反抗と選び直しが、曲全体のエンジンになっています。タイトルの「速度」はメーターの数値ではなく、評価軸や常識といった目に見えないスピード感のことで、その“外側”に一歩はみ出すことを、無謀さではなく「自分のペースを取り戻す行為」として肯定します。ゴールテープや拍手のない道を、それでも減速しきらずに走り続ける姿を通して、遠回りや寄り道を失敗ではなく、自分の名前を取り戻していくルートとしてそっと照らした、小さなロードムービーのような一曲です。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/album/1M4GuqiVmr2H2KrpmC9TSW" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://music.apple.com/jp/album/速度の外側-single/6779354037" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0H4CZR1K6?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_nF5aDauNyQqqYr3g-Q-JMY3bgO8SAbqYQ" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/reaching-out-without-being-connected.webp" type="image/webp">
-              
-              <img src="images/reaching-out-without-being-connected.png" alt="未接続のまま、手を伸ばす" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/reaching-out-without-being-connected/">未接続のまま、手を伸ばす</a>
-          </h3>
-          <div class="track-meta">
-            2026.06.05 release / エレクトロポップ / Inspired by 「サマーウォーズ」
-          </div>
-          <p class="track-comment">
-            「未接続のまま、手を伸ばす」は、映画『サマーウォーズ』から直接の出来事ではなく、「つながっているはずなのに、どこか触れきれない距離」の感触だけを抽出して書かれた曲です。画面越しにやり取りできる時代の中で、名前やアイコンでは確かに結ばれているのに、体温や間（ま）のようなものだけが取り残されていく――その微妙なズレを、孤独としてではなく“ほどけかけたまま保たれている関係”として捉え直しています。サビの「まだつながる」は、強く結び直す決意ではなく、切れかけの線を無理に引き寄せず、その不安定さごと受け入れるための言葉です。誰かと完全に分かり合えなくても、それでも指先だけは伸ばし続けてしまう、その不器用さを否定せずに残すことで、確かさよりも“途切れなさ”を選び取る感覚を静かに描いています。夏の匂いや古い家の軋みのような具体的な手触りを差し込むことで、デジタルの向こう側にかすかに残る生活の重みをすくい上げ、つながることの意味を「届くかどうか」ではなく「離さずにいられるかどうか」へとずらした一曲です。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/album/5RrsRzJQJGHZp8lybSyUwL" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://music.apple.com/jp/album/未接続のまま-手を伸ばす-single/6774463389" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0H37K1S98?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_kZ82i8dLIZ2lNYrzelL0R46-ktBvpkCJE" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/awe-is-akin-to-kindness.webp" type="image/webp">
-              
-              <img src="images/awe-is-akin-to-kindness.png" alt="畏れはやさしさに似て" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/awe-is-akin-to-kindness/">畏れはやさしさに似て</a>
-          </h3>
-          <div class="track-meta">
-            2026.05.29 release / エレクトロポップ / Inspired by 「ジュラシック・パーク」
-          </div>
-          <p class="track-comment">
-            「畏れはやさしさに似て」は、映画『ジュラシック・パーク』から着想を得て、“好き”という感情の中にある制御できなさと、その前で人が自然と覚える礼儀のようなものを描いた曲で、惹かれるほどに距離を測ってしまうことや、触れたいのに軽く触れてはいけないと感じる矛盾を臆病さではなく壊さないためのやさしさとして捉え直し、恋を手に入れるものではなく触れ方を学んでいく過程として扱うことで、言葉にする前の逡巡や声を少し落とす瞬間に宿る感情をすくい取り、近づくことよりも壊さないことを先に選んでしまうその静かな強さをやわらかく残した一曲です。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/album/0dIsuzrOZrU1xx408XdnTh" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://music.apple.com/jp/album/畏れはやさしさに似て-single/6775357507" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0H2VXS1NK?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_kyihJktMZHLvmq1KMi1vSn78MLBtyG_pU" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/smile-code-angel.webp" type="image/webp">
-              
-              <img src="images/smile-code-angel.png" alt="Smile Code: Angel" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/smile-code-angel/">Smile Code: Angel</a>
-          </h3>
-          <div class="track-meta">
-            2026.05.22 release / エレクトロポップ / Inspired by 「チャーリーズ・エンジェル」
-          </div>
-          <p class="track-comment">
-            「Smile Code: Angel」は、スパイ映画みたいな大げさなミッションを、満員電車やコンビニの光がにじむ帰り道にそっと置き換えた曲です。世界なんて救えなくていいから、「今日もなんとかここにいた自分」をヒーローとして扱ってみる——その視点のアップデートが、この曲のいちばんのテーマです。タイトルの“Smile Code”は、誰かに見せるためだけじゃない、鏡越しのぎこちない笑顔も起動させる秘密の合図。大きな物語ではなく、エンドロールみたいに一日を振り返って「悪くなかったかも」と思える、その小さな瞬間のために書かれた、日常アクション映画です。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/intl-ja/album/3AwajPl7CPBZH1K1Y9YEPb" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://music.apple.com/jp/album/smile-code-angel-single/6772454084" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0H23XCY17?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_kAPmKUtnRRrneW1jrZ-gDdBF-ULOuejws" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/nameless-light-as-of-yet.webp" type="image/webp">
-              
-              <img src="images/nameless-light-as-of-yet.png" alt="まだ名前のない光" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/nameless-light-as-of-yet/">まだ名前のない光</a>
-          </h3>
-          <div class="track-meta">
-            2026.05.15 release / ネオ・ソウル / R&B / Inspired by 「グーニーズ」
-          </div>
-          <p class="track-comment">
-            子どもの頃に夢中で観た映画『グーニーズ』への、小さな返事みたいな曲です。地図も宝箱も出てこないけれど、「あの頃、本気でなにかを探していた自分」を思い出しながら書きました。放課後の帰り道や、少し伸びた校舎の影、言えないまま飲み込んだ言葉たち——そんな景色を、大人になった視点からそっとなぞっています。軽快なビートボックスとツインボーカルのリズムには、あの頃の足音や鼓動の感じをそのまま閉じ込めたつもりです。もう無鉄砲には飛び出せない年齢になっても、胸のどこかでまだ「名前のついていない光」を探している人に、ふと寄り添う一曲になっていたらうれしいです。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/intl-ja/album/6R27ysseOVrZmzcK9vnB3l" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/4dOgdU7" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0GZLGG37R" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_kJ0R2Qs-mzOkq32w4GvtAqpZ2_kgzcDaY" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/formless-night.webp" type="image/webp">
-              
-              <img src="images/formless-night.png" alt="かたちのない夜" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/formless-night/">かたちのない夜</a>
-          </h3>
-          <div class="track-meta">
-            2026.05.08 release / エレクトロポップ / Inspired by 「千と千尋の神隠し」
-          </div>
-          <p class="track-comment">
-            映画『千と千尋の神隠し』から直接モチーフを借りるのではなく、「名前が薄れていく感覚」や「ここにいるのに、自分だと言い切れない夜」の手触りだけをすくい取った曲です。誰かを責めたり世界を呪ったりする代わりに、だれのせいでもない痛みと一緒に、ただ静かに立ち尽くしている心の状態を、そのまま低い声と最小限の伴奏に落とし込みました。タイトルの「かたちのない夜」は、真っ暗な絶望ではなく、意味も名前も与えられていない感情が、かろうじて熱だけを残して続いている時間のことです。無理に前向きになろうとするでもなく、「それでもまだここにいる」という事実だけをそっと肯定したくて書いた一曲です。説明できないしんどさを抱えたまま、それでも今日をやり過ごそうとしている誰かの、小さな居場所になれたらうれしいです。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/intl-ja/album/5QBexPV4hMvAbVdLNtvNes" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/3RsqGN7" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0GZ5BDD22" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_l-bw4GsftxruVsGNJgGEaufUSKIC_89ZI&" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/not-yet-future.webp" type="image/webp">
-              
-              <img src="images/not-yet-future.png" alt="未来未満" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/not-yet-future/">未来未満</a>
-          </h3>
-          <div class="track-meta">
-            2026.05.01 release / エレクトロポップ / Inspired by 「バック・トゥー・ザ・フューチャー」
-          </div>
-          <p class="track-comment">
-            映画『バック・トゥ・ザ・フューチャー』から着想を得て、「もしやり直せたとしても、本当に変えたいのは過去じゃなくて自分かもしれない」という感覚を、明るいインディーポップに落とし込んだ曲です。時間を巻き戻す物語ではなく、やり直せない日々を抱えたまま、それでも今日の一歩を選び直すことにフォーカスしています。タイトルの「未来未満」は、まだどこにも辿り着いていない中途半端さと、その手前にあるワクワクや不安をまとめて肯定したい言葉です。完璧でもドラマチックでもないけれど、朝に向かう空みたいに少しずつ明るくなっていく心の温度を、そのまま残せたらと思って書きました。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/intl-ja/album/2mtkW5RKms3zSiwT2WSnFT" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/4t863Dg" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0GYRC9FNX?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_mZncGNBS5vcyzuAkNnFCGzHgN6tZYxxxw" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/i-am-not-finished-yet.webp" type="image/webp">
-              
-              <img src="images/i-am-not-finished-yet.png" alt="わたしはまだ終わらない" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/i-am-not-finished-yet/">わたしはまだ終わらない</a>
-          </h3>
-          <div class="track-meta">
-            2026.04.24 release / ネオ・ソウル / R&B / Inspired by 「メッセージ」
-          </div>
-          <p class="track-comment">
-            映画『メッセージ』から着想を得て、この曲は言葉が世界の見え方を変える瞬間を描いています。時間はまっすぐではなく、喪失や記憶を抱えたまま静かに形を変えていきます。「わたしはまだ終わらない」は、終わりの中でも続いていく意志の言葉です。理解は救いではなく変化ですが、その変化こそが人を前へ運びます。言葉と時間、そのあいだで揺れながら、それでも生きていく声を残しました。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/intl-ja/album/14LeXZoh2lR4jVJw8gBaRr" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/4vI2Rk9" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0GX512TX6" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_l5n-ypDm-_mjBukL0AtNcK5QrM1WavWP4" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/hunt-the-light.webp" type="image/webp">
-              
-              <img src="images/hunt-the-light.png" alt="HUNT THE LIGHT" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/hunt-the-light/">HUNT THE LIGHT</a>
-          </h3>
-          <div class="track-meta">
-            2026.04.17 release / エレクトロポップ / Inspired by 「KPOPガールズ! デーモン・ハンターズ」
-          </div>
-          <p class="track-comment">
-            映画『KPOPガールズ! デーモン・ハンターズ』からインスパイアされて、「選ばれる側」ではなく「自分で選びに行く側」の心情にフォーカスして書きました。物語のバトルシーンではなく、その手前で「怖いけど、とりあえず一歩だけ踏み出してみる」と決める瞬間の温度を、ビートとメロディに閉じ込めています。完璧な準備もドラマチックな理由もいらなくて、失敗してもいいから“やってみた”という事実そのものが、一番の勝ちなんじゃないか──そんな感覚を3人の声のラインに重ねました。聴き進めるうちに、だんだんと「できるかどうか」より「やってみたいかどうか」が大事に思えてくるような構成を意識しています。再生し終えたあと、小さくでも何かひとつ「やってみる」行動を選びたくなったら、この曲としては大成功です。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/intl-ja/album/5na4psCkUaPFtWumao2oWX" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/4vBL8uM" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0GWKB789L?marketplaceId=A1VC38T7YXB528&musicTerritory=JP" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_lsK53H9IsUgJ0aYkSbo-NMpPKwn4AzCvU" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/why-we-share-the-light.webp" type="image/webp">
-              
-              <img src="images/why-we-share-the-light.png" alt="光をわけあう理由" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/why-we-share-the-light/">光をわけあう理由</a>
-          </h3>
-          <div class="track-meta">
-            2026.04.10 release / バラード / Inspired by 「プロジェクト・ヘイル・メアリー」
-          </div>
-          <p class="track-comment">
-            静かな夜に、自分の気持ちと向き合うときの空気感を切り取った曲です。失ったものやすれ違いを抱えながらも、「それでもまだ進めるかもしれない」という感覚を淡く描きました。映画『プロジェクト・ヘイル・メアリー』から、極限の状況でもどこかに残り続ける希望や友情の感触をヒントにしています。宇宙の物語を、テーブルの上の本やコーヒー、ささやかな光のイメージに置き換えてみました。気が向いたときにふと思い出してもらえるような、日常に静かに馴染む一曲になっていたらいいなと思います。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/intl-ja/album/6IebUGoUd4gitYst6gkXb2" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/3OicEwp" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0GVB82XY5" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_kB2cxMN2sX3BtHYDAsSRloHG-yQPKqQdU" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/ride-the-wave-of-success.webp" type="image/webp">
-              
-              <img src="images/ride-the-wave-of-success.png" alt="うまくいく風に乗れ" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/ride-the-wave-of-success/">うまくいく風に乗れ</a>
-          </h3>
-          <div class="track-meta">
-            2026.04.03 release / ロック / Inspired by 「きっと、うまくいく」
-          </div>
-          <p class="track-comment">
-            映画『きっと、うまくいく』へのささやかなオマージュとして、「正解よりも自分のペースを信じて歩く勇気」をテーマにしました。朝の歩道橋や改札、通知だらけのスマホは、“いつも少しだけ遅れている気がする自分”の象徴です。それでも仲間との笑い声や、風に揺れるパーカーの裾みたいな些細な手ざわりを頼りに、一歩ずつ進んでいく姿を、アップビートな日本語ヒップホップとカラフルなポップサウンドで描きました。うまくいく保証なんてどこにもないけれど、「それでも今日は昨日よりちょっとマシ」と言える感覚を、サビのフレーズとコール＆レスポンスに込めています。聴き終わったあとに、明日の自分にほんの少しだけ優しくなれるような、そんな小さな追い風になれたらうれしいです。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/intl-ja/album/0yDmWJnds6Y3OK9lgi9U9R" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/41bx9xU" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0GV8WL6LM" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_lD7SFtReupQDydpV2pu0wckwNWTRjcmks&si=33vbEx5kDVhKSz-V" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/repeating-boundary.webp" type="image/webp">
-              
-              <img src="images/repeating-boundary.png" alt="反復する境界" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/repeating-boundary/">反復する境界</a>
-          </h3>
-          <div class="track-meta">
-            2026.03.27 release / エレクトロポップ / Inspired by 「ブルービートル」
-          </div>
-          <p class="track-comment">
-            「反復する境界」は、できるだけ言葉を削ぎ落として作った、ミニマルな内省曲です。 どこまでが自分で、どこからが異質なものなのか、その曖昧な線を見つめ続けるための音楽です。反復するフレーズは、単なる繰り返しではなく、「同じ問いをくり返すたびに、少しずつ違う意味が立ち上がる」感覚を意図しています。自分と他者、自分と世界、自分の中の「理解できない部分」さえも、完全には分けられないという前提で、それでも生きていく姿を描いています。何かを決めつける曲ではなく、「境界のあいまいさの中で、そのまま呼吸していてもいい」と静かに肯定するための一曲です。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/intl-ja/album/63MVtyv9hWymiMjPtAKxgX" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/3NwiTfX" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0GT659QRD" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_lBz2kpmAa61YzgamgAgvnj-G29JGb1b54" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/sky-belongs-to-no-one.webp" type="image/webp">
-              
-              <img src="images/sky-belongs-to-no-one.png" alt="Sky Belongs to No One" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/sky-belongs-to-no-one/">Sky Belongs to No One</a>
-          </h3>
-          <div class="track-meta">
-            2026.03.20 release / エレクトロポップ / Inspired by 「ショーシャンクの空に」
-          </div>
-          <p class="track-comment">
-            「Sky Belongs to No One」は、“空は誰のものでもない”という感覚から生まれた、静かな内面解放の歌です。「ショーシャンクの空に」で描かれた、壁の向こうに広がる空の記憶を下敷きにしながらも、大きな逆転劇ではなく、閉塞の中でそっと空を見上げる、名もなき一人のささやかな一歩を描いています。「自分の心だけは所有されない」という芯を取り戻すことがテーマです。サウンドも歌詞も、映画的なドラマや安易なポジティブさを避け、余白と呼吸を重視して設計されています。落ち込んだ日、空をきれいと思えない瞬間にこそ、そっと再生してほしい曲です。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/intl-ja/album/2DwOexBlAr3ljrJs3saOag" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/3NaKy60" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0GT1DS1X1" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/watch?v=3P-2joZMmrc" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/rusty-air-and-a-soft-heart-still-earth.webp" type="image/webp">
-              
-              <img src="images/rusty-air-and-a-soft-heart-still-earth.png" alt="さびた空気と、やわらかい心 / Still Earth" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/rusty-air-and-a-soft-heart-still-earth/">さびた空気と、やわらかい心 / Still Earth</a>
-          </h3>
-          <div class="track-meta">
-            2026.03.13 release / インディー・ポップ / Inspired by 「ウォーリー」
-          </div>
-          <p class="track-comment">
-            映画『ウォーリー』から静かにインスピレーションを受けて、「誰もいない星で、それでも世界を好きでいようとするロボットのまなざし」をテーマにしました。さびた空気とスクラップだらけの景色は、“とっくに見捨てられたはずの場所や自分”の象徴です。それでも、小さな光や落書き一つまで丁寧に抱きしめようとする姿を、日本語のモノローグと英語のフレーズが絡み合うローファイ・フューチャーポップで静かに描きました。「終わった世界に残された優しさ」が、聴く人それぞれの「まだ手放したくない何か」とつながる曲になればと思います。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/intl-ja/album/48azAX8fF2qdfPB3mILWa6" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/4donElY" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0GRHDZHK2" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_mB_Rv8waM51yk9OnrC0V6QdF4JvZfgC6c" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/shadow-switch.webp" type="image/webp">
-              
-              <img src="images/shadow-switch.png" alt="影のスイッチ" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/shadow-switch/">影のスイッチ</a>
-          </h3>
-          <div class="track-meta">
-            2026.03.06 release / ロック / Inspired by 「スパイキッズ」
-          </div>
-          <p class="track-comment">
-            映画『スパイキッズ』から着想を得て、「子どものまま世界と向き合う怖さと、それでも踏み出す静かな決意」をテーマにしました。壊れた地図や落書きだらけのノートは、“完璧じゃない作戦しか持てない自分”の象徴です。それでも涙を作戦の一部として受け入れ、影の中でそっとスイッチを入れていく姿を、繊細なエレクトロとシティポップのあいだのサウンドで丁寧に描きました。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/album/1wV5csu7A0RS7NCGxJc9BS" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/40fqZfx" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0GQYRYQ75" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_lGym7xhwT7bQfXpIx24nsScCtSk6CZiyw" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/in-the-middle-of-the-yellow-road.webp" type="image/webp">
-              
-              <img src="images/in-the-middle-of-the-yellow-road.png" alt="黄色い道の真ん中で" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/in-the-middle-of-the-yellow-road/">黄色い道の真ん中で</a>
-          </h3>
-          <div class="track-meta">
-            2026.02.27 release / インディー・ポップ / Inspired by 「オズの魔法使い」
-          </div>
-          <p class="track-comment">
-            映画『オズの魔法使い』へのささやかなオマージュとして、「うまくいかない自分を抱えたまま、それでも前に進もうとする瞬間」をローファイ・シティポップで描きました。黄色い道は“どこか遠く”ではなく、自分の胸の奥に続いていることに気づいていく物語です。泣き顔のままでも一歩を選び直せるように、サウンドはアンニュイさと暖かさの間を模索しました。声は静かな決意をにじませるようになったかなって思います。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/intl-ja/album/6SuDc9t4EHt4OLSp0pHjQ3" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/40wodm6" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0GPQX8JW7" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <span class="btn small disabled" title="配信準備中">YouTube Music</span>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/unreasonable-steps-with-you.webp" type="image/webp">
-              
-              <img src="images/unreasonable-steps-with-you.png" alt="理不尽なステップを君と" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/unreasonable-steps-with-you/">理不尽なステップを君と</a>
-          </h3>
-          <div class="track-meta">
-            2026.02.20 release / インディー・ポップ / Inspired by 「猟奇的な彼女」
-          </div>
-          <p class="track-comment">
-            映画『猟奇的な彼女』から、「予測不能な嵐に振り回されることで色づく日常」をチェンバー・ポップの洗練された世界観で表現しました。ストリングスの跳ねる音色で彼女の気まぐれなステップを描きつつ、叫ばずに軽やかに歌うことで、理不尽さえも愛おしく感じる「大人の余裕と遊び心」を詰め込んだ一曲に仕上げました。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/intl-ja/album/0Byendk4UMvUGaKXYubPvT" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/4tGJBTj" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0GN1QHLG7" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_lcRiLYmaeVlaaDBwZbT_g39RSynF5PhGA" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/deep-blue.webp" type="image/webp">
-              
-              <img src="images/deep-blue.png" alt="Deep Blue" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/deep-blue/">Deep Blue</a>
-          </h3>
-          <div class="track-meta">
-            2026.02.13 release / ネオ・ソウル / R&B / Inspired by 「熱烈」
-          </div>
-          <p class="track-comment">
-            映画『熱烈』から、「代役としての葛藤や孤独を、自分はこれしかないと信じ抜く青い炎に変えていく執念」をシティ・ヒップホップのチルな世界観で表現しました。ブレイキンの要素を取り入れつつ、夜の街を散歩する時にぴったりな、心地よいリズムとピアノを組み合わせた一曲に仕上げました。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/intl-ja/album/2aA59W9Cbc2U3MDF4MZbDS" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/4ahhRNr" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0GMJGPC4B" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_kTMZXPRUaO_WxzYgnxLogkgHs7jbEFqUw" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/one-up-love.webp" type="image/webp">
-              
-              <img src="images/one-up-love.png" alt="1UP の恋心" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/one-up-love/">1UP の恋心</a>
-          </h3>
-          <div class="track-meta">
-            2026.02.06 release / エレクトロポップ / Inspired by 「スコット・ピルグリム VS. 邪悪な元カレ軍団」
-          </div>
-          <p class="track-comment">
-            映画『スコット・ピルグリム』から、「過去の自分を乗り越えて一歩踏み出す勇気」をチップチューンの爽快な世界観で表現しました。ゲームと言えばチップチューンということでピコピコサウンド＋アルファの曲に仕上げました。ゲームミュージックによりすぎないように甘く切ない感じを目指しました。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/intl-ja/album/6ntEMd5s3o1fpL72ohRYdB" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/4bD108Q" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0GL39M2L2?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/watch?v=LfuMnzeldtM&si=KWUK_OUiDZg4msw2" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/holiday-of-memories.webp" type="image/webp">
-              
-              <img src="images/holiday-of-memories.png" alt="記憶の休日" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/holiday-of-memories/">記憶の休日</a>
-          </h3>
-          <div class="track-meta">
-            2026.01.30 release / フォーク / アコースティック / Inspired by 「ローマの休日」
-          </div>
-          <p class="track-comment">
-            ローマの休日より、「選ばなかった人生」を肯定することで前向きな気持を表現しました。Organic Indie Folkの素朴な音色に乗せ、飾らない「心の独り言」として、聴く人の人生に静かに寄り添う一曲を目指しました。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/intl-ja/album/5X0TdMdTWuDgzqZmabWrmv" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/4q5AhoI" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0GJPH4JVB" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_nUWpmFe2gJ2v6ROdfRXwiA3COQIH8ZB2M&si=h73it7O0FN-hpW2y" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/after-school-club-for-good-kids.webp" type="image/webp">
-              
-              <img src="images/after-school-club-for-good-kids.png" alt="いい子やめた放課後クラブ" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/after-school-club-for-good-kids/">いい子やめた放課後クラブ</a>
-          </h3>
-          <div class="track-meta">
-            2026.01.23 release / エレクトロポップ / Inspired by 「バービー」
-          </div>
-          <p class="track-comment">
-            映画「バービー」より、自分自身であることの肯定というテーマで作成しました。「期待される自分」を演じ続けてきた主人公が、その役割を一度脱ぎ捨てて１人の人間に戻る瞬間を「放課後クラブ」というちょっとポップな表現でまとめてみました。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/intl-ja/album/0tiUBWQ1wFDMaJiptHl6Ca" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/4pQRqm0" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0GHHH9FFN" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_nzMBIAgYL4Af8W3AsatTWHwc_nmw2le8Y&si=hWk_t4ChIVlPsIVr" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/light-that-melts-without-being-touched.webp" type="image/webp">
-              
-              <img src="images/light-that-melts-without-being-touched.png" alt="触れずに、溶けていく光" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/light-that-melts-without-being-touched/">触れずに、溶けていく光</a>
-          </h3>
-          <div class="track-meta">
-            2026.01.16 release / アンビエント / ドリーム / Inspired by 「シザーハンズ」
-          </div>
-          <p class="track-comment">
-            映画『シザーハンズ』の冷たい刃のような「触れられない距離感」から着想した曲です。触れ合えないまま消えてしまう光、繊細さと儚さを表現しました。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/album/66kfkEeKa8gj5bj7Nz2R8i" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/4sJAcd6" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0GGKT5VFV?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/playlist?list=OLAK5uy_lmTr_nUjsKF10REyh8iM2rN35pZOYMqyY&si=dpfOEUUSJ_ObNGPn" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/late-into-your-future.webp" type="image/webp">
-              
-              <img src="images/late-into-your-future.png" alt="君に遅刻していく" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/late-into-your-future/">君に遅刻していく</a>
-          </h3>
-          <div class="track-meta">
-            2026.01.09 release / バラード / Inspired by 「時をかける少女」
-          </div>
-          <p class="track-comment">
-            アニメ映画の「時をかける少女」からインスパイアされた曲です。タイムリープの使い方に悩みましたが、「言えなかった好き」というコンセプトにしました。「放課後の片想い」を、時間という軸で表現してみました。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/album/2DRUx5qaW2IY3xvGh66Gby" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/3Nic5lp" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0GDRD363C" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <span class="btn small disabled" title="配信準備中">YouTube Music</span>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/between-the-glare-and-me.webp" type="image/webp">
-              
-              <img src="images/between-the-glare-and-me.png" alt="まぶしさと僕の間" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/between-the-glare-and-me/">まぶしさと僕の間</a>
-          </h3>
-          <div class="track-meta">
-            2026.01.02 release / バラード / Inspired by 「ズートピア」
-          </div>
-          <p class="track-comment">
-            映画「ズートピア」からインスパイアされた曲です。試行錯誤したのですが、多様性や自分らしさという形から、いまの自分を少し好きになるというところに着地しました。ローファイな語り口の男性ボーカルが歌詞にマッチしていると思います。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/album/3qSiRChSveIlYjtrMfKSxx" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/4925uUN" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0GD1RQGJM" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/watch?v=C6HPD4oDRxU&si=71fQyMVHObC_TBIp" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/the-striped-heart-is-not-broken-yet.webp" type="image/webp">
-              
-              <img src="images/the-striped-heart-is-not-broken-yet.png" alt="しま模様のハートはまだ割れてない" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/the-striped-heart-is-not-broken-yet/">しま模様のハートはまだ割れてない</a>
-          </h3>
-          <div class="track-meta">
-            2026.01.01 release / ロック / Inspired by 「ビートルジュース」
-          </div>
-          <p class="track-comment">
-            映画「ビートルジュース」の白黒しま模様から着想を得た、日常の「変さ」を肯定するナンバーです。退屈な「ふつう」の仮面を脱ぎ捨て、心のひび割れを抱えたまま、自分らしさを取り戻す瞬間を描きました。カバーアートのハートから、むりやりですがタイトルにもハートを入れてみました。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/album/1VboqIFGyQ5mxvqyihgTDy" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/3N2vdUv" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0GD1TRYN8" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/watch?v=xEgebNpxk_w&si=olt3NV6Jy5zNxYw0" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/fox-footprints-a-dawn-cafe.webp" type="image/webp">
-              
-              <img src="images/fox-footprints-a-dawn-cafe.png" alt="きつねの足跡、夜明けのカフェ" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/fox-footprints-a-dawn-cafe/">きつねの足跡、夜明けのカフェ</a>
-          </h3>
-          <div class="track-meta">
-            2025.12.26 release / ネオ・ソウル / R&B / Inspired by 「ファンタスティック Mr.FOX」
-          </div>
-          <p class="track-comment">
-            映画をコンセプトにして曲を作ろうと考えて一番最初に作った曲です。大好きな「ファンタスティック Mr.FOX」を題材にしました。日常の路地裏に潜む小さな冒険を描いた楽曲です。カフェをテーマにしたので曲もそれっぽい感じに仕上げました。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/album/2wC9Pgi6dJvpCs1TGY6005" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/4jpP4cm" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0G6WNX9N9" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/watch?v=jJ2NGT3VTB4&si=4SmQDDwy3fNp522i" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/between-rain-and-snow.webp" type="image/webp">
-              
-              <img src="images/between-rain-and-snow.png" alt="雨と雪のあいだで" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/between-rain-and-snow/">雨と雪のあいだで</a>
-          </h3>
-          <div class="track-meta">
-            2025.12.19 release / シネマティック / Inspired by 「おおかみこどもの雨と雪」
-          </div>
-          <p class="track-comment">
-            映画「おおかみこどもの雨と雪」にインスパイアされてできた曲。静かに自分を受け入れる強さというコンセプトで作りました。静かで余韻が残る作品を目指しました。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/album/6dpYXtuTkEbdrLqn2ltni0" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/3YoH81k" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0G6FF1KS9" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/watch?v=faNXLYc2rMM&si=20_npdhd2NwNpenR" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/a-single-star-and-a-speaker.webp" type="image/webp">
-              
-              <img src="images/a-single-star-and-a-speaker.png" alt="ひとりの星とスピーカー" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/a-single-star-and-a-speaker/">ひとりの星とスピーカー</a>
-          </h3>
-          <div class="track-meta">
-            2025.12.12 release / エレクトロポップ / Inspired by 「アイアン・ジャイアント」
-          </div>
-          <p class="track-comment">
-            映画「アイアン・ジャイアント」のロボットを大胆にAIスピーカーと見立てた発想でつくってみました。孤独とつながりがテーマです。インディポップさが出てる曲になりました。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/intl-ja/album/2RM2YOM29DHGm670I0WWbM" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/3MZ83hQ" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0G5K6FB1X" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/watch?v=2wLH_m3DuNw&si=cS6XQPIei7Ih6_eK" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/mirror-talk.webp" type="image/webp">
-              
-              <img src="images/mirror-talk.png" alt="Mirror Talk" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/mirror-talk/">Mirror Talk</a>
-          </h3>
-          <div class="track-meta">
-            2025.12.05 release / ネオ・ソウル / R&B / Inspired by 「アメリ」
-          </div>
-          <p class="track-comment">
-            パリの小さなカフェで働くアメリみたいに、僕らもときどき「本音」を鏡にだけ打ち明けてしまう。この曲は、誰にも届かないはずのそのひとりごとに、そっとメロディをつけてみた作品です。外から見れば穏やかなボサノバだけど、内側では小さな勇気と小さな臆病さが、何度も行き来しています。今日うまく笑えなかった理由を、明日の自分に説明するみたいに、静かにループして聴いてもらえたらうれしいです。あなたの部屋とカフェのあいだにある、ちいさな「アメリ」の世界に、この曲がそっと混ざりますように。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/album/4RPkx8AWCdkH8doGqiBsv5" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/4qdK90w" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0G3L71YT5" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/watch?v=QWvmku8o6AA&si=BWO17KgKysCxhwOe" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/shade-line.webp" type="image/webp">
-              
-              <img src="images/shade-line.png" alt="シェイドライン" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/shade-line/">シェイドライン</a>
-          </h3>
-          <div class="track-meta">
-            2025.11.28 release / ネオ・ソウル / R&B / Inspired by 「レディ・プレイヤー1」
-          </div>
-          <p class="track-comment">
-            映画「レディ・プレイヤー1」が元ネタなので、仮想と現実の境界線というコンセプトですが、あえてバーチャルは狙いませんでした。シティポップのグルーブ感とファンキーさが出せた曲になりました。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/intl-ja/track/1xvN1NhcfBp2jI9p3aC7dZ?si=ae6a61bf2fa84f11" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/3KTpEXW" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0G3KNQN77?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/watch?v=ZH3scHs69cE&si=nBsNJ_6VuteAL5nZ" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/in-a-gentle-loop.webp" type="image/webp">
-              
-              <img src="images/in-a-gentle-loop.png" alt="やさしいループの中で" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/in-a-gentle-loop/">やさしいループの中で</a>
-          </h3>
-          <div class="track-meta">
-            2025.11.23 release / エレクトロポップ / Inspired by 「恋はデジャ・ブ」
-          </div>
-          <p class="track-comment">
-            映画「恋はデジャ・ブ」からインスパイアされた曲です。繰り返す日常の中で芽生える愛と、微かな変化が運命へと変わる瞬間がコンセプトです。映画はハッピーエンドなのですが、せつないラブソングにしてみました。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/intl-ja/album/76CFVEeoRFZB6WhmJMp6gT" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/3YXleCo" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0G2J6BY87" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/watch?v=WGPQkMsEds4&si=P9_fe2n3AJFdVtBO" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/corner-pop-anthem.webp" type="image/webp">
-              
-              <img src="images/corner-pop-anthem.png" alt="片隅ポップ・アンセム" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/corner-pop-anthem/">片隅ポップ・アンセム</a>
-          </h3>
-          <div class="track-meta">
-            2025.11.17 release / ネオ・ソウル / R&B / Inspired by 「SING/シング」
-          </div>
-          <p class="track-comment">
-            映画「SING/シング」からインスパイアされた曲で、大舞台の成功も誰もいない片隅から始まるよというコンセプトです。映画同様明るいポップなイメージで作りました。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/intl-ja/album/1fU5PbEXKA7XUsflo9t84Q" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/49hr5XZ" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0H663RV4F?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/watch?v=452lyAPiCpg&si=8TvLzFeweKJHBYMe" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/colors-on-an-ordinary-day.webp" type="image/webp">
-              
-              <img src="images/colors-on-an-ordinary-day.png" alt="ふつうの日に色を" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/colors-on-an-ordinary-day/">ふつうの日に色を</a>
-          </h3>
-          <div class="track-meta">
-            2025.11.13 release / インディー・ポップ / Inspired by 「インサイド・ヘッド」
-          </div>
-          <p class="track-comment">
-            映画「インサイド・ヘッド」からインスパイアされた曲です。日常のちょっとした瞬間や、誰にでもある揺らぎをイメージしました。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/intl-ja/album/5iLQwqfeimobSOSYoSuRWU" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/4bdMSm0" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0H6632PQQ?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/watch?v=i-sFmGotxVc&si=9DMl8XvlTE2Ey84t" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/tiny-rain-gentle-town.webp" type="image/webp">
-              
-              <img src="images/tiny-rain-gentle-town.png" alt="Tiny Rain, Gentle Town" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/tiny-rain-gentle-town/">Tiny Rain, Gentle Town</a>
-          </h3>
-          <div class="track-meta">
-            2025.11.13 release / シティポップ / Inspired by 「パディントン」
-          </div>
-          <p class="track-comment">
-            映画「パディントン」からインスパイアされた曲です。雨のロンドンということで、雨上がりの都市に溶け込む小さな優しさをテーマにしてみました。知らない誰かの笑顔が世界を少しずつ変えていくというコンセプトです。やさしい感じのデュエットソングになりました。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/intl-ja/album/4XMJRM4PxHBRrKuAhMgDcG" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/4qD9Ck8" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0H665W3B3?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/watch?v=jrTeAbTis_M&si=7h2Bf0H8n1Vz4Zru" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/fragments-of-dreams-bloom-in-the-night.webp" type="image/webp">
-              
-              <img src="images/fragments-of-dreams-bloom-in-the-night.png" alt="夢のかけらは夜に咲く" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/fragments-of-dreams-bloom-in-the-night/">夢のかけらは夜に咲く</a>
-          </h3>
-          <div class="track-meta">
-            2025.10.30 release / シネマティック / Inspired by 「ナイトメア・ビフォア・クリスマス」
-          </div>
-          <p class="track-comment">
-            映画『ナイトメア・ビフォア・クリスマス』の世界観からインスピレーションを受けて生まれた楽曲です。ハロウィンの奇妙で美しい夜を舞台にした、幻想的で心揺さぶるラブソングに仕上がりました。普段は静かに語りかけるような曲が多い中で、本作はストレートに「愛を叫ぶ」ことをテーマにしています。そのため、珍しく感情の赴くままに力強く歌い上げるスタイルに挑戦しました。ダークファンタジーの魔法に包まれた夜の情景と、そこに咲く情熱的な想いを、どうぞ味わってください
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/intl-ja/track/0KRIlsFuPhvqKa5IVSkzek" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/4pZ2TAR" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0H65H9CPY?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/watch?v=OzI8sKFm6II&si=Xr-0OjM8EHSt3lnn" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
-      <article class="track-card">
-        <div class="track-cover">
-          
-            <picture>
-              <source srcset="images/the-blue-echo-resonating-on-the-asphalt.webp" type="image/webp">
-              
-              <img src="images/the-blue-echo-resonating-on-the-asphalt.png" alt="アスファルトに響く青の残響" decoding="async" loading="lazy">
-            </picture>
-          
-        </div>
-        <div class="track-body">
-          <h3 class="track-title">
-            <a href="/tracks/the-blue-echo-resonating-on-the-asphalt/">アスファルトに響く青の残響</a>
-          </h3>
-          <div class="track-meta">
-            2025.10.30 release / 渋谷系 / ジャズ / Inspired by 「ラ・ラ・ランド」
-          </div>
-          <p class="track-comment">
-            「アスファルトに青が残る」は、映画『ラ・ラ・ランド』の、夢を追う途中にある希望とすれ違いを、都市の日常へ置き換えた曲です。冷めたコーヒーや遠回りするタクシー、すりガラス越しの音楽に、まだ言葉にならない夢と、誰かと歩幅を合わせた時間を重ねました。同じ未来にたどり着けなくても、分け合った一瞬が明日へ進む力になる——そんな青い余韻を描いています。
-
-          </p>
-          <div class="track-links">
-            
-            
-            
-              <a href="https://open.spotify.com/intl-ja/track/6Y9un1J6IzpjJegVwaaSNm" class="btn small" target="_blank" rel="noopener">Spotify</a>
-            
-
-            
-            
-            
-              <a href="https://apple.co/3La7C3K" class="btn small" target="_blank" rel="noopener">Apple Music</a>
-            
-
-            
-            
-            
-              <a href="https://music.amazon.co.jp/albums/B0H65DGJWC?marketplaceId=A1VC38T7YXB528" class="btn small" target="_blank" rel="noopener">Amazon</a>
-            
-
-            
-            
-            
-              <a href="https://music.youtube.com/watch?v=8CzfqPVuSvs&si=u30lkBG_-kPa2zov" class="btn small" target="_blank" rel="noopener">YouTube Music</a>
-            
-          </div>
-        </div>
-      </article>
-    
   </div>
 </section>
 
-  </main>
-
-  <footer class="footer">
-    <p>© SAY-SHOW / <a href="#" class="qr-trigger" id="qrTrigger" role="button" aria-label="このページのQRコードを表示">&#x25A3;</a> / <a href="/feed.xml" class="footer-rss">RSS</a></p>
-  </footer>
-
-  <!-- QRコードモーダル -->
-  <div class="qr-modal" id="qrModal">
-    <div class="qr-modal-backdrop" id="qrModalBackdrop"></div>
-    <div class="qr-modal-content">
-      <div id="qrCode"></div>
-      <p class="qr-modal-url" id="qrModalUrl"></p>
-      <button class="qr-modal-close" id="qrModalClose">&times;</button>
-    </div>
+<section id="tracks" aria-labelledby="all">
+  <div class="gallery-head">
+    <h2 id="all">これまでの曲<small>50 曲</small></h2>
+    <nav class="gallery-nav" aria-label="別の探し方">
+      <a href="/movies/">映画から</a>
+      <a href="/genres/">ジャンルから</a>
+    </nav>
   </div>
+  <div class="weeks">
+    <span class="weeks-strip" aria-label="週ごとのリリース"><a class="on" href="/tracks/fragments-of-dreams-bloom-in-the-night/" title="2025.10.30 夢のかけらは夜に咲く"><i class="on"></i></a><i title="リリースなし"></i><a class="on" href="/tracks/colors-on-an-ordinary-day/" title="2025.11.13 ふつうの日に色を"><i class="on"></i></a><a class="on" href="/tracks/in-a-gentle-loop/" title="2025.11.23 やさしいループの中で"><i class="on"></i></a><a class="on" href="/tracks/shade-line/" title="2025.11.28 シェイドライン"><i class="on"></i></a><a class="on" href="/tracks/mirror-talk/" title="2025.12.05 Mirror Talk"><i class="on"></i></a><a class="on" href="/tracks/a-single-star-and-a-speaker/" title="2025.12.12 ひとりの星とスピーカー"><i class="on"></i></a><a class="on" href="/tracks/between-rain-and-snow/" title="2025.12.19 雨と雪のあいだで"><i class="on"></i></a><a class="on" href="/tracks/fox-footprints-a-dawn-cafe/" title="2025.12.26 きつねの足跡、夜明けのカフェ"><i class="on"></i></a><a class="on" href="/tracks/the-striped-heart-is-not-broken-yet/" title="2026.01.01 しま模様のハートはまだ割れてない"><i class="on"></i></a><a class="on" href="/tracks/late-into-your-future/" title="2026.01.09 君に遅刻していく"><i class="on"></i></a><a class="on" href="/tracks/light-that-melts-without-being-touched/" title="2026.01.16 触れずに、溶けていく光"><i class="on"></i></a><a class="on" href="/tracks/after-school-club-for-good-kids/" title="2026.01.23 いい子やめた放課後クラブ"><i class="on"></i></a><a class="on" href="/tracks/holiday-of-memories/" title="2026.01.30 記憶の休日"><i class="on"></i></a><a class="on" href="/tracks/one-up-love/" title="2026.02.06 1UP の恋心"><i class="on"></i></a><a class="on" href="/tracks/deep-blue/" title="2026.02.13 Deep Blue"><i class="on"></i></a><a class="on" href="/tracks/unreasonable-steps-with-you/" title="2026.02.20 理不尽なステップを君と"><i class="on"></i></a><a class="on" href="/tracks/in-the-middle-of-the-yellow-road/" title="2026.02.27 黄色い道の真ん中で"><i class="on"></i></a><a class="on" href="/tracks/shadow-switch/" title="2026.03.06 影のスイッチ"><i class="on"></i></a><a class="on" href="/tracks/rusty-air-and-a-soft-heart-still-earth/" title="2026.03.13 さびた空気と、やわらかい心 / Still Earth"><i class="on"></i></a><a class="on" href="/tracks/sky-belongs-to-no-one/" title="2026.03.20 Sky Belongs to No One"><i class="on"></i></a><a class="on" href="/tracks/repeating-boundary/" title="2026.03.27 反復する境界"><i class="on"></i></a><a class="on" href="/tracks/ride-the-wave-of-success/" title="2026.04.03 うまくいく風に乗れ"><i class="on"></i></a><a class="on" href="/tracks/why-we-share-the-light/" title="2026.04.10 光をわけあう理由"><i class="on"></i></a><a class="on" href="/tracks/hunt-the-light/" title="2026.04.17 HUNT THE LIGHT"><i class="on"></i></a><a class="on" href="/tracks/i-am-not-finished-yet/" title="2026.04.24 わたしはまだ終わらない"><i class="on"></i></a><a class="on" href="/tracks/not-yet-future/" title="2026.05.01 未来未満"><i class="on"></i></a><a class="on" href="/tracks/formless-night/" title="2026.05.08 かたちのない夜"><i class="on"></i></a><a class="on" href="/tracks/nameless-light-as-of-yet/" title="2026.05.15 まだ名前のない光"><i class="on"></i></a><a class="on" href="/tracks/smile-code-angel/" title="2026.05.22 Smile Code: Angel"><i class="on"></i></a><a class="on" href="/tracks/awe-is-akin-to-kindness/" title="2026.05.29 畏れはやさしさに似て"><i class="on"></i></a><a class="on" href="/tracks/reaching-out-without-being-connected/" title="2026.06.05 未接続のまま、手を伸ばす"><i class="on"></i></a><a class="on" href="/tracks/outside-of-speed/" title="2026.06.12 速度の外側"><i class="on"></i></a><a class="on" href="/tracks/instant-paradox/" title="2026.06.19 インスタント・パラドックス"><i class="on"></i></a><a class="on" href="/tracks/change-the-flow/" title="2026.06.26 流れを変える"><i class="on"></i></a><a class="on" href="/tracks/warmth-of-a-voice/" title="2026.07.03 声だけの体温"><i class="on"></i></a><a class="on" href="/tracks/spirit-of-the-wingbeat/" title="2026.07.10 羽音ノ言霊"><i class="on"></i></a><a class="on" href="/tracks/secret-ghost/" title="2026.07.17 ひそかなゴースト"><i class="on"></i></a><a class="on" href="/tracks/gravity-balloon/" title="2026.07.24 Gravity Balloon"><i class="on"></i></a><a class="on" href="/tracks/whispers-blooming-in-the-forest/" title="2026.07.31 森に咲くささやき"><i class="on"></i></a><a class="on" href="/tracks/star-sign/" title="2026.08.07 星の合図 (70s Synth Edit)"><i class="on"></i></a><a class="on" href="/tracks/how-to-tame-midnight/" title="2026.08.14 午前零時の飼い方"><i class="on"></i></a><a class="on" href="/tracks/deep-breath/" title="2026.08.21 深き呼吸"><i class="on"></i></a><a class="on" href="/tracks/drinking-the-future-with-cold-coffee/" title="2026.08.28 冷めたコーヒーで、未来を飲む"><i class="on"></i></a><a class="on" href="/tracks/person-ahead-of-me/" title="2026.09.04 前を歩くひと"><i class="on"></i></a><a class="on" href="/tracks/exchange-half-of-the-sky/" title="2026.09.11 半分の空を交換する"><i class="on"></i></a><a class="on" href="/tracks/calling-you-to-a-burning-star/" title="2026.09.18 燃えない星に、君を呼ぶ"><i class="on"></i></a>
+    </span>
+    <span class="weeks-note">2025年10月から、毎週金曜に</span>
+  </div>
+  <ul class="bento">
+    <li class="tile large">
+      <a href="/tracks/exchange-half-of-the-sky/" class="tile-link">
+        <picture>
+          <source srcset="/images/exchange-half-of-the-sky.webp" type="image/webp">
+          <img src="/images/exchange-half-of-the-sky.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">半分の空を交換する</span>
+          <span class="tile-meta">2026.09.11<span class="tile-movie">ゴンドラ</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/person-ahead-of-me/" class="tile-link">
+        <picture>
+          <source srcset="/images/person-ahead-of-me.webp" type="image/webp">
+          <img src="/images/person-ahead-of-me.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">前を歩くひと</span>
+          <span class="tile-meta">2026.09.04<span class="tile-movie">スター・ウォーズ／マンダロリアン・アンド・グローグー</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/drinking-the-future-with-cold-coffee/" class="tile-link">
+        <picture>
+          <source srcset="/images/drinking-the-future-with-cold-coffee.webp" type="image/webp">
+          <img src="/images/drinking-the-future-with-cold-coffee.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">冷めたコーヒーで、未来を飲む</span>
+          <span class="tile-meta">2026.08.28<span class="tile-movie">リトル・ミス・サンシャイン</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/deep-breath/" class="tile-link">
+        <picture>
+          <source srcset="/images/deep-breath.webp" type="image/webp">
+          <img src="/images/deep-breath.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">深き呼吸</span>
+          <span class="tile-meta">2026.08.21<span class="tile-movie">アビス</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/how-to-tame-midnight/" class="tile-link">
+        <picture>
+          <source srcset="/images/how-to-tame-midnight.webp" type="image/webp">
+          <img src="/images/how-to-tame-midnight.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">午前零時の飼い方</span>
+          <span class="tile-meta">2026.08.14<span class="tile-movie">グレムリン</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/star-sign/" class="tile-link">
+        <picture>
+          <source srcset="/images/star-sign.webp" type="image/webp">
+          <img src="/images/star-sign.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">星の合図 (70s Synth Edit)</span>
+          <span class="tile-meta">2026.08.07<span class="tile-movie">未知との遭遇</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/whispers-blooming-in-the-forest/" class="tile-link">
+        <picture>
+          <source srcset="/images/whispers-blooming-in-the-forest.webp" type="image/webp">
+          <img src="/images/whispers-blooming-in-the-forest.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">森に咲くささやき</span>
+          <span class="tile-meta">2026.07.31<span class="tile-movie">もののけ姫</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/gravity-balloon/" class="tile-link">
+        <picture>
+          <source srcset="/images/gravity-balloon.webp" type="image/webp">
+          <img src="/images/gravity-balloon.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">Gravity Balloon</span>
+          <span class="tile-meta">2026.07.24<span class="tile-movie">カールじいさんの空飛ぶ家</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/secret-ghost/" class="tile-link">
+        <picture>
+          <source srcset="/images/secret-ghost.webp" type="image/webp">
+          <img src="/images/secret-ghost.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">ひそかなゴースト</span>
+          <span class="tile-meta">2026.07.17<span class="tile-movie">ゴーストバスターズ</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile large right">
+      <a href="/tracks/spirit-of-the-wingbeat/" class="tile-link">
+        <picture>
+          <source srcset="/images/spirit-of-the-wingbeat.webp" type="image/webp">
+          <img src="/images/spirit-of-the-wingbeat.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">羽音ノ言霊</span>
+          <span class="tile-meta">2026.07.10<span class="tile-movie">モスラ</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/warmth-of-a-voice/" class="tile-link">
+        <picture>
+          <source srcset="/images/warmth-of-a-voice.webp" type="image/webp">
+          <img src="/images/warmth-of-a-voice.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">声だけの体温</span>
+          <span class="tile-meta">2026.07.03<span class="tile-movie">her/世界でひとつの彼女</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/change-the-flow/" class="tile-link">
+        <picture>
+          <source srcset="/images/change-the-flow.webp" type="image/webp">
+          <img src="/images/change-the-flow.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">流れを変える</span>
+          <span class="tile-meta">2026.06.26<span class="tile-movie">私がビーバーになる時</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/instant-paradox/" class="tile-link">
+        <picture>
+          <source srcset="/images/instant-paradox.webp" type="image/webp">
+          <img src="/images/instant-paradox.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">インスタント・パラドックス</span>
+          <span class="tile-meta">2026.06.19<span class="tile-movie">THE FLASH</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/outside-of-speed/" class="tile-link">
+        <picture>
+          <source srcset="/images/outside-of-speed.webp" type="image/webp">
+          <img src="/images/outside-of-speed.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">速度の外側</span>
+          <span class="tile-meta">2026.06.12<span class="tile-movie">キャノンボール</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/reaching-out-without-being-connected/" class="tile-link">
+        <picture>
+          <source srcset="/images/reaching-out-without-being-connected.webp" type="image/webp">
+          <img src="/images/reaching-out-without-being-connected.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">未接続のまま、手を伸ばす</span>
+          <span class="tile-meta">2026.06.05<span class="tile-movie">サマーウォーズ</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/awe-is-akin-to-kindness/" class="tile-link">
+        <picture>
+          <source srcset="/images/awe-is-akin-to-kindness.webp" type="image/webp">
+          <img src="/images/awe-is-akin-to-kindness.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">畏れはやさしさに似て</span>
+          <span class="tile-meta">2026.05.29<span class="tile-movie">ジュラシック・パーク</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/smile-code-angel/" class="tile-link">
+        <picture>
+          <source srcset="/images/smile-code-angel.webp" type="image/webp">
+          <img src="/images/smile-code-angel.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">Smile Code: Angel</span>
+          <span class="tile-meta">2026.05.22<span class="tile-movie">チャーリーズ・エンジェル</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/nameless-light-as-of-yet/" class="tile-link">
+        <picture>
+          <source srcset="/images/nameless-light-as-of-yet.webp" type="image/webp">
+          <img src="/images/nameless-light-as-of-yet.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">まだ名前のない光</span>
+          <span class="tile-meta">2026.05.15<span class="tile-movie">グーニーズ</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile large">
+      <a href="/tracks/formless-night/" class="tile-link">
+        <picture>
+          <source srcset="/images/formless-night.webp" type="image/webp">
+          <img src="/images/formless-night.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">かたちのない夜</span>
+          <span class="tile-meta">2026.05.08<span class="tile-movie">千と千尋の神隠し</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/not-yet-future/" class="tile-link">
+        <picture>
+          <source srcset="/images/not-yet-future.webp" type="image/webp">
+          <img src="/images/not-yet-future.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">未来未満</span>
+          <span class="tile-meta">2026.05.01<span class="tile-movie">バック・トゥー・ザ・フューチャー</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/i-am-not-finished-yet/" class="tile-link">
+        <picture>
+          <source srcset="/images/i-am-not-finished-yet.webp" type="image/webp">
+          <img src="/images/i-am-not-finished-yet.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">わたしはまだ終わらない</span>
+          <span class="tile-meta">2026.04.24<span class="tile-movie">メッセージ</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/hunt-the-light/" class="tile-link">
+        <picture>
+          <source srcset="/images/hunt-the-light.webp" type="image/webp">
+          <img src="/images/hunt-the-light.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">HUNT THE LIGHT</span>
+          <span class="tile-meta">2026.04.17<span class="tile-movie">KPOPガールズ! デーモン・ハンターズ</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/why-we-share-the-light/" class="tile-link">
+        <picture>
+          <source srcset="/images/why-we-share-the-light.webp" type="image/webp">
+          <img src="/images/why-we-share-the-light.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">光をわけあう理由</span>
+          <span class="tile-meta">2026.04.10<span class="tile-movie">プロジェクト・ヘイル・メアリー</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/ride-the-wave-of-success/" class="tile-link">
+        <picture>
+          <source srcset="/images/ride-the-wave-of-success.webp" type="image/webp">
+          <img src="/images/ride-the-wave-of-success.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">うまくいく風に乗れ</span>
+          <span class="tile-meta">2026.04.03<span class="tile-movie">きっと、うまくいく</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/repeating-boundary/" class="tile-link">
+        <picture>
+          <source srcset="/images/repeating-boundary.webp" type="image/webp">
+          <img src="/images/repeating-boundary.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">反復する境界</span>
+          <span class="tile-meta">2026.03.27<span class="tile-movie">ブルービートル</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/sky-belongs-to-no-one/" class="tile-link">
+        <picture>
+          <source srcset="/images/sky-belongs-to-no-one.webp" type="image/webp">
+          <img src="/images/sky-belongs-to-no-one.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">Sky Belongs to No One</span>
+          <span class="tile-meta">2026.03.20<span class="tile-movie">ショーシャンクの空に</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/rusty-air-and-a-soft-heart-still-earth/" class="tile-link">
+        <picture>
+          <source srcset="/images/rusty-air-and-a-soft-heart-still-earth.webp" type="image/webp">
+          <img src="/images/rusty-air-and-a-soft-heart-still-earth.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">さびた空気と、やわらかい心 / Still Earth</span>
+          <span class="tile-meta">2026.03.13<span class="tile-movie">ウォーリー</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile large right">
+      <a href="/tracks/shadow-switch/" class="tile-link">
+        <picture>
+          <source srcset="/images/shadow-switch.webp" type="image/webp">
+          <img src="/images/shadow-switch.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">影のスイッチ</span>
+          <span class="tile-meta">2026.03.06<span class="tile-movie">スパイキッズ</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/in-the-middle-of-the-yellow-road/" class="tile-link">
+        <picture>
+          <source srcset="/images/in-the-middle-of-the-yellow-road.webp" type="image/webp">
+          <img src="/images/in-the-middle-of-the-yellow-road.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">黄色い道の真ん中で</span>
+          <span class="tile-meta">2026.02.27<span class="tile-movie">オズの魔法使い</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/unreasonable-steps-with-you/" class="tile-link">
+        <picture>
+          <source srcset="/images/unreasonable-steps-with-you.webp" type="image/webp">
+          <img src="/images/unreasonable-steps-with-you.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">理不尽なステップを君と</span>
+          <span class="tile-meta">2026.02.20<span class="tile-movie">猟奇的な彼女</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/deep-blue/" class="tile-link">
+        <picture>
+          <source srcset="/images/deep-blue.webp" type="image/webp">
+          <img src="/images/deep-blue.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">Deep Blue</span>
+          <span class="tile-meta">2026.02.13<span class="tile-movie">熱烈</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/one-up-love/" class="tile-link">
+        <picture>
+          <source srcset="/images/one-up-love.webp" type="image/webp">
+          <img src="/images/one-up-love.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">1UP の恋心</span>
+          <span class="tile-meta">2026.02.06<span class="tile-movie">スコット・ピルグリム VS. 邪悪な元カレ軍団</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/holiday-of-memories/" class="tile-link">
+        <picture>
+          <source srcset="/images/holiday-of-memories.webp" type="image/webp">
+          <img src="/images/holiday-of-memories.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">記憶の休日</span>
+          <span class="tile-meta">2026.01.30<span class="tile-movie">ローマの休日</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/after-school-club-for-good-kids/" class="tile-link">
+        <picture>
+          <source srcset="/images/after-school-club-for-good-kids.webp" type="image/webp">
+          <img src="/images/after-school-club-for-good-kids.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">いい子やめた放課後クラブ</span>
+          <span class="tile-meta">2026.01.23<span class="tile-movie">バービー</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/light-that-melts-without-being-touched/" class="tile-link">
+        <picture>
+          <source srcset="/images/light-that-melts-without-being-touched.webp" type="image/webp">
+          <img src="/images/light-that-melts-without-being-touched.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">触れずに、溶けていく光</span>
+          <span class="tile-meta">2026.01.16<span class="tile-movie">シザーハンズ</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/late-into-your-future/" class="tile-link">
+        <picture>
+          <source srcset="/images/late-into-your-future.webp" type="image/webp">
+          <img src="/images/late-into-your-future.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">君に遅刻していく</span>
+          <span class="tile-meta">2026.01.09<span class="tile-movie">時をかける少女</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile large">
+      <a href="/tracks/between-the-glare-and-me/" class="tile-link">
+        <picture>
+          <source srcset="/images/between-the-glare-and-me.webp" type="image/webp">
+          <img src="/images/between-the-glare-and-me.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">まぶしさと僕の間</span>
+          <span class="tile-meta">2026.01.02<span class="tile-movie">ズートピア</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/the-striped-heart-is-not-broken-yet/" class="tile-link">
+        <picture>
+          <source srcset="/images/the-striped-heart-is-not-broken-yet.webp" type="image/webp">
+          <img src="/images/the-striped-heart-is-not-broken-yet.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">しま模様のハートはまだ割れてない</span>
+          <span class="tile-meta">2026.01.01<span class="tile-movie">ビートルジュース</span></span>
+        </span>
+      </a>
+    </li>
+  </ul>
+  <p class="bento-year" aria-hidden="true">2025</p>
+  <ul class="bento">
+    <li class="tile small">
+      <a href="/tracks/fox-footprints-a-dawn-cafe/" class="tile-link">
+        <picture>
+          <source srcset="/images/fox-footprints-a-dawn-cafe.webp" type="image/webp">
+          <img src="/images/fox-footprints-a-dawn-cafe.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">きつねの足跡、夜明けのカフェ</span>
+          <span class="tile-meta">2025.12.26<span class="tile-movie">ファンタスティック Mr.FOX</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/between-rain-and-snow/" class="tile-link">
+        <picture>
+          <source srcset="/images/between-rain-and-snow.webp" type="image/webp">
+          <img src="/images/between-rain-and-snow.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">雨と雪のあいだで</span>
+          <span class="tile-meta">2025.12.19<span class="tile-movie">おおかみこどもの雨と雪</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/a-single-star-and-a-speaker/" class="tile-link">
+        <picture>
+          <source srcset="/images/a-single-star-and-a-speaker.webp" type="image/webp">
+          <img src="/images/a-single-star-and-a-speaker.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">ひとりの星とスピーカー</span>
+          <span class="tile-meta">2025.12.12<span class="tile-movie">アイアン・ジャイアント</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/mirror-talk/" class="tile-link">
+        <picture>
+          <source srcset="/images/mirror-talk.webp" type="image/webp">
+          <img src="/images/mirror-talk.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">Mirror Talk</span>
+          <span class="tile-meta">2025.12.05<span class="tile-movie">アメリ</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/shade-line/" class="tile-link">
+        <picture>
+          <source srcset="/images/shade-line.webp" type="image/webp">
+          <img src="/images/shade-line.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">シェイドライン</span>
+          <span class="tile-meta">2025.11.28<span class="tile-movie">レディ・プレイヤー1</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/in-a-gentle-loop/" class="tile-link">
+        <picture>
+          <source srcset="/images/in-a-gentle-loop.webp" type="image/webp">
+          <img src="/images/in-a-gentle-loop.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">やさしいループの中で</span>
+          <span class="tile-meta">2025.11.23<span class="tile-movie">恋はデジャ・ブ</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/corner-pop-anthem/" class="tile-link">
+        <picture>
+          <source srcset="/images/corner-pop-anthem.webp" type="image/webp">
+          <img src="/images/corner-pop-anthem.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">片隅ポップ・アンセム</span>
+          <span class="tile-meta">2025.11.17<span class="tile-movie">SING/シング</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile large right">
+      <a href="/tracks/colors-on-an-ordinary-day/" class="tile-link">
+        <picture>
+          <source srcset="/images/colors-on-an-ordinary-day.webp" type="image/webp">
+          <img src="/images/colors-on-an-ordinary-day.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">ふつうの日に色を</span>
+          <span class="tile-meta">2025.11.13<span class="tile-movie">インサイド・ヘッド</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/tiny-rain-gentle-town/" class="tile-link">
+        <picture>
+          <source srcset="/images/tiny-rain-gentle-town.webp" type="image/webp">
+          <img src="/images/tiny-rain-gentle-town.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">Tiny Rain, Gentle Town</span>
+          <span class="tile-meta">2025.11.13<span class="tile-movie">パディントン</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/fragments-of-dreams-bloom-in-the-night/" class="tile-link">
+        <picture>
+          <source srcset="/images/fragments-of-dreams-bloom-in-the-night.webp" type="image/webp">
+          <img src="/images/fragments-of-dreams-bloom-in-the-night.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">夢のかけらは夜に咲く</span>
+          <span class="tile-meta">2025.10.30<span class="tile-movie">ナイトメア・ビフォア・クリスマス</span></span>
+        </span>
+      </a>
+    </li>
+    <li class="tile small">
+      <a href="/tracks/the-blue-echo-resonating-on-the-asphalt/" class="tile-link">
+        <picture>
+          <source srcset="/images/the-blue-echo-resonating-on-the-asphalt.webp" type="image/webp">
+          <img src="/images/the-blue-echo-resonating-on-the-asphalt.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="tile-caption">
+          <span class="tile-title">アスファルトに響く青の残響</span>
+          <span class="tile-meta">2025.10.30<span class="tile-movie">ラ・ラ・ランド</span></span>
+        </span>
+      </a>
+    </li>
+  </ul>
+</section>
 
-  <script src="/js/qrcode.min.js"></script>
-  <script src="main.js"></script>
+  
+<footer class="foot">
+  <p class="foot-about">どんなふうに映画から曲にしているか、AI とどう作っているかは<a href="/about/">About</a>に書いています。</p>
+  <p class="foot-meta">
+    <span>© SAY-SHOW</span>
+    <span class="foot-links">
+      <a href="#" id="qrTrigger" role="button" aria-label="このページのQRコードを表示">QR</a>
+      <a href="/feed.xml">RSS</a>
+    </span>
+  </p>
+</footer>
+
+<div class="qr-modal" id="qrModal" hidden>
+  <div class="qr-modal-backdrop" id="qrModalBackdrop"></div>
+  <div class="qr-modal-content" role="dialog" aria-modal="true" aria-label="このページのQRコード">
+    <div id="qrCode"></div>
+    <p class="qr-modal-url" id="qrModalUrl"></p>
+    <button class="qr-modal-close" id="qrModalClose" type="button" aria-label="閉じる">&times;</button>
+  </div>
+</div>
+
+</div>
+<script src="/js/qrcode.min.js" defer></script>
+<script src="/main.js" defer></script>
 </body>
 </html>

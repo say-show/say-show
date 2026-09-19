@@ -2,395 +2,49 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Movies | SAY-SHOW</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="SAY-SHOWの楽曲がインスパイアされた映画の一覧。年代順・五十音順で曲を探せます。">
-  <link rel="canonical" href="https://say-show.me/movies/">
-  <link rel="stylesheet" href="/style.css">
-  <link rel="alternate" type="application/rss+xml" title="SAY-SHOW" href="https://say-show.me/feed.xml">
-  <script>try{if(sessionStorage.getItem('ssLoadingShown'))document.documentElement.classList.add('quick-loading')}catch(e){}</script>
-  <noscript><style>.loading-overlay{display:none}.track-card{opacity:1}</style></noscript>
-  <meta property="og:title" content="Movies | SAY-SHOW">
-  <meta property="og:description" content="SAY-SHOWの楽曲がインスパイアされた映画の一覧。年代順・五十音順で曲を探せます。">
-  <meta property="og:url" content="https://say-show.me/movies/">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://say-show.me/ogp.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Movies | SAY-SHOW">
-  <meta name="twitter:description" content="SAY-SHOWの楽曲がインスパイアされた映画の一覧。年代順・五十音順で曲を探せます。">
-  <meta name="twitter:image" content="https://say-show.me/ogp.png">
-  <link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="/favicon-192.png" sizes="192x192">
-  <link rel="apple-touch-icon" href="/apple-touch-icon-180.png">
-  <style>
-    /* === 映画インデックス専用スタイル === */
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Movies | SAY-SHOW</title>
+<meta name="description" content="SAY-SHOWの楽曲がインスパイアされた映画の一覧。年代順・五十音順で曲を探せます。">
+<link rel="canonical" href="https://say-show.me/movies/">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#EFEDE8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141317" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Movies | SAY-SHOW">
+<meta property="og:description" content="SAY-SHOWの楽曲がインスパイアされた映画の一覧。年代順・五十音順で曲を探せます。">
+<meta property="og:url" content="https://say-show.me/movies/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://say-show.me/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Movies | SAY-SHOW">
+<meta name="twitter:description" content="SAY-SHOWの楽曲がインスパイアされた映画の一覧。年代順・五十音順で曲を探せます。">
+<meta name="twitter:image" content="https://say-show.me/ogp.png">
+<meta name="google-site-verification" content="RB2-RdDvJ2j9jTj-AGnv9IVf0c_nRKONMJVZYHpQ_vo">
+<link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon-180.png">
+<link rel="alternate" type="application/rss+xml" title="SAY-SHOW" href="https://say-show.me/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
 
-    .movies-page {
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 0 0 90px;
-    }
-
-    /* hidden 属性が display 指定に負けないようにする */
-    [hidden] { display: none !important; }
-
-    /* --- ソート切替（JSが有効なときだけ出す） --- */
-    .shelf-toolbar {
-      position: sticky;
-      top: 56px;
-      z-index: 50;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 18px;
-      flex-wrap: wrap;
-      padding: 14px 20px;
-      margin-bottom: 10px;
-      background: rgba(5, 6, 11, 0.88);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .seg {
-      display: inline-flex;
-      padding: 3px;
-      border-radius: 20px;
-      background: var(--bg-alt);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .seg button {
-      padding: 7px 16px;
-      border: 0;
-      border-radius: 17px;
-      background: transparent;
-      color: var(--text-muted);
-      font-size: 0.83rem;
-      font-weight: 600;
-      font-family: inherit;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .seg button:hover { color: var(--text-main); }
-
-    .seg button[aria-pressed="true"] {
-      background: var(--accent);
-      color: #fff;
-    }
-
-    .shelf-stat {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-    }
-
-    .shelf-stat strong { color: var(--accent); font-size: 1rem; }
-
-    /* --- 年代の分布バー --- */
-    .span-viz {
-      display: flex;
-      align-items: stretch;
-      gap: 4px;
-      height: 76px;
-      margin: 6px 24px 4px;
-    }
-
-    .span-viz-col {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-    }
-
-    /* 棒が伸びる領域（ここを基準に % 指定する） */
-    .span-viz-track {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: center;
-      gap: 3px;
-      min-height: 0;
-    }
-
-    .span-viz-n {
-      font-size: 0.63rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      line-height: 1;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .span-viz-bar {
-      width: 100%;
-      background: rgba(255, 75, 139, 0.32);
-      border-radius: 3px 3px 0 0;
-      transition: background 0.2s ease;
-    }
-
-    .span-viz-col:hover .span-viz-bar { background: var(--accent); }
-    .span-viz-col:hover .span-viz-n { color: var(--accent); }
-
-    .span-viz-tick {
-      height: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.62rem;
-      color: var(--text-muted);
-      letter-spacing: 0.02em;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 4px;
-      box-sizing: content-box;
-    }
-
-    /* --- 棚 --- */
-    .shelf { margin-top: 22px; scroll-margin-top: 130px; }
-
-    .shelf-head {
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
-      padding: 0 24px 8px;
-    }
-
-    .shelf-label {
-      font-size: 1.6rem;
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      color: var(--text-main);
-      line-height: 1;
-      margin: 0;
-    }
-
-    .shelf-n {
-      font-size: 0.76rem;
-      color: var(--text-muted);
-      font-variant-numeric: tabular-nums;
-    }
-
-    /* 棚板のライン */
-    .shelf-rule {
-      height: 1px;
-      margin: 0 24px 13px;
-      background: linear-gradient(to right, var(--accent), rgba(255, 75, 139, 0.05) 55%, transparent);
-    }
-
-    /* 棚の中身。横スクロールにすると画面外に隠れる枚数が多すぎる
-       （実測: 390pxで44枚中41枚が隠れ、全部見るのに横スワイプ18回）ため、
-       折り返しグリッドで全部その場に並べる。PCは自動列数、モバイルは2列。 */
-    .shelf-lane {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 22px 16px;
-      padding: 4px 24px 14px;
-    }
-
-    /* --- カード --- */
-    .film {
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.26s ease;
-    }
-
-    .film:hover { transform: translateY(-5px); }
-
-    /* 絵の枠は映画ポスター比（2:3）で固定する。ポスターの有無やホバーでの
-       切り替えで高さが変わるとグリッドがガタつくため、常に同じ面積を確保する */
-    .film-art {
-      position: relative;
-      aspect-ratio: 2 / 3;
-      border-radius: 9px;
-      overflow: hidden;
-      background: var(--bg-alt);
-      box-shadow: 0 5px 14px rgba(0, 0, 0, 0.55);
-      transition: box-shadow 0.26s ease;
-    }
-
-    .film:hover .film-art {
-      box-shadow: 0 12px 26px rgba(255, 75, 139, 0.32);
-    }
-
-    /* --- ポスター層（枠にぴったり収まる） --- */
-    .film-poster {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* --- カバーアート層 --- */
-    .film-cover {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* ポスターがある場合だけホバーで出てくる層になる */
-    .film-cover.is-hover {
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .film:hover .film-cover.is-hover { opacity: 1; }
-
-    /* 1:1 を 2:3 の枠に置くと上下が空くので、同じ絵をぼかして敷き詰める */
-    .film-cover-blur {
-      position: absolute;
-      inset: 0;
-    }
-
-    .film-cover-blur img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      filter: blur(22px) saturate(1.25) brightness(0.55);
-      transform: scale(1.25);
-    }
-
-    .film-cover-main {
-      position: relative;
-      width: 100%;
-      display: block;
-    }
-
-    .film-cover-main img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.45s ease;
-    }
-
-    .film:hover .film-cover-main img { transform: scale(1.05); }
-
-    .film-art-placeholder {
-      width: 100%;
-      height: 100%;
-      background: var(--bg-alt);
-      border: 1px dashed rgba(255, 255, 255, 0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 0.7rem;
-      color: var(--text-muted);
-    }
-
-    /* ホバーで曲名を出すオーバーレイ */
-    .film-veil {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 12px;
-      /* 暗転させない。ポスターやカバーアートを隠さず、文字は影だけで読ませる */
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95), 0 0 10px rgba(0, 0, 0, 0.8);
-      opacity: 0;
-      transition: opacity 0.26s ease;
-    }
-
-    .film:hover .film-veil { opacity: 1; }
-
-    /* 暗転をやめたので、明るい絵の上でも読めるよう白系にする
-       （アクセントのピンクは淡い背景に埋もれてしまう） */
-    .film-veil-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      color: rgba(255, 255, 255, 0.78);
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .film-veil-track {
-      font-size: 0.83rem;
-      font-weight: 600;
-      line-height: 1.35;
-      color: var(--text-main);
-    }
-
-    .film-body { padding: 10px 2px 0; }
-
-    .film-title {
-      font-size: 0.86rem;
-      font-weight: 700;
-      line-height: 1.35;
-      color: var(--text-main);
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .film-year {
-      margin-top: 3px;
-      font-size: 0.74rem;
-      color: var(--text-muted);
-      font-variant-numeric: tabular-nums;
-      letter-spacing: 0.04em;
-    }
-
-    .film-year-todo { color: #ffbe3c; }
-
-    /* タッチデバイスはホバーが効かないので、曲名を常時うっすら出す */
-    @media (hover: none) {
-      .film-veil { opacity: 1; }
-      .film-veil-label { display: none; }
-    }
-
-    @media (max-width: 768px) {
-      .shelf-head, .shelf-lane { padding-left: 16px; padding-right: 16px; }
-      .shelf-rule { margin-left: 16px; margin-right: 16px; }
-      .shelf-label { font-size: 1.3rem; }
-      /* トップページのトラックグリッドと同じ2列に揃える */
-      .shelf-lane { grid-template-columns: repeat(2, 1fr); gap: 18px 12px; }
-      .span-viz { display: none; }
-    }
-
-    /* --- フッターの TMDb 帰属表記 --- */
-    .footer-credit {
-      margin-top: 6px;
-      font-size: 0.7rem;
-      opacity: 0.7;
-    }
-  </style>
 </head>
-<body>
-  <!-- ローディングアニメーション -->
-  <div class="loading-overlay" id="loadingOverlay">
-    <div class="loading-logo-wrapper">
-      <img src="/favicon-512-transparent.png" alt="SAY-SHOW" class="loading-logo-img">
-    </div>
-  </div>
-
-  <nav class="global-nav">
-  <a href="/" class="nav-logo">
-    <img src="/favicon-512-transparent.png" alt="">
-    <span>SAY-SHOW</span>
+<body class="page-default">
+<div class="wrap">
+  
+<nav class="nav" aria-label="サイト内">
+  <a class="brand" href="/">
+    <img src="/favicon-512-transparent.png" alt="" width="22" height="22">
+    <span class="brand-text">SAY-SHOW<small>映画のワンシーンから生まれる、AIコラボの音楽プロジェクト</small></span>
   </a>
   <div class="nav-links">
-    <a href="/#tracks">Tracks</a>
-    <a href="/timeline/">Timeline</a>
-    <a href="/movies/">Movies</a>
+    <a href="/">Tracks</a>
+    <a href="/movies/" aria-current="page">Movies</a>
     <a href="/genres/">Genres</a>
-    <a href="/videos/">Videos</a>
     <a href="/about/">About</a>
   </div>
 </nav>
 
-
-  
-  
-  
-
-  
   
   
   
@@ -398,16 +52,22 @@
 
   
   
+  
+  
+  
 
   
   
 
-  <header class="page-header">
-    <h1 class="page-title">Movies</h1>
-    <p class="page-subtitle">1939年から2026年まで、50本の映画から</p>
+  
+  
+
+  <header class="page-head">
+    <h1>Movies</h1>
+    <p>1939年から2026年まで、50本の映画から。カードにマウスを乗せると曲のジャケットに変わります</p>
   </header>
 
-  <main class="movies-page">
+  <main>
     <div class="shelf-toolbar">
       
       <div class="seg" id="sortSeg" hidden>
@@ -2725,14 +2385,7 @@
     
     <div id="shelvesKana" hidden></div>
   </main>
-
-  <footer class="footer">
-    <p>© SAY-SHOW / <a href="/feed.xml" class="footer-rss">RSS</a></p>
-    
-    <p class="footer-credit">Movie posters from <a href="https://www.themoviedb.org/" target="_blank" rel="noopener">TMDB</a>. This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
-  </footer>
-
-  <script src="/main.js"></script>
+<script src="/main.js"></script>
   <script>
   (function () {
     var decadeWrap = document.getElementById('shelvesDecade');
@@ -2848,5 +2501,31 @@
     seg.hidden = false;
   })();
   </script>
+
+  
+<footer class="foot">
+  <p class="foot-about">どんなふうに映画から曲にしているか、AI とどう作っているかは<a href="/about/">About</a>に書いています。</p>
+  <p class="foot-credit">Movie posters from <a href="https://www.themoviedb.org/" target="_blank" rel="noopener">TMDB</a>. This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+  <p class="foot-meta">
+    <span>© SAY-SHOW</span>
+    <span class="foot-links">
+      <a href="#" id="qrTrigger" role="button" aria-label="このページのQRコードを表示">QR</a>
+      <a href="/feed.xml">RSS</a>
+    </span>
+  </p>
+</footer>
+
+<div class="qr-modal" id="qrModal" hidden>
+  <div class="qr-modal-backdrop" id="qrModalBackdrop"></div>
+  <div class="qr-modal-content" role="dialog" aria-modal="true" aria-label="このページのQRコード">
+    <div id="qrCode"></div>
+    <p class="qr-modal-url" id="qrModalUrl"></p>
+    <button class="qr-modal-close" id="qrModalClose" type="button" aria-label="閉じる">&times;</button>
+  </div>
+</div>
+
+</div>
+<script src="/js/qrcode.min.js" defer></script>
+<script src="/main.js" defer></script>
 </body>
 </html>
