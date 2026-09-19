@@ -258,7 +258,6 @@ button { font-family: inherit; }
   gap: clamp(14px, 2vw, 28px) clamp(12px, 1.6vw, 22px);
 }
 .tile.large { grid-column: span 2; grid-row: span 2; }
-.tile.large.right { grid-column: 5 / span 2; } /* 帯の右側に置く。列数が変わる幅では下で上書き */
 /* 年が変わる境目のラベル。年ごとに .bento を分けているので、その間に置く */
 .bento-year {
   margin: 34px 0 16px; font-size: 12px; color: var(--ink-soft);
@@ -458,7 +457,6 @@ button { font-family: inherit; }
 
 @media (max-width: 960px) {
   .bento { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .tile.large.right { grid-column: 3 / span 2; }
   .genre-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 @media (max-width: 860px) {
@@ -473,7 +471,7 @@ button { font-family: inherit; }
   .hero-art { max-width: none; }
   .hero-title, .track-title { font-size: 28px; }
   .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .tile.large, .tile.large.right { grid-column: 1 / -1; grid-row: auto; }
+  .tile.large { grid-column: 1 / -1; grid-row: auto; }
   .tile-title { font-size: 12px; }
   .tile.large .tile-title { font-size: 15px; }
   .weeks { flex-direction: column; align-items: flex-start; gap: 8px; }
