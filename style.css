@@ -116,8 +116,7 @@ body:not(.page-home) .brand-text small { opacity: .6; }
 /* ---------- 3. プレビュープレイヤー ---------- */
 .player {
   display: flex; align-items: center; gap: 16px;
-  padding: 14px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
-  margin-bottom: 22px;
+  padding: 14px 0 6px; border-top: 1px solid var(--rule);
 }
 .play {
   flex: none; width: 44px; height: 44px; border-radius: 50%;
@@ -134,11 +133,15 @@ body:not(.page-home) .brand-text small { opacity: .6; }
 .player-label { font-size: 12px; color: var(--ink-soft); white-space: nowrap; }
 .player-time { font-size: 12px; color: var(--ink-soft); font-variant-numeric: tabular-nums; min-width: 5.5em; text-align: right; }
 
-/* 配信リンク（「フルで聴く」）*/
-.listen { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 14px; margin: 0; }
-.listen span { color: var(--ink-soft); }
-.listen a { border-bottom: 1px solid var(--rule); padding-bottom: 2px; }
-.listen a:hover { border-color: var(--ink); }
+/* 配信リンク（「フルで聴く」）。プレイヤーと同じ枠の中に入り、枠はこの行の下で閉じる（ピンクの円 → 線 → 出口、を一続きに読ませる）。
+   ラベルは「60秒プレビュー」と同じ 12px の補助色で 2 行を対にし、アイコン列の左端は再生ボタンと揃う */
+.listen { padding: 14px 0 12px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); margin-bottom: 22px; font-size: 14px; }
+.player + .listen { padding-top: 0; border-top: 0; }
+.listen > span { display: block; font-size: 12px; color: var(--ink-soft); margin-bottom: 2px; }
+.listen-row { display: flex; flex-wrap: wrap; gap: 0 24px; }
+.listen a { display: inline-flex; align-items: center; gap: 8px; padding: 7px 0; }
+.listen a:hover { color: var(--accent); }
+.listen .ic { width: 18px; height: 18px; fill: currentColor; flex: none; }
 
 /* coming-soon の曲: 配信リンクの代わり */
 .listen-soon {
