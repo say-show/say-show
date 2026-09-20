@@ -475,10 +475,11 @@ body:not(.page-home) .brand-text small { opacity: .6; }
 .prose .about-logo { width: 120px; height: 120px; margin: 24px 0 28px; }
 
 /* 404: 曲ページの型をそのまま使う「No. 404」。固有なのは導線の 1 行と最近の曲 4 枚（.shelf-tiles 流用）だけ */
-.notfound code { font-family: var(--sans); font-variant-numeric: tabular-nums; }
-.notfound-go { margin: 18px 0 0; }
-.notfound-go a.go { border-bottom: 1px solid var(--ink-soft); padding-bottom: 2px; }
-.notfound-go a.go:hover { border-color: var(--ink); }
+/* クラス名は旧 404（.notfound: max-width 720px）と衝突しないよう別名にする。古い style.css は最大 10 分キャッシュされる */
+.track-404 code { font-family: var(--sans); font-variant-numeric: tabular-nums; }
+.track-404-go { margin: 18px 0 0; }
+.track-404-go a.go { border-bottom: 1px solid var(--ink-soft); padding-bottom: 2px; }
+.track-404-go a.go:hover { border-color: var(--ink); }
 
 /* ---------- 10. ページ間の遷移（View Transitions）/ 動き軽減 / レスポンシブ ---------- */
 /* クロスドキュメント View Transitions。対応ブラウザ（Chrome / Edge / Safari 18.2+）では
