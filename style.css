@@ -93,6 +93,9 @@ body:not(.page-home) .brand-text small { opacity: .6; }
 .foot-about { font-size: 13px; color: var(--ink); margin-bottom: 14px !important; }
 .foot-about a { margin: 0 2px; color: var(--ink); border-bottom: 1px solid var(--ink-soft); }
 .foot-credit { margin-bottom: 14px !important; font-size: 11.5px; }
+.foot-follow { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-bottom: 14px !important; font-size: 12.5px; }
+.foot-follow span { color: var(--ink-soft); }
+.foot-follow a { color: var(--ink); border-bottom: 1px solid var(--rule); }
 .foot-meta { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .foot-links { display: inline-flex; gap: 18px; }
 .foot a:hover { color: var(--ink); }
@@ -234,7 +237,17 @@ body:not(.page-home) .brand-text small { opacity: .6; }
 .next-play.is-playing .ic-play { display: none; }
 .next-play.is-playing .ic-pause { display: block; }
 
-/* ギャラリー見出し + 週の帯 */
+/* フォローの帯: アーティスト単位の入口。ヒーローの曲単位リンクと役割を分ける */
+.follow {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 22px;
+  margin: 0; padding: 14px 0; border-top: 1px solid var(--rule);
+  font-size: 14px;
+}
+.follow span { color: var(--ink-soft); margin-right: 6px; }
+.follow a { border-bottom: 1px solid var(--rule); padding-bottom: 2px; }
+.follow a:hover { border-color: var(--ink); }
+
+/* ギャラリー見出し */
 .gallery-head {
   display: flex; align-items: baseline; justify-content: space-between; gap: 24px; flex-wrap: wrap;
   padding-top: 20px; margin-bottom: 14px;
