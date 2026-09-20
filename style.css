@@ -474,12 +474,16 @@ body:not(.page-home) .brand-text small { opacity: .6; }
 .prose strong { font-weight: 700; }
 .prose .about-logo { width: 120px; height: 120px; margin: 24px 0 28px; }
 
-.notfound { padding: clamp(48px, 12vh, 140px) 0 40px; max-width: 34em; }
+/* 404: 番号で探す導線 + 最近の曲 4 枚（.shelf-tiles を流用）。幅は 4 枚が並ぶ分だけ */
+.notfound { padding: clamp(48px, 10vh, 120px) 0 40px; max-width: 720px; }
 .notfound-code { margin: 0 0 8px; font-size: 13px; color: var(--ink-soft); }
 .notfound h1 { margin: 0 0 16px; font-family: var(--serif); font-weight: 600; font-size: clamp(26px, 3vw, 34px); line-height: 1.3; }
-.notfound p { margin: 0 0 28px; color: var(--ink-soft); }
-.notfound a.go { border-bottom: 1px solid var(--ink-soft); padding-bottom: 2px; }
+.notfound p { margin: 0 0 28px; color: var(--ink-soft); line-height: 1.8; }
+.notfound code { font-family: var(--sans); font-variant-numeric: tabular-nums; color: var(--ink); }
+.notfound a.go { color: var(--ink); border-bottom: 1px solid var(--ink-soft); padding-bottom: 2px; }
 .notfound a.go:hover { border-color: var(--ink); }
+.notfound-recent { margin: 44px 0 36px; }
+.notfound-recent h2 { margin: 0 0 14px; font-size: 13px; font-weight: 500; color: var(--ink-soft); }
 
 /* ---------- 10. ページ間の遷移（View Transitions）/ 動き軽減 / レスポンシブ ---------- */
 /* クロスドキュメント View Transitions。対応ブラウザ（Chrome / Edge / Safari 18.2+）では
