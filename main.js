@@ -76,18 +76,6 @@
   });
 })();
 
-// === 曲ページ「← すべての曲」===
-// サイト内のページから来たときはブラウザの「戻る」と同じにする（元のスクロール位置に戻り、
-// View Transitions も逆再生される）。検索や SNS から直接来たときは href どおりトップへ。
-(function () {
-  var back = document.querySelector('.track-eyebrow a');
-  if (!back) return;
-  var fromSite = document.referrer && document.referrer.indexOf(location.origin + '/') === 0;
-  if (fromSite && history.length > 1) {
-    back.addEventListener('click', function (e) { e.preventDefault(); history.back(); });
-  }
-})();
-
 // === QR コードモーダル ===
 (function () {
   var trigger = document.getElementById('qrTrigger');
