@@ -2534,6 +2534,12 @@
 </div>
 
 </div>
+<script type="speculationrules">
+{
+  "prerender": [{ "where": { "href_matches": "/tracks/*" }, "eagerness": "moderate" }],
+  "prefetch":  [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }]
+}
+</script>
 <script src="/js/qrcode.min.js" defer></script>
 <script src="/main.js" defer></script>
 </body>

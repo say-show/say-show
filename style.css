@@ -481,8 +481,19 @@ body:not(.page-home) .brand-text small { opacity: .6; }
 .notfound a.go { border-bottom: 1px solid var(--ink-soft); padding-bottom: 2px; }
 .notfound a.go:hover { border-color: var(--ink); }
 
-/* ---------- 10. 動き軽減 / レスポンシブ ---------- */
+/* ---------- 10. ページ間の遷移（View Transitions）/ 動き軽減 / レスポンシブ ---------- */
+/* クロスドキュメント View Transitions。対応ブラウザ（Chrome / Edge / Safari 18.2+）では
+   ページ全体が短くクロスフェードし、同じ view-transition-name を持つジャケット
+   （cover-<slug>: ギャラリー ⇄ 曲ページ ⇄ History / Genres / この曲のまわり）が位置とサイズを補間して移動する。
+   非対応ブラウザでは通常の遷移。方針「動きは 1 箇所」の、その 1 箇所をこれに使う（2026-09-20） */
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .22s; }
+::view-transition-group(*) { animation-duration: .38s; animation-timing-function: cubic-bezier(.2, .7, .2, 1); }
+/* ジャケットは輪郭が変わらないので古い絵と新しい絵を重ねずに切り替える（二重写りを防ぐ） */
+::view-transition-old(*), ::view-transition-new(*) { mix-blend-mode: normal; }
+
 @media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0s !important; animation: none !important; }
 }

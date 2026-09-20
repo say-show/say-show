@@ -88,7 +88,7 @@
   <div class="art">
     <picture>
       <source srcset="/images/repeating-boundary.webp" type="image/webp">
-      <img src="/images/repeating-boundary.png" alt="反復する境界 のカバーアート" width="800" height="800" fetchpriority="high">
+      <img src="/images/repeating-boundary.png" alt="反復する境界 のカバーアート" width="800" height="800" fetchpriority="high" style="view-transition-name: cover-repeating-boundary">
     </picture>
   </div>
 
@@ -247,7 +247,7 @@
         <a href="/tracks/exchange-half-of-the-sky/" class="tile-link">
           <picture>
             <source srcset="/images/exchange-half-of-the-sky.webp" type="image/webp">
-            <img src="/images/exchange-half-of-the-sky.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <img src="/images/exchange-half-of-the-sky.png" alt="" width="800" height="800" loading="lazy" decoding="async" style="view-transition-name: cover-exchange-half-of-the-sky">
           </picture>
           <span class="tile-caption"><span class="tile-title">半分の空を交換する</span><span class="tile-meta">2026.09.11</span></span>
         </a>
@@ -256,7 +256,7 @@
         <a href="/tracks/star-sign/" class="tile-link">
           <picture>
             <source srcset="/images/star-sign.webp" type="image/webp">
-            <img src="/images/star-sign.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <img src="/images/star-sign.png" alt="" width="800" height="800" loading="lazy" decoding="async" style="view-transition-name: cover-star-sign">
           </picture>
           <span class="tile-caption"><span class="tile-title">星の合図 (70s Synth Edit)</span><span class="tile-meta">2026.08.07</span></span>
         </a>
@@ -265,7 +265,7 @@
         <a href="/tracks/warmth-of-a-voice/" class="tile-link">
           <picture>
             <source srcset="/images/warmth-of-a-voice.webp" type="image/webp">
-            <img src="/images/warmth-of-a-voice.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <img src="/images/warmth-of-a-voice.png" alt="" width="800" height="800" loading="lazy" decoding="async" style="view-transition-name: cover-warmth-of-a-voice">
           </picture>
           <span class="tile-caption"><span class="tile-title">声だけの体温</span><span class="tile-meta">2026.07.03</span></span>
         </a>
@@ -274,7 +274,7 @@
         <a href="/tracks/reaching-out-without-being-connected/" class="tile-link">
           <picture>
             <source srcset="/images/reaching-out-without-being-connected.webp" type="image/webp">
-            <img src="/images/reaching-out-without-being-connected.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <img src="/images/reaching-out-without-being-connected.png" alt="" width="800" height="800" loading="lazy" decoding="async" style="view-transition-name: cover-reaching-out-without-being-connected">
           </picture>
           <span class="tile-caption"><span class="tile-title">未接続のまま、手を伸ばす</span><span class="tile-meta">2026.06.05</span></span>
         </a>
@@ -317,6 +317,12 @@
 </div>
 
 </div>
+<script type="speculationrules">
+{
+  "prerender": [{ "where": { "href_matches": "/tracks/*" }, "eagerness": "moderate" }],
+  "prefetch":  [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }]
+}
+</script>
 <script src="/js/qrcode.min.js" defer></script>
 <script src="/main.js" defer></script>
 </body>

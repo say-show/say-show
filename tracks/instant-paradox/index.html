@@ -88,7 +88,7 @@
   <div class="art">
     <picture>
       <source srcset="/images/instant-paradox.webp" type="image/webp">
-      <img src="/images/instant-paradox.png" alt="インスタント・パラドックス のカバーアート" width="800" height="800" fetchpriority="high">
+      <img src="/images/instant-paradox.png" alt="インスタント・パラドックス のカバーアート" width="800" height="800" fetchpriority="high" style="view-transition-name: cover-instant-paradox">
     </picture>
   </div>
 
@@ -200,7 +200,7 @@
         <a href="/tracks/calling-you-to-a-burning-star/" class="tile-link">
           <picture>
             <source srcset="/images/calling-you-to-a-burning-star.webp" type="image/webp">
-            <img src="/images/calling-you-to-a-burning-star.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <img src="/images/calling-you-to-a-burning-star.png" alt="" width="800" height="800" loading="lazy" decoding="async" style="view-transition-name: cover-calling-you-to-a-burning-star">
           </picture>
           <span class="tile-caption"><span class="tile-title">燃えない星に、君を呼ぶ</span><span class="tile-meta">2026.09.18</span></span>
         </a>
@@ -209,7 +209,7 @@
         <a href="/tracks/ride-the-wave-of-success/" class="tile-link">
           <picture>
             <source srcset="/images/ride-the-wave-of-success.webp" type="image/webp">
-            <img src="/images/ride-the-wave-of-success.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <img src="/images/ride-the-wave-of-success.png" alt="" width="800" height="800" loading="lazy" decoding="async" style="view-transition-name: cover-ride-the-wave-of-success">
           </picture>
           <span class="tile-caption"><span class="tile-title">うまくいく風に乗れ</span><span class="tile-meta">2026.04.03</span></span>
         </a>
@@ -218,7 +218,7 @@
         <a href="/tracks/shadow-switch/" class="tile-link">
           <picture>
             <source srcset="/images/shadow-switch.webp" type="image/webp">
-            <img src="/images/shadow-switch.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <img src="/images/shadow-switch.png" alt="" width="800" height="800" loading="lazy" decoding="async" style="view-transition-name: cover-shadow-switch">
           </picture>
           <span class="tile-caption"><span class="tile-title">影のスイッチ</span><span class="tile-meta">2026.03.06</span></span>
         </a>
@@ -227,7 +227,7 @@
         <a href="/tracks/the-striped-heart-is-not-broken-yet/" class="tile-link">
           <picture>
             <source srcset="/images/the-striped-heart-is-not-broken-yet.webp" type="image/webp">
-            <img src="/images/the-striped-heart-is-not-broken-yet.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <img src="/images/the-striped-heart-is-not-broken-yet.png" alt="" width="800" height="800" loading="lazy" decoding="async" style="view-transition-name: cover-the-striped-heart-is-not-broken-yet">
           </picture>
           <span class="tile-caption"><span class="tile-title">しま模様のハートはまだ割れてない</span><span class="tile-meta">2026.01.01</span></span>
         </a>
@@ -270,6 +270,12 @@
 </div>
 
 </div>
+<script type="speculationrules">
+{
+  "prerender": [{ "where": { "href_matches": "/tracks/*" }, "eagerness": "moderate" }],
+  "prefetch":  [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }]
+}
+</script>
 <script src="/js/qrcode.min.js" defer></script>
 <script src="/main.js" defer></script>
 </body>

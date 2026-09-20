@@ -87,7 +87,7 @@
   <div class="art">
     <picture>
       <source srcset="/images/late-into-your-future.webp" type="image/webp">
-      <img src="/images/late-into-your-future.png" alt="君に遅刻していく のカバーアート" width="800" height="800" fetchpriority="high">
+      <img src="/images/late-into-your-future.png" alt="君に遅刻していく のカバーアート" width="800" height="800" fetchpriority="high" style="view-transition-name: cover-late-into-your-future">
     </picture>
   </div>
 
@@ -232,7 +232,7 @@
         <a href="/tracks/spirit-of-the-wingbeat/" class="tile-link">
           <picture>
             <source srcset="/images/spirit-of-the-wingbeat.webp" type="image/webp">
-            <img src="/images/spirit-of-the-wingbeat.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <img src="/images/spirit-of-the-wingbeat.png" alt="" width="800" height="800" loading="lazy" decoding="async" style="view-transition-name: cover-spirit-of-the-wingbeat">
           </picture>
           <span class="tile-caption"><span class="tile-title">羽音ノ言霊</span><span class="tile-meta">2026.07.10</span></span>
         </a>
@@ -241,7 +241,7 @@
         <a href="/tracks/why-we-share-the-light/" class="tile-link">
           <picture>
             <source srcset="/images/why-we-share-the-light.webp" type="image/webp">
-            <img src="/images/why-we-share-the-light.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <img src="/images/why-we-share-the-light.png" alt="" width="800" height="800" loading="lazy" decoding="async" style="view-transition-name: cover-why-we-share-the-light">
           </picture>
           <span class="tile-caption"><span class="tile-title">光をわけあう理由</span><span class="tile-meta">2026.04.10</span></span>
         </a>
@@ -250,7 +250,7 @@
         <a href="/tracks/between-the-glare-and-me/" class="tile-link">
           <picture>
             <source srcset="/images/between-the-glare-and-me.webp" type="image/webp">
-            <img src="/images/between-the-glare-and-me.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <img src="/images/between-the-glare-and-me.png" alt="" width="800" height="800" loading="lazy" decoding="async" style="view-transition-name: cover-between-the-glare-and-me">
           </picture>
           <span class="tile-caption"><span class="tile-title">まぶしさと僕の間</span><span class="tile-meta">2026.01.02</span></span>
         </a>
@@ -293,6 +293,12 @@
 </div>
 
 </div>
+<script type="speculationrules">
+{
+  "prerender": [{ "where": { "href_matches": "/tracks/*" }, "eagerness": "moderate" }],
+  "prefetch":  [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }]
+}
+</script>
 <script src="/js/qrcode.min.js" defer></script>
 <script src="/main.js" defer></script>
 </body>

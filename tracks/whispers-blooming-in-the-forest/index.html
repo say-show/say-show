@@ -88,7 +88,7 @@
   <div class="art">
     <picture>
       <source srcset="/images/whispers-blooming-in-the-forest.webp" type="image/webp">
-      <img src="/images/whispers-blooming-in-the-forest.png" alt="森に咲くささやき のカバーアート" width="800" height="800" fetchpriority="high">
+      <img src="/images/whispers-blooming-in-the-forest.png" alt="森に咲くささやき のカバーアート" width="800" height="800" fetchpriority="high" style="view-transition-name: cover-whispers-blooming-in-the-forest">
     </picture>
   </div>
 
@@ -186,7 +186,7 @@
         <a href="/tracks/gravity-balloon/" class="tile-link">
           <picture>
             <source srcset="/images/gravity-balloon.webp" type="image/webp">
-            <img src="/images/gravity-balloon.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <img src="/images/gravity-balloon.png" alt="" width="800" height="800" loading="lazy" decoding="async" style="view-transition-name: cover-gravity-balloon">
           </picture>
           <span class="tile-caption"><span class="tile-title">Gravity Balloon</span><span class="tile-meta">2026.07.24</span></span>
         </a>
@@ -195,7 +195,7 @@
         <a href="/tracks/change-the-flow/" class="tile-link">
           <picture>
             <source srcset="/images/change-the-flow.webp" type="image/webp">
-            <img src="/images/change-the-flow.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <img src="/images/change-the-flow.png" alt="" width="800" height="800" loading="lazy" decoding="async" style="view-transition-name: cover-change-the-flow">
           </picture>
           <span class="tile-caption"><span class="tile-title">流れを変える</span><span class="tile-meta">2026.06.26</span></span>
         </a>
@@ -204,7 +204,7 @@
         <a href="/tracks/holiday-of-memories/" class="tile-link">
           <picture>
             <source srcset="/images/holiday-of-memories.webp" type="image/webp">
-            <img src="/images/holiday-of-memories.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <img src="/images/holiday-of-memories.png" alt="" width="800" height="800" loading="lazy" decoding="async" style="view-transition-name: cover-holiday-of-memories">
           </picture>
           <span class="tile-caption"><span class="tile-title">記憶の休日</span><span class="tile-meta">2026.01.30</span></span>
         </a>
@@ -247,6 +247,12 @@
 </div>
 
 </div>
+<script type="speculationrules">
+{
+  "prerender": [{ "where": { "href_matches": "/tracks/*" }, "eagerness": "moderate" }],
+  "prefetch":  [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }]
+}
+</script>
 <script src="/js/qrcode.min.js" defer></script>
 <script src="/main.js" defer></script>
 </body>

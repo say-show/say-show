@@ -88,7 +88,7 @@
   <div class="art">
     <picture>
       <source srcset="/images/between-rain-and-snow.webp" type="image/webp">
-      <img src="/images/between-rain-and-snow.png" alt="雨と雪のあいだで のカバーアート" width="800" height="800" fetchpriority="high">
+      <img src="/images/between-rain-and-snow.png" alt="雨と雪のあいだで のカバーアート" width="800" height="800" fetchpriority="high" style="view-transition-name: cover-between-rain-and-snow">
     </picture>
   </div>
 
@@ -186,7 +186,7 @@
         <a href="/tracks/deep-breath/" class="tile-link">
           <picture>
             <source srcset="/images/deep-breath.webp" type="image/webp">
-            <img src="/images/deep-breath.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <img src="/images/deep-breath.png" alt="" width="800" height="800" loading="lazy" decoding="async" style="view-transition-name: cover-deep-breath">
           </picture>
           <span class="tile-caption"><span class="tile-title">深き呼吸</span><span class="tile-meta">2026.08.21</span></span>
         </a>
@@ -195,7 +195,7 @@
         <a href="/tracks/fragments-of-dreams-bloom-in-the-night/" class="tile-link">
           <picture>
             <source srcset="/images/fragments-of-dreams-bloom-in-the-night.webp" type="image/webp">
-            <img src="/images/fragments-of-dreams-bloom-in-the-night.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <img src="/images/fragments-of-dreams-bloom-in-the-night.png" alt="" width="800" height="800" loading="lazy" decoding="async" style="view-transition-name: cover-fragments-of-dreams-bloom-in-the-night">
           </picture>
           <span class="tile-caption"><span class="tile-title">夢のかけらは夜に咲く</span><span class="tile-meta">2025.10.30</span></span>
         </a>
@@ -238,6 +238,12 @@
 </div>
 
 </div>
+<script type="speculationrules">
+{
+  "prerender": [{ "where": { "href_matches": "/tracks/*" }, "eagerness": "moderate" }],
+  "prefetch":  [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }]
+}
+</script>
 <script src="/js/qrcode.min.js" defer></script>
 <script src="/main.js" defer></script>
 </body>

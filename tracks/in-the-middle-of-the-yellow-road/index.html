@@ -87,7 +87,7 @@
   <div class="art">
     <picture>
       <source srcset="/images/in-the-middle-of-the-yellow-road.webp" type="image/webp">
-      <img src="/images/in-the-middle-of-the-yellow-road.png" alt="黄色い道の真ん中で のカバーアート" width="800" height="800" fetchpriority="high">
+      <img src="/images/in-the-middle-of-the-yellow-road.png" alt="黄色い道の真ん中で のカバーアート" width="800" height="800" fetchpriority="high" style="view-transition-name: cover-in-the-middle-of-the-yellow-road">
     </picture>
   </div>
 
@@ -229,7 +229,7 @@
         <a href="/tracks/person-ahead-of-me/" class="tile-link">
           <picture>
             <source srcset="/images/person-ahead-of-me.webp" type="image/webp">
-            <img src="/images/person-ahead-of-me.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <img src="/images/person-ahead-of-me.png" alt="" width="800" height="800" loading="lazy" decoding="async" style="view-transition-name: cover-person-ahead-of-me">
           </picture>
           <span class="tile-caption"><span class="tile-title">前を歩くひと</span><span class="tile-meta">2026.09.04</span></span>
         </a>
@@ -238,7 +238,7 @@
         <a href="/tracks/drinking-the-future-with-cold-coffee/" class="tile-link">
           <picture>
             <source srcset="/images/drinking-the-future-with-cold-coffee.webp" type="image/webp">
-            <img src="/images/drinking-the-future-with-cold-coffee.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <img src="/images/drinking-the-future-with-cold-coffee.png" alt="" width="800" height="800" loading="lazy" decoding="async" style="view-transition-name: cover-drinking-the-future-with-cold-coffee">
           </picture>
           <span class="tile-caption"><span class="tile-title">冷めたコーヒーで、未来を飲む</span><span class="tile-meta">2026.08.28</span></span>
         </a>
@@ -247,7 +247,7 @@
         <a href="/tracks/how-to-tame-midnight/" class="tile-link">
           <picture>
             <source srcset="/images/how-to-tame-midnight.webp" type="image/webp">
-            <img src="/images/how-to-tame-midnight.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <img src="/images/how-to-tame-midnight.png" alt="" width="800" height="800" loading="lazy" decoding="async" style="view-transition-name: cover-how-to-tame-midnight">
           </picture>
           <span class="tile-caption"><span class="tile-title">午前零時の飼い方</span><span class="tile-meta">2026.08.14</span></span>
         </a>
@@ -256,7 +256,7 @@
         <a href="/tracks/secret-ghost/" class="tile-link">
           <picture>
             <source srcset="/images/secret-ghost.webp" type="image/webp">
-            <img src="/images/secret-ghost.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <img src="/images/secret-ghost.png" alt="" width="800" height="800" loading="lazy" decoding="async" style="view-transition-name: cover-secret-ghost">
           </picture>
           <span class="tile-caption"><span class="tile-title">ひそかなゴースト</span><span class="tile-meta">2026.07.17</span></span>
         </a>
@@ -299,6 +299,12 @@
 </div>
 
 </div>
+<script type="speculationrules">
+{
+  "prerender": [{ "where": { "href_matches": "/tracks/*" }, "eagerness": "moderate" }],
+  "prefetch":  [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }]
+}
+</script>
 <script src="/js/qrcode.min.js" defer></script>
 <script src="/main.js" defer></script>
 </body>

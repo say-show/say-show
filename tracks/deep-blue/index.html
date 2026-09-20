@@ -88,7 +88,7 @@
   <div class="art">
     <picture>
       <source srcset="/images/deep-blue.webp" type="image/webp">
-      <img src="/images/deep-blue.png" alt="Deep Blue のカバーアート" width="800" height="800" fetchpriority="high">
+      <img src="/images/deep-blue.png" alt="Deep Blue のカバーアート" width="800" height="800" fetchpriority="high" style="view-transition-name: cover-deep-blue">
     </picture>
   </div>
 
@@ -203,7 +203,7 @@ Deep Blueに 全てを 潜めている
         <a href="/tracks/outside-of-speed/" class="tile-link">
           <picture>
             <source srcset="/images/outside-of-speed.webp" type="image/webp">
-            <img src="/images/outside-of-speed.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <img src="/images/outside-of-speed.png" alt="" width="800" height="800" loading="lazy" decoding="async" style="view-transition-name: cover-outside-of-speed">
           </picture>
           <span class="tile-caption"><span class="tile-title">速度の外側</span><span class="tile-meta">2026.06.12</span></span>
         </a>
@@ -212,7 +212,7 @@ Deep Blueに 全てを 潜めている
         <a href="/tracks/nameless-light-as-of-yet/" class="tile-link">
           <picture>
             <source srcset="/images/nameless-light-as-of-yet.webp" type="image/webp">
-            <img src="/images/nameless-light-as-of-yet.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <img src="/images/nameless-light-as-of-yet.png" alt="" width="800" height="800" loading="lazy" decoding="async" style="view-transition-name: cover-nameless-light-as-of-yet">
           </picture>
           <span class="tile-caption"><span class="tile-title">まだ名前のない光</span><span class="tile-meta">2026.05.15</span></span>
         </a>
@@ -221,7 +221,7 @@ Deep Blueに 全てを 潜めている
         <a href="/tracks/i-am-not-finished-yet/" class="tile-link">
           <picture>
             <source srcset="/images/i-am-not-finished-yet.webp" type="image/webp">
-            <img src="/images/i-am-not-finished-yet.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <img src="/images/i-am-not-finished-yet.png" alt="" width="800" height="800" loading="lazy" decoding="async" style="view-transition-name: cover-i-am-not-finished-yet">
           </picture>
           <span class="tile-caption"><span class="tile-title">わたしはまだ終わらない</span><span class="tile-meta">2026.04.24</span></span>
         </a>
@@ -230,7 +230,7 @@ Deep Blueに 全てを 潜めている
         <a href="/tracks/fox-footprints-a-dawn-cafe/" class="tile-link">
           <picture>
             <source srcset="/images/fox-footprints-a-dawn-cafe.webp" type="image/webp">
-            <img src="/images/fox-footprints-a-dawn-cafe.png" alt="" width="800" height="800" loading="lazy" decoding="async">
+            <img src="/images/fox-footprints-a-dawn-cafe.png" alt="" width="800" height="800" loading="lazy" decoding="async" style="view-transition-name: cover-fox-footprints-a-dawn-cafe">
           </picture>
           <span class="tile-caption"><span class="tile-title">きつねの足跡、夜明けのカフェ</span><span class="tile-meta">2025.12.26</span></span>
         </a>
@@ -273,6 +273,12 @@ Deep Blueに 全てを 潜めている
 </div>
 
 </div>
+<script type="speculationrules">
+{
+  "prerender": [{ "where": { "href_matches": "/tracks/*" }, "eagerness": "moderate" }],
+  "prefetch":  [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }]
+}
+</script>
 <script src="/js/qrcode.min.js" defer></script>
 <script src="/main.js" defer></script>
 </body>

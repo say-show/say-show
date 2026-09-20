@@ -88,7 +88,7 @@
   <div class="art">
     <picture>
       <source srcset="/images/the-blue-echo-resonating-on-the-asphalt.webp" type="image/webp">
-      <img src="/images/the-blue-echo-resonating-on-the-asphalt.png" alt="アスファルトに響く青の残響 のカバーアート" width="800" height="800" fetchpriority="high">
+      <img src="/images/the-blue-echo-resonating-on-the-asphalt.png" alt="アスファルトに響く青の残響 のカバーアート" width="800" height="800" fetchpriority="high" style="view-transition-name: cover-the-blue-echo-resonating-on-the-asphalt">
     </picture>
   </div>
 
@@ -217,6 +217,12 @@
 </div>
 
 </div>
+<script type="speculationrules">
+{
+  "prerender": [{ "where": { "href_matches": "/tracks/*" }, "eagerness": "moderate" }],
+  "prefetch":  [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }]
+}
+</script>
 <script src="/js/qrcode.min.js" defer></script>
 <script src="/main.js" defer></script>
 </body>
