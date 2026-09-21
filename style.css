@@ -141,6 +141,8 @@ body:not(.page-home) .brand-text small { opacity: .6; }
 .listen-row { display: flex; flex-wrap: wrap; gap: 0 24px; }
 .listen a { display: inline-flex; align-items: center; gap: 8px; padding: 7px 0; }
 .listen a:hover { color: var(--accent); }
+.listen-pending { display: inline-flex; align-items: center; gap: 8px; padding: 7px 0; color: var(--ink-soft); opacity: .55; } /* 公開 14 日以内で URL 未取得 */
+.listen-pending small { font-size: 11px; margin-left: 2px; }
 .listen .ic { width: 20px; height: 20px; flex: none; overflow: visible; } /* 線画は輪郭が細いぶん小さく見えるので塗りの 18px 相当を 20px で */
 .listen .ic-shape { fill: var(--paper); stroke: currentColor; stroke-width: 1.6; }
 
