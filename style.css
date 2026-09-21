@@ -230,7 +230,9 @@ body:not(.page-home) .brand-text small { opacity: .6; }
 }
 .next img { width: 52px; height: 52px; border-radius: 3px; object-fit: cover; flex: none; }
 .next-body { flex: 1; min-width: 0; line-height: 1.4; }
-.next-kicker { display: block; font-size: 12px; color: var(--ink-soft); }
+.next-kicker { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ink-soft); }
+/* 「最新曲」と同じ語彙の点（時間軸上の印）。ヒーローの 8px より一段控えめ。文字はアクセント色にしない（枠+点+色は重い） */
+.next-kicker::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 .next-title { display: block; font-family: var(--serif); font-weight: 500; font-size: 15px; margin-top: 2px; }
 .next:hover .next-title { color: var(--accent); }
 .next-play {
