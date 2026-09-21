@@ -21,7 +21,7 @@
   --paper: #EFEDE8;
   --paper-deep: #E4E1DA;
   --ink: #1A191D;
-  --ink-soft: #6E6B75;
+  --ink-soft: #5A5760; /* 紙の上で 6.0:1（旧 #6E6B75 は 4.46 で WCAG AA 4.5 未満。--paper-deep 上では 4.0）。ダークは 6.4 で据え置き */
   --rule: #D9D6CF;
   --accent: #E0407A;
   --shadow: 0 30px 60px -30px rgba(40, 30, 20, .45);
