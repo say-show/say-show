@@ -93,7 +93,9 @@
       var qr = qrcode(0, 'M');
       qr.addData(url);
       qr.make();
-      qrContainer.innerHTML = qr.createSvgTag({ cellSize: 4, margin: 4 });
+      // scalable: width/height 属性を付けず viewBox だけにして、表示サイズは CSS（.qr-modal-content svg）で固定する。
+      // 固定 cellSize のままだと URL の長さ（= マス数）でトップと曲ページで大きさが変わってしまう
+      qrContainer.innerHTML = qr.createSvgTag({ cellSize: 4, margin: 4, scalable: true });
       urlDisplay.textContent = url;
       generated = true;
     }

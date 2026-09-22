@@ -106,7 +106,7 @@ body:not(.page-home) .brand-text small { opacity: .6; }
   position: relative; padding: 24px 24px 20px; border-radius: 10px;
   background: #fff; color: #1A191D; text-align: center; max-width: min(90vw, 360px);
 }
-.qr-modal-content svg { display: block; margin: 0 auto; max-width: 100%; height: auto; }
+.qr-modal-content svg { display: block; margin: 0 auto; width: 200px; height: 200px; max-width: 100%; } /* URL の長さ（マス数）によらず同じ大きさで出す */
 .qr-modal-url { margin: 12px 0 0; font-size: 12px; word-break: break-all; color: #6E6B75; }
 .qr-modal-close {
   position: absolute; top: 6px; right: 8px; width: 32px; height: 32px;
