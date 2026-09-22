@@ -403,7 +403,7 @@ body:not(.page-home) .brand-text small { opacity: .6; }
   background: var(--paper-deep); box-shadow: 0 10px 24px -14px rgba(0, 0, 0, .5);
 }
 .film-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.film-cover { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.film-cover { position: absolute; inset: 0; display: flex; align-items: flex-start; justify-content: center; } /* 1:1 を上に寄せ、下の余白（約 80px）に曲名の帯を収める。中央だと 1 行でも絵にかかる */
 .film-cover.is-hover { opacity: 0; transition: opacity .3s ease; }
 .film:hover .film-cover.is-hover, .film:focus-visible .film-cover.is-hover { opacity: 1; }
 .film-cover-blur { position: absolute; inset: 0; }
