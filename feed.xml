@@ -5,13 +5,23 @@
     <link>https://say-show.me/</link>
     <description>映画のワンシーンから生まれる、AIコラボの音楽プロジェクト。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 18 Sep 2026 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2026 00:00:00 +0900</lastBuildDate>
     <image>
       <url>https://say-show.me/favicon-512.png</url>
       <title>SAY-SHOW</title>
       <link>https://say-show.me/</link>
     </image>
     <atom:link href="https://say-show.me/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>風がほどく、わたし</title>
+      <link>https://say-show.me/tracks/the-wind-unties-me/</link>
+      <guid isPermaLink="true">https://say-show.me/tracks/the-wind-unties-me/</guid>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0900</pubDate>
+      <category>バラード</category>
+      <category>Inspired by 「サウンド・オブ・ミュージック」</category>
+      <description>「風がほどく、わたし」は、映画『サウンド・オブ・ミュージック』の物語そのものではなく、広い空の下で歌うことが、いつの間にか誰かの期待や正しさに合わせて固くなった心を、自分自身の輪郭へと戻していく感覚から生まれた曲です。朝はいつも「急がなければ置いていかれる」と窓を叩いてくるけれど、結びかけた靴ひもを少しゆるめ、空を横切る鳥や胸の奥にしまった古いピアノの音に耳を澄ませる——そんな一見ささやかな立ち止まりを、逃げることではなく、自分を置いていかないための選択として描いています。タイトルの「風がほどく」は、傷や比較や期待を無理に断ち切るのではなく、ひとりの声に寄り添うピアノと、少しずつ重なっていくハーモニーのように、固く結ばれたものを静かにゆるめていくイメージです。震えていることも、迷っていることも、生きているからこそ鳴る音なのだと受け止めながら、世界を変えられない日にも、せめて自分の声だけは見失わずに明日へ進めるようにと願っています。</description>
+      <enclosure url="https://say-show.me/images/the-wind-unties-me.png" type="image/png" length="0"/>
+    </item>
     <item>
       <title>燃えない星に、君を呼ぶ</title>
       <link>https://say-show.me/tracks/calling-you-to-a-burning-star/</link>
@@ -201,16 +211,6 @@
       <category>Inspired by 「グーニーズ」</category>
       <description>子どもの頃に夢中で観た映画『グーニーズ』への、小さな返事みたいな曲です。地図も宝箱も出てこないけれど、「あの頃、本気でなにかを探していた自分」を思い出しながら書きました。放課後の帰り道や、少し伸びた校舎の影、言えないまま飲み込んだ言葉たち——そんな景色を、大人になった視点からそっとなぞっています。軽快なビートボックスとツインボーカルのリズムには、あの頃の足音や鼓動の感じをそのまま閉じ込めたつもりです。もう無鉄砲には飛び出せない年齢になっても、胸のどこかでまだ「名前のついていない光」を探している人に、ふと寄り添う一曲になっていたらうれしいです。</description>
       <enclosure url="https://say-show.me/images/nameless-light-as-of-yet.png" type="image/png" length="0"/>
-    </item>
-    <item>
-      <title>かたちのない夜</title>
-      <link>https://say-show.me/tracks/formless-night/</link>
-      <guid isPermaLink="true">https://say-show.me/tracks/formless-night/</guid>
-      <pubDate>Fri, 08 May 2026 00:00:00 +0900</pubDate>
-      <category>エレクトロポップ</category>
-      <category>Inspired by 「千と千尋の神隠し」</category>
-      <description>映画『千と千尋の神隠し』から直接モチーフを借りるのではなく、「名前が薄れていく感覚」や「ここにいるのに、自分だと言い切れない夜」の手触りだけをすくい取った曲です。誰かを責めたり世界を呪ったりする代わりに、だれのせいでもない痛みと一緒に、ただ静かに立ち尽くしている心の状態を、そのまま低い声と最小限の伴奏に落とし込みました。タイトルの「かたちのない夜」は、真っ暗な絶望ではなく、意味も名前も与えられていない感情が、かろうじて熱だけを残して続いている時間のことです。無理に前向きになろうとするでもなく、「それでもまだここにいる」という事実だけをそっと肯定したくて書いた一曲です。説明できないしんどさを抱えたまま、それでも今日をやり過ごそうとしている誰かの、小さな居場所になれたらうれしいです。</description>
-      <enclosure url="https://say-show.me/images/formless-night.png" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>
