@@ -76,7 +76,7 @@ J-POPとシティポップ、インディポップをベースにした、映画
 
 ## 🎞️ Releases
 
-このリポジトリの [Releases](https://github.com/say-show/say-show/releases) には、Instagram Reel 用に生成した曲ごとの動画（`reel-{NNN}` タグ）が並んでいます。サイトの一部ではなく、投稿手順を案内する GitHub Issue から動画を取得するための置き場です。
+このリポジトリの [Releases](https://github.com/say-show/say-show/releases) には、Instagram Reel 用に生成した曲ごとの動画とキャプション（`reel-{NNN}` タグ）が並んでいます。サイトの一部ではなく、投稿手順を案内する GitHub Issue から動画を取得するための置き場です。
 
 ---
 
