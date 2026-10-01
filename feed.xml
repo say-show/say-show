@@ -5,13 +5,23 @@
     <link>https://say-show.me/</link>
     <description>映画のワンシーンから生まれる、AIコラボの音楽プロジェクト。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 25 Sep 2026 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2026 00:00:00 +0900</lastBuildDate>
     <image>
       <url>https://say-show.me/favicon-512.png</url>
       <title>SAY-SHOW</title>
       <link>https://say-show.me/</link>
     </image>
     <atom:link href="https://say-show.me/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>胸の銀河を走れ</title>
+      <link>https://say-show.me/tracks/run-through-the-galaxy-in-your-chest/</link>
+      <guid isPermaLink="true">https://say-show.me/tracks/run-through-the-galaxy-in-your-chest/</guid>
+      <pubDate>Fri, 02 Oct 2026 00:00:00 +0900</pubDate>
+      <category>ロック</category>
+      <category>Inspired by 「ネバーエンディング・ストーリー」</category>
+      <description>「胸の銀河を走れ」は、映画『ネバーエンディング・ストーリー』が持つ「物語の力」や、名前を呼ぶことで失われかけたものに輪郭が戻っていく感覚から着想を得ながら、映画の冒険譚そのものではなく、誰かの答えを待つうちに自分の声を見失いかけた人が、まだ何者でもない自分をもう一度引き受けていくための曲です。「空白の空」や「読まれない頁（ページ）」は、未来が見えない不安だけでなく、まだ書き換えられる余白のこと。誰かに救われるのを待つのではなく、震える声でも「ここにいる」と言い、自分の名前を世界へ返していく瞬間を、80年代ファンタジー映画のようなきらめきと少しの切なさに重ねました。終わらない物語とは、特別な誰かのためだけに続くものではなく、何度でも今日を始め直せる人のそばで静かに続いていくものなのかもしれません。</description>
+      <enclosure url="https://say-show.me/images/run-through-the-galaxy-in-your-chest.png" type="image/png" length="0"/>
+    </item>
     <item>
       <title>風がほどく、わたし</title>
       <link>https://say-show.me/tracks/the-wind-unties-me/</link>
@@ -201,16 +211,6 @@
       <category>Inspired by 「チャーリーズ・エンジェル」</category>
       <description>「Smile Code: Angel」は、スパイ映画みたいな大げさなミッションを、満員電車やコンビニの光がにじむ帰り道にそっと置き換えた曲です。世界なんて救えなくていいから、「今日もなんとかここにいた自分」をヒーローとして扱ってみる——その視点のアップデートが、この曲のいちばんのテーマです。タイトルの“Smile Code”は、誰かに見せるためだけじゃない、鏡越しのぎこちない笑顔も起動させる秘密の合図。大きな物語ではなく、エンドロールみたいに一日を振り返って「悪くなかったかも」と思える、その小さな瞬間のために書かれた、日常アクション映画です。</description>
       <enclosure url="https://say-show.me/images/smile-code-angel.png" type="image/png" length="0"/>
-    </item>
-    <item>
-      <title>まだ名前のない光</title>
-      <link>https://say-show.me/tracks/nameless-light-as-of-yet/</link>
-      <guid isPermaLink="true">https://say-show.me/tracks/nameless-light-as-of-yet/</guid>
-      <pubDate>Fri, 15 May 2026 00:00:00 +0900</pubDate>
-      <category>ネオ・ソウル / R&amp;B</category>
-      <category>Inspired by 「グーニーズ」</category>
-      <description>子どもの頃に夢中で観た映画『グーニーズ』への、小さな返事みたいな曲です。地図も宝箱も出てこないけれど、「あの頃、本気でなにかを探していた自分」を思い出しながら書きました。放課後の帰り道や、少し伸びた校舎の影、言えないまま飲み込んだ言葉たち——そんな景色を、大人になった視点からそっとなぞっています。軽快なビートボックスとツインボーカルのリズムには、あの頃の足音や鼓動の感じをそのまま閉じ込めたつもりです。もう無鉄砲には飛び出せない年齢になっても、胸のどこかでまだ「名前のついていない光」を探している人に、ふと寄り添う一曲になっていたらうれしいです。</description>
-      <enclosure url="https://say-show.me/images/nameless-light-as-of-yet.png" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>
