@@ -5,13 +5,23 @@
     <link>https://say-show.me/</link>
     <description>映画のワンシーンから生まれる、AIコラボの音楽プロジェクト。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 02 Oct 2026 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0900</lastBuildDate>
     <image>
       <url>https://say-show.me/favicon-512.png</url>
       <title>SAY-SHOW</title>
       <link>https://say-show.me/</link>
     </image>
     <atom:link href="https://say-show.me/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>夢の続き</title>
+      <link>https://say-show.me/tracks/continuation-of-a-dream/</link>
+      <guid isPermaLink="true">https://say-show.me/tracks/continuation-of-a-dream/</guid>
+      <pubDate>Fri, 09 Oct 2026 00:00:00 +0900</pubDate>
+      <category>ネオ・ソウル / R&amp;B</category>
+      <category>Inspired by 「ロボット・ドリームズ」</category>
+      <description>「夢の続き」は、映画『ロボットドリーム』から受け取った、もう会えない相手の記憶と一緒にそれでも日々を進んでいく感覚を、夕焼けの帰り道や携帯に残った写真、読み返せないまま残してしまうメッセージといった身近な景色へ置き換えた曲です。失ったものをきれいに忘れる話ではなく、「もう一度だけ会えたら」と願ってしまう自分を否定せず、時間が進んだあとも胸の中に残るぬくもりを抱えたまま歩くことを描いています。タイトルの「夢の続き」には、現実では途切れてしまった関係にも、眠る直前やふと立ち止まった瞬間には確かに続きがあるように思えてしまう、その静かな未練とやさしさを込めました。大きな別れの物語ではなく、夜の帰り道にふいに誰かを思い出して、少しだけ立ち止まってしまう人のための曲です。</description>
+      <enclosure url="https://say-show.me/images/continuation-of-a-dream.png" type="image/png" length="0"/>
+    </item>
     <item>
       <title>胸の銀河を走れ</title>
       <link>https://say-show.me/tracks/run-through-the-galaxy-in-your-chest/</link>
@@ -201,16 +211,6 @@
       <category>Inspired by 「ジュラシック・パーク」</category>
       <description>「畏れはやさしさに似て」は、映画『ジュラシック・パーク』から着想を得て、“好き”という感情の中にある制御できなさと、その前で人が自然と覚える礼儀のようなものを描いた曲で、惹かれるほどに距離を測ってしまうことや、触れたいのに軽く触れてはいけないと感じる矛盾を臆病さではなく壊さないためのやさしさとして捉え直し、恋を手に入れるものではなく触れ方を学んでいく過程として扱うことで、言葉にする前の逡巡や声を少し落とす瞬間に宿る感情をすくい取り、近づくことよりも壊さないことを先に選んでしまうその静かな強さをやわらかく残した一曲です。</description>
       <enclosure url="https://say-show.me/images/awe-is-akin-to-kindness.png" type="image/png" length="0"/>
-    </item>
-    <item>
-      <title>Smile Code: Angel</title>
-      <link>https://say-show.me/tracks/smile-code-angel/</link>
-      <guid isPermaLink="true">https://say-show.me/tracks/smile-code-angel/</guid>
-      <pubDate>Fri, 22 May 2026 00:00:00 +0900</pubDate>
-      <category>エレクトロポップ</category>
-      <category>Inspired by 「チャーリーズ・エンジェル」</category>
-      <description>「Smile Code: Angel」は、スパイ映画みたいな大げさなミッションを、満員電車やコンビニの光がにじむ帰り道にそっと置き換えた曲です。世界なんて救えなくていいから、「今日もなんとかここにいた自分」をヒーローとして扱ってみる——その視点のアップデートが、この曲のいちばんのテーマです。タイトルの“Smile Code”は、誰かに見せるためだけじゃない、鏡越しのぎこちない笑顔も起動させる秘密の合図。大きな物語ではなく、エンドロールみたいに一日を振り返って「悪くなかったかも」と思える、その小さな瞬間のために書かれた、日常アクション映画です。</description>
-      <enclosure url="https://say-show.me/images/smile-code-angel.png" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>
