@@ -5,13 +5,23 @@
     <link>https://say-show.me/</link>
     <description>映画のワンシーンから生まれる、AIコラボの音楽プロジェクト。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 09 Oct 2026 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 00:00:00 +0900</lastBuildDate>
     <image>
       <url>https://say-show.me/favicon-512.png</url>
       <title>SAY-SHOW</title>
       <link>https://say-show.me/</link>
     </image>
     <atom:link href="https://say-show.me/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>しょっぱくていいよ</title>
+      <link>https://say-show.me/tracks/salty-is-totally-fine/</link>
+      <guid isPermaLink="true">https://say-show.me/tracks/salty-is-totally-fine/</guid>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 +0900</pubDate>
+      <category>渋谷系 / ジャズ</category>
+      <category>Inspired by 「ソング・オブ・ザ・シー 海のうた」</category>
+      <description>「しょっぱくていいよ」は、映画『ソング・オブ・ザ・シー 海のうた』から、「感情を解き放つと心がもう一度動き出す」という感覚をすくい取って作った曲です。いつも「大丈夫」と笑って、誰かのための灯台のように立ち続けるがんばり屋さんに、コートのポケットへこっそり貝殻を入れたり、傘を隠したりしながら、ちょっといたずらっぽく「泣いたっていいんだよ」と笑いかけます。涙と海はどちらもしょっぱいから、こぼれた分だけ潮が満ちて、空はちゃんと晴れていく。泣くことを、また軽やかに泳ぎ出すための準備として描きました。ふわっと弾むサビに乗せて、聴き終わったあとに肩の力が抜けて、少し笑顔で明日へ向かえたらうれしいです。</description>
+      <enclosure url="https://say-show.me/images/salty-is-totally-fine.png" type="image/png" length="0"/>
+    </item>
     <item>
       <title>夢の続き</title>
       <link>https://say-show.me/tracks/continuation-of-a-dream/</link>
@@ -201,16 +211,6 @@
       <category>Inspired by 「サマーウォーズ」</category>
       <description>「未接続のまま、手を伸ばす」は、映画『サマーウォーズ』から直接の出来事ではなく、「つながっているはずなのに、どこか触れきれない距離」の感触だけを抽出して書かれた曲です。画面越しにやり取りできる時代の中で、名前やアイコンでは確かに結ばれているのに、体温や間（ま）のようなものだけが取り残されていく――その微妙なズレを、孤独としてではなく“ほどけかけたまま保たれている関係”として捉え直しています。サビの「まだつながる」は、強く結び直す決意ではなく、切れかけの線を無理に引き寄せず、その不安定さごと受け入れるための言葉です。誰かと完全に分かり合えなくても、それでも指先だけは伸ばし続けてしまう、その不器用さを否定せずに残すことで、確かさよりも“途切れなさ”を選び取る感覚を静かに描いています。夏の匂いや古い家の軋みのような具体的な手触りを差し込むことで、デジタルの向こう側にかすかに残る生活の重みをすくい上げ、つながることの意味を「届くかどうか」ではなく「離さずにいられるかどうか」へとずらした一曲です。</description>
       <enclosure url="https://say-show.me/images/reaching-out-without-being-connected.png" type="image/png" length="0"/>
-    </item>
-    <item>
-      <title>畏れはやさしさに似て</title>
-      <link>https://say-show.me/tracks/awe-is-akin-to-kindness/</link>
-      <guid isPermaLink="true">https://say-show.me/tracks/awe-is-akin-to-kindness/</guid>
-      <pubDate>Fri, 29 May 2026 00:00:00 +0900</pubDate>
-      <category>エレクトロポップ</category>
-      <category>Inspired by 「ジュラシック・パーク」</category>
-      <description>「畏れはやさしさに似て」は、映画『ジュラシック・パーク』から着想を得て、“好き”という感情の中にある制御できなさと、その前で人が自然と覚える礼儀のようなものを描いた曲で、惹かれるほどに距離を測ってしまうことや、触れたいのに軽く触れてはいけないと感じる矛盾を臆病さではなく壊さないためのやさしさとして捉え直し、恋を手に入れるものではなく触れ方を学んでいく過程として扱うことで、言葉にする前の逡巡や声を少し落とす瞬間に宿る感情をすくい取り、近づくことよりも壊さないことを先に選んでしまうその静かな強さをやわらかく残した一曲です。</description>
-      <enclosure url="https://say-show.me/images/awe-is-akin-to-kindness.png" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>
