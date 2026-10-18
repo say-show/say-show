@@ -535,6 +535,8 @@ body:not(.page-home) .brand-text small { opacity: .6; }
 .prose hr { border: 0; border-top: 1px solid var(--rule); margin: 40px 0; }
 .prose strong { font-weight: 700; }
 .prose .about-logo { width: 120px; height: 87px; margin: 24px 0 28px; }
+/* 最後のポータルへのリンク。狭い画面でドメインの「-」で折り返さない */
+.prose .about-portal { white-space: nowrap; }
 
 /* 404: 曲ページの型をそのまま使う「No. 404」。固有なのは導線の 1 行と最近の曲 4 枚（.shelf-tiles 流用）だけ */
 /* クラス名は旧 404（.notfound: max-width 720px）と衝突しないよう別名にする。古い style.css は最大 10 分キャッシュされる */
