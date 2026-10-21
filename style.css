@@ -376,7 +376,6 @@ body:not(.page-home) .brand-text small { opacity: .6; }
 .sound > div { display: grid; grid-template-columns: 5em 1fr; gap: 12px; padding: 10px 0; border-top: 1px solid var(--rule); }
 .sound dt { color: var(--ink-soft); }
 .sound dd { margin: 0; }
-.sound dd small { display: block; color: var(--ink-soft); font-size: 12.5px; margin-top: 2px; }
 .sound i { font-style: normal; display: inline-block; margin: 0 10px 4px 0; padding-bottom: 1px; border-bottom: 1px solid var(--rule); }
 
 .lyrics { margin: 0; font-family: var(--serif); font-size: 15px; line-height: 2.15; white-space: pre-wrap; color: var(--ink); }
