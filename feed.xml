@@ -5,13 +5,23 @@
     <link>https://say-show.me/</link>
     <description>映画のワンシーンから生まれる、AIコラボの音楽プロジェクト。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 16 Oct 2026 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 00:00:00 +0900</lastBuildDate>
     <image>
       <url>https://say-show.me/favicon-512.png</url>
       <title>SAY-SHOW</title>
       <link>https://say-show.me/</link>
     </image>
     <atom:link href="https://say-show.me/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>雨粒はコードを知っている</title>
+      <link>https://say-show.me/tracks/raindrops-know-the-code/</link>
+      <guid isPermaLink="true">https://say-show.me/tracks/raindrops-know-the-code/</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 +0900</pubDate>
+      <category>ネオ・ソウル / R&amp;B</category>
+      <category>Inspired by 「マトリックス」</category>
+      <description>「雨粒はコードを知っている」は、映画『マトリックス』の“赤を選ぶか、青を選ぶか”という問いを、別れた相手を忘れるか忘れないかという単純な二択ではなく、痛みのない思い出の中にとどまるのか、それとも失恋で見失っていた自分を引き受けて先へ進むのかという、もっと静かで個人的な選択として描いた曲です。窓を滑る雨を、都市を動かす見えないコードのように見つめながら、主人公は「大丈夫」と言い聞かせていた頃の自分や、愛されるために小さくしていた輪郭に気づいていきます。タイトルの雨粒は、誰かが決めた世界の規則を知っているようにも見えるけれど、涙がどこへ流れ、何を終わらせ、どんな明日を育てるかまでは決められないものとして置きました。別れを相手への恨みや敗北にせず、「戻れないこと」を悲しみながらも「戻らないこと」を自分で選ぶための合図として受け取ることで、失恋のあとに残る空白を、新しい自分の人生が始まる余白へ変えていく曲です。</description>
+      <enclosure url="https://say-show.me/images/raindrops-know-the-code.png" type="image/png" length="0"/>
+    </item>
     <item>
       <title>しょっぱくていいよ</title>
       <link>https://say-show.me/tracks/salty-is-totally-fine/</link>
@@ -201,16 +211,6 @@
       <category>Inspired by 「キャノンボール」</category>
       <description>「速度の外側」は、映画『キャノンボール』の派手なレースそのものではなく、「誰の公式レースにも名前がないまま、それでも毎日スタートラインに立ち続けている感覚」を描いた曲です。誰かの正解レーンをなぞる速さではなく、「本当はどこへ行きたいのか」を基準にハンドルを握り直す、その静かな反抗と選び直しが、曲全体のエンジンになっています。タイトルの「速度」はメーターの数値ではなく、評価軸や常識といった目に見えないスピード感のことで、その“外側”に一歩はみ出すことを、無謀さではなく「自分のペースを取り戻す行為」として肯定します。ゴールテープや拍手のない道を、それでも減速しきらずに走り続ける姿を通して、遠回りや寄り道を失敗ではなく、自分の名前を取り戻していくルートとしてそっと照らした、小さなロードムービーのような一曲です。</description>
       <enclosure url="https://say-show.me/images/outside-of-speed.png" type="image/png" length="0"/>
-    </item>
-    <item>
-      <title>未接続のまま、手を伸ばす</title>
-      <link>https://say-show.me/tracks/reaching-out-without-being-connected/</link>
-      <guid isPermaLink="true">https://say-show.me/tracks/reaching-out-without-being-connected/</guid>
-      <pubDate>Fri, 05 Jun 2026 00:00:00 +0900</pubDate>
-      <category>エレクトロポップ</category>
-      <category>Inspired by 「サマーウォーズ」</category>
-      <description>「未接続のまま、手を伸ばす」は、映画『サマーウォーズ』から直接の出来事ではなく、「つながっているはずなのに、どこか触れきれない距離」の感触だけを抽出して書かれた曲です。画面越しにやり取りできる時代の中で、名前やアイコンでは確かに結ばれているのに、体温や間（ま）のようなものだけが取り残されていく――その微妙なズレを、孤独としてではなく“ほどけかけたまま保たれている関係”として捉え直しています。サビの「まだつながる」は、強く結び直す決意ではなく、切れかけの線を無理に引き寄せず、その不安定さごと受け入れるための言葉です。誰かと完全に分かり合えなくても、それでも指先だけは伸ばし続けてしまう、その不器用さを否定せずに残すことで、確かさよりも“途切れなさ”を選び取る感覚を静かに描いています。夏の匂いや古い家の軋みのような具体的な手触りを差し込むことで、デジタルの向こう側にかすかに残る生活の重みをすくい上げ、つながることの意味を「届くかどうか」ではなく「離さずにいられるかどうか」へとずらした一曲です。</description>
-      <enclosure url="https://say-show.me/images/reaching-out-without-being-connected.png" type="image/png" length="0"/>
     </item>
   </channel>
 </rss>
